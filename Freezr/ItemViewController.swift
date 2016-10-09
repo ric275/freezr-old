@@ -26,6 +26,14 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         present(imageSelector, animated: true, completion: nil)
     }
     
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        
+        itemImage.image = image
+        
+        imageSelector.dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func cameraTapped(_ sender: AnyObject) {
     }
     
