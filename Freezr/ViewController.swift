@@ -1,5 +1,5 @@
 //
-//  ItemsViewController.swift
+//  ViewController.swift
 //  Freezr
 //
 //  Created by Jack Taylor on 09/10/2016.
@@ -8,8 +8,10 @@
 
 import UIKit
 
-class ItemsViewController: UIViewController {
+class ViewController: UIViewController {
 
+    @IBOutlet weak var itemsTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
