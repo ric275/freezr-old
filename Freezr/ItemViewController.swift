@@ -8,17 +8,22 @@
 
 import UIKit
 
-class ItemViewController: UIViewController {
+class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
     @IBOutlet weak var itemImage: UIImageView!
 
     @IBOutlet weak var itemName: UITextField!
     
+    var imageSelector = UIImagePickerController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        imageSelector.delegate = self
     }
     @IBAction func photosTapped(_ sender: AnyObject) {
+        imageSelector.sourceType = .photoLibrary
+        present(imageSelector, animated: true, completion: nil)
     }
     
     @IBAction func cameraTapped(_ sender: AnyObject) {
