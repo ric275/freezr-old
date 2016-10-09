@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ItemsViewController.swift
 //  Freezr
 //
 //  Created by Jack Taylor on 09/10/2016.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ItemsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
