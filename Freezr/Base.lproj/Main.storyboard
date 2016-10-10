@@ -79,6 +79,7 @@
                                 <state key="normal" title="Delete item"/>
                                 <connections>
                                     <action selector="addToFreezrTapped:" destination="L68-X7-ABi" eventType="touchUpInside" id="lCN-wk-d9q"/>
+                                    <action selector="deleteItemTapped:" destination="L68-X7-ABi" eventType="touchUpInside" id="dqo-ck-Zis"/>
                                 </connections>
                             </button>
                         </subviews>

@@ -49,6 +49,8 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     
     @IBAction func cameraTapped(_ sender: AnyObject) {
+        imageSelector.sourceType = .camera
+        present(imageSelector, animated: true, completion: nil)
     }
     
     @IBAction func addToFreezrTapped(_ sender: AnyObject) {
@@ -68,5 +70,15 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         navigationController!.popViewController(animated: true)
     }
  
+    @IBAction func deleteItemTapped(_ sender: AnyObject) {
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        context.delete(item!)
+        
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        
+        navigationController!.popViewController(animated: true)
+        
+    }
         
 }
