@@ -14,6 +14,10 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     @IBOutlet weak var itemName: UITextField!
     
+    @IBOutlet weak var addItemOrUpdateButton: UIButton!
+    
+    @IBOutlet weak var deleteItemButton: UIButton!
+    
     var imageSelector = UIImagePickerController()
     var item : Item? = nil
     
@@ -21,6 +25,15 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         super.viewDidLoad()
         
         imageSelector.delegate = self
+        
+        if item != nil{
+            itemImage.image = UIImage(data: item!.image as! Data)
+            itemName.text = item!.name
+            
+            addItemOrUpdateButton.setTitle("Update item", for: .normal)
+        } else {
+            deleteItemButton.isHidden = true
+        }
     }
     @IBAction func photosTapped(_ sender: AnyObject) {
         imageSelector.sourceType = .photoLibrary
@@ -51,6 +64,8 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         }
         
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        
+        navigationController!.popViewController(animated: true)
     }
  
         

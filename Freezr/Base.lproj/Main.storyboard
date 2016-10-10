@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--My Freezr-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" customModule="Freezr" customModuleProvider="target" sceneMemberID="viewController">
@@ -31,10 +31,10 @@
                             <constraint firstItem="Rrq-PB-Zq1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="ufk-ee-OTM"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="0jD-6i-UQn">
+                    <navigationItem key="navigationItem" title="My Freezr" id="0jD-6i-UQn">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Y7S-Oh-i05">
                             <connections>
-                                <segue destination="L68-X7-ABi" kind="show" id="o4W-yZ-bNQ"/>
+                                <segue destination="L68-X7-ABi" kind="show" identifier="itemSegue" id="o4W-yZ-bNQ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -75,15 +75,23 @@
                                     <action selector="addToFreezrTapped:" destination="L68-X7-ABi" eventType="touchUpInside" id="RbN-YI-H0A"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HX1-Qx-yuN">
+                                <state key="normal" title="Delete item"/>
+                                <connections>
+                                    <action selector="addToFreezrTapped:" destination="L68-X7-ABi" eventType="touchUpInside" id="lCN-wk-d9q"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="c9T-2y-KlU" firstAttribute="top" secondItem="5rx-kh-Ue2" secondAttribute="bottom" constant="20" id="Cer-Hg-Qdq"/>
+                            <constraint firstItem="HX1-Qx-yuN" firstAttribute="centerX" secondItem="ZSs-Xm-hP9" secondAttribute="centerX" id="D2G-fg-fvt"/>
                             <constraint firstItem="5rx-kh-Ue2" firstAttribute="centerX" secondItem="ZSs-Xm-hP9" secondAttribute="centerX" id="Ftc-hm-kcn"/>
                             <constraint firstItem="7wE-fg-BPV" firstAttribute="centerX" secondItem="ZSs-Xm-hP9" secondAttribute="centerX" id="QhK-zg-lhI"/>
                             <constraint firstItem="c9T-2y-KlU" firstAttribute="centerX" secondItem="ZSs-Xm-hP9" secondAttribute="centerX" id="SFy-FQ-AFk"/>
                             <constraint firstItem="5rx-kh-Ue2" firstAttribute="width" secondItem="7wE-fg-BPV" secondAttribute="width" id="T5k-Md-HiX"/>
                             <constraint firstItem="c9T-2y-KlU" firstAttribute="centerX" secondItem="ZSs-Xm-hP9" secondAttribute="centerX" id="adi-5f-2bF"/>
+                            <constraint firstItem="HX1-Qx-yuN" firstAttribute="top" secondItem="c9T-2y-KlU" secondAttribute="bottom" constant="15" id="lQP-7y-EKh"/>
                             <constraint firstItem="5rx-kh-Ue2" firstAttribute="top" secondItem="7wE-fg-BPV" secondAttribute="bottom" constant="30" id="omB-gL-RAm"/>
                             <constraint firstItem="7wE-fg-BPV" firstAttribute="top" secondItem="dlb-8f-5Lo" secondAttribute="bottom" constant="30" id="udq-WQ-Hwj"/>
                         </constraints>
@@ -103,6 +111,8 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="addItemOrUpdateButton" destination="c9T-2y-KlU" id="lia-n0-er7"/>
+                        <outlet property="deleteItemButton" destination="HX1-Qx-yuN" id="52P-1a-Vas"/>
                         <outlet property="itemImage" destination="7wE-fg-BPV" id="rbk-JR-08d"/>
                         <outlet property="itemName" destination="5rx-kh-Ue2" id="p7S-td-KhJ"/>
                     </connections>

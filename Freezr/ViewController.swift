@@ -27,7 +27,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         do {
             items = try context.fetch(Item.fetchRequest())
-            print(items)
+            itemListTableView.reloadData()
         } catch {
             
         }
@@ -41,8 +41,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let cell = UITableViewCell()
         let item = items[indexPath.row]
         cell.textLabel?.text = item.name
+        cell.imageView?.image = UIImage(data: item.image as! Data)
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let item = items[indexPath.row]
+        performSegue(withIdentifier: "itemSegue", sender: item)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let nextViewController = segue.destination as! ItemViewController
+        nextViewController.item = sender as? Item
+    }
     
 }
