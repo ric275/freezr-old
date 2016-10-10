@@ -38,7 +38,7 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     @IBAction func cameraTapped(_ sender: AnyObject) {
     }
     
- @IBAction func addTapped(_ sender: AnyObject) {
+    @IBAction func addToFreezrTapped(_ sender: AnyObject) {
         if item != nil {
             item!.name = itemName.text
             item!.image = UIImagePNGRepresentation(itemImage.image!) as NSData?
@@ -52,4 +52,6 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
     }
+ 
+        
 }

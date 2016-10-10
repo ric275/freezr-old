@@ -311,6 +311,7 @@
 				0467322D1DAAE6FA00EEC292 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

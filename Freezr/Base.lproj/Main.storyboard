@@ -23,7 +23,7 @@
                     <navigationItem key="navigationItem" id="0jD-6i-UQn">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Y7S-Oh-i05">
                             <connections>
-                                <segue destination="L68-X7-ABi" kind="show" id="mCi-9U-lHh"/>
+                                <segue destination="L68-X7-ABi" kind="show" id="o4W-yZ-bNQ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -55,20 +55,21 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ltL-5R-USt">
-                                <state key="normal" title="Add"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c9T-2y-KlU">
+                                <state key="normal" title="Add item to Freezr"/>
                                 <connections>
-                                    <action selector="addTapped:" destination="L68-X7-ABi" eventType="touchUpInside" id="xCQ-AI-ZKK"/>
+                                    <action selector="addToFreezrTapped:" destination="L68-X7-ABi" eventType="touchUpInside" id="RbN-YI-H0A"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="c9T-2y-KlU" firstAttribute="top" secondItem="5rx-kh-Ue2" secondAttribute="bottom" constant="20" id="Cer-Hg-Qdq"/>
                             <constraint firstItem="5rx-kh-Ue2" firstAttribute="centerX" secondItem="ZSs-Xm-hP9" secondAttribute="centerX" id="Ftc-hm-kcn"/>
                             <constraint firstItem="7wE-fg-BPV" firstAttribute="centerX" secondItem="ZSs-Xm-hP9" secondAttribute="centerX" id="QhK-zg-lhI"/>
+                            <constraint firstItem="c9T-2y-KlU" firstAttribute="centerX" secondItem="ZSs-Xm-hP9" secondAttribute="centerX" id="SFy-FQ-AFk"/>
                             <constraint firstItem="5rx-kh-Ue2" firstAttribute="width" secondItem="7wE-fg-BPV" secondAttribute="width" id="T5k-Md-HiX"/>
-                            <constraint firstItem="ltL-5R-USt" firstAttribute="top" secondItem="5rx-kh-Ue2" secondAttribute="bottom" constant="20" id="Yvf-tv-fpd"/>
-                            <constraint firstItem="ltL-5R-USt" firstAttribute="centerX" secondItem="ZSs-Xm-hP9" secondAttribute="centerX" id="l2k-53-tZ6"/>
+                            <constraint firstItem="c9T-2y-KlU" firstAttribute="centerX" secondItem="ZSs-Xm-hP9" secondAttribute="centerX" id="adi-5f-2bF"/>
                             <constraint firstItem="5rx-kh-Ue2" firstAttribute="top" secondItem="7wE-fg-BPV" secondAttribute="bottom" constant="30" id="omB-gL-RAm"/>
                             <constraint firstItem="7wE-fg-BPV" firstAttribute="top" secondItem="dlb-8f-5Lo" secondAttribute="bottom" constant="30" id="udq-WQ-Hwj"/>
                         </constraints>
@@ -88,7 +89,6 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
-                        <outlet property="addTapped" destination="ltL-5R-USt" id="xee-Ei-Mdl"/>
                         <outlet property="itemImage" destination="7wE-fg-BPV" id="rbk-JR-08d"/>
                         <outlet property="itemName" destination="5rx-kh-Ue2" id="p7S-td-KhJ"/>
                     </connections>
