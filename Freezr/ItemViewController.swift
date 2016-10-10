@@ -11,14 +11,15 @@ import UIKit
 class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var itemImage: UIImageView!
-
+    
     @IBOutlet weak var itemName: UITextField!
     
     var imageSelector = UIImagePickerController()
+    var item : Item? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         imageSelector.delegate = self
     }
     @IBAction func photosTapped(_ sender: AnyObject) {
@@ -37,5 +38,18 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     @IBAction func cameraTapped(_ sender: AnyObject) {
     }
     
-    @IBOutlet weak var addTapped: UIButton!
+ @IBAction func addTapped(_ sender: AnyObject) {
+        if item != nil {
+            item!.name = itemName.text
+            item!.image = UIImagePNGRepresentation(itemImage.image!) as NSData?
+        } else {
+            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            
+            let item = Item(context: context)
+            item.name = itemName.text
+            item.image = UIImagePNGRepresentation(itemImage.image!) as NSData?
+        }
+        
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+    }
 }

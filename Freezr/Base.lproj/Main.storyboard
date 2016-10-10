@@ -18,29 +18,15 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="03u-ZL-Wfw">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
-                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="03u-ZL-Wfw" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="75e-2d-yPp"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="03u-ZL-Wfw" secondAttribute="bottom" id="AcK-AM-EZ8"/>
-                            <constraint firstAttribute="trailing" secondItem="03u-ZL-Wfw" secondAttribute="trailing" id="mvZ-oy-bhP"/>
-                            <constraint firstItem="03u-ZL-Wfw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="t4g-q2-Ss4"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="0jD-6i-UQn">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="k48-ox-OKf">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Y7S-Oh-i05">
                             <connections>
-                                <segue destination="L68-X7-ABi" kind="show" id="hwA-jI-i5g"/>
+                                <segue destination="L68-X7-ABi" kind="show" id="mCi-9U-lHh"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="itemsTableView" destination="03u-ZL-Wfw" id="pNJ-Xv-MVl"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -71,6 +57,9 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ltL-5R-USt">
                                 <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="addTapped:" destination="L68-X7-ABi" eventType="touchUpInside" id="xCQ-AI-ZKK"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
