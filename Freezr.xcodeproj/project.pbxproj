@@ -8,19 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		0467321A1DAAE6FA00EEC292 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046732191DAAE6FA00EEC292 /* AppDelegate.swift */; };
-		0467321C1DAAE6FA00EEC292 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0467321B1DAAE6FA00EEC292 /* ViewController.swift */; };
 		0467321F1DAAE6FA00EEC292 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0467321D1DAAE6FA00EEC292 /* Main.storyboard */; };
 		046732221DAAE6FA00EEC292 /* Freezr.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 046732201DAAE6FA00EEC292 /* Freezr.xcdatamodeld */; };
 		046732241DAAE6FA00EEC292 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 046732231DAAE6FA00EEC292 /* Assets.xcassets */; };
 		046732271DAAE6FA00EEC292 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046732251DAAE6FA00EEC292 /* LaunchScreen.storyboard */; };
 		0467322F1DAAF03600EEC292 /* bPwodT6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0467322E1DAAF03500EEC292 /* bPwodT6.jpg */; };
 		046732311DAAF38500EEC292 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046732301DAAF38500EEC292 /* ItemViewController.swift */; };
+		04E4204A1DABF28700390EF5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E420491DABF28700390EF5 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		046732161DAAE6FA00EEC292 /* Freezr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Freezr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		046732191DAAE6FA00EEC292 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0467321B1DAAE6FA00EEC292 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0467321E1DAAE6FA00EEC292 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		046732211DAAE6FA00EEC292 /* Freezr.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Freezr.xcdatamodel; sourceTree = "<group>"; };
 		046732231DAAE6FA00EEC292 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -28,6 +27,7 @@
 		046732281DAAE6FA00EEC292 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0467322E1DAAF03500EEC292 /* bPwodT6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bPwodT6.jpg; sourceTree = "<group>"; };
 		046732301DAAF38500EEC292 /* ItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
+		04E420491DABF28700390EF5 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				046732191DAAE6FA00EEC292 /* AppDelegate.swift */,
-				0467321B1DAAE6FA00EEC292 /* ViewController.swift */,
+				04E420491DABF28700390EF5 /* ViewController.swift */,
 				046732301DAAF38500EEC292 /* ItemViewController.swift */,
 				0467321D1DAAE6FA00EEC292 /* Main.storyboard */,
 				046732231DAAE6FA00EEC292 /* Assets.xcassets */,
@@ -146,9 +146,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0467321C1DAAE6FA00EEC292 /* ViewController.swift in Sources */,
 				046732311DAAF38500EEC292 /* ItemViewController.swift in Sources */,
 				0467321A1DAAE6FA00EEC292 /* AppDelegate.swift in Sources */,
+				04E4204A1DABF28700390EF5 /* ViewController.swift in Sources */,
 				046732221DAAE6FA00EEC292 /* Freezr.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

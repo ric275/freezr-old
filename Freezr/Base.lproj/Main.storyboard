@@ -10,7 +10,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Freezr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" customModule="Freezr" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -18,7 +18,18 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Rrq-PB-Zq1">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Rrq-PB-Zq1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Fwz-gq-rA8"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Rrq-PB-Zq1" secondAttribute="bottom" id="jEC-DX-NK4"/>
+                            <constraint firstAttribute="trailing" secondItem="Rrq-PB-Zq1" secondAttribute="trailing" id="kM6-E4-8pQ"/>
+                            <constraint firstItem="Rrq-PB-Zq1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="ufk-ee-OTM"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="0jD-6i-UQn">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Y7S-Oh-i05">
@@ -27,6 +38,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="itemListTableView" destination="Rrq-PB-Zq1" id="BCj-56-2Mb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
