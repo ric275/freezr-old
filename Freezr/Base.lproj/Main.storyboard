@@ -58,16 +58,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bPwodT6.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="7wE-fg-BPV">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="setImagePicture.png" translatesAutoresizingMaskIntoConstraints="NO" id="7wE-fg-BPV">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="1q8-E7-HfR"/>
                                     <constraint firstAttribute="height" constant="200" id="hYS-4V-lgm"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="item name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5rx-kh-Ue2">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Item name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5rx-kh-Ue2">
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c9T-2y-KlU">
                                 <state key="normal" title="Add item to Freezr"/>
@@ -76,7 +76,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HX1-Qx-yuN">
-                                <state key="normal" title="Delete item"/>
+                                <state key="normal" title="Delete item">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="addToFreezrTapped:" destination="L68-X7-ABi" eventType="touchUpInside" id="lCN-wk-d9q"/>
                                     <action selector="deleteItemTapped:" destination="L68-X7-ABi" eventType="touchUpInside" id="dqo-ck-Zis"/>
@@ -142,6 +144,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bPwodT6.jpg" width="680" height="581"/>
+        <image name="setImagePicture.png" width="553" height="226"/>
     </resources>
 </document>
