@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  FreezrViewController.swift
 //  Freezr
 //
 //  Created by Jack Taylor on 09/10/2016.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var itemListTableView: UITableView!
     
@@ -53,6 +53,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let nextViewController = segue.destination as! ItemViewController
         nextViewController.item = sender as? Item
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let item = items[indexPath.row]
+            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            context.delete(item)
+            (UIApplication.shared.delegate as! AppDelegate).saveContext()
+            
+            do {
+                items = try context.fetch(Item.fetchRequest())
+                tableView.reloadData()
+            } catch {}
+            
+        }
     }
     
 }

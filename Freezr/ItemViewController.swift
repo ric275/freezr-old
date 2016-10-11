@@ -26,6 +26,8 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
         imageSelector.delegate = self
         
+        
+        
         if item != nil{
             itemImage.image = UIImage(data: item!.image as! Data)
             itemName.text = item!.name
@@ -34,6 +36,7 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         } else {
             deleteItemButton.isHidden = true
         }
+        
     }
     @IBAction func photosTapped(_ sender: AnyObject) {
         imageSelector.sourceType = .photoLibrary
@@ -56,20 +59,21 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     @IBAction func addToFreezrTapped(_ sender: AnyObject) {
         if item != nil {
             item!.name = itemName.text
-            item!.image = UIImagePNGRepresentation(itemImage.image!) as NSData?
+            item!.image = UIImageJPEGRepresentation(itemImage.image!, 0.1)! as NSData?
+            
         } else {
             let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
             
             let item = Item(context: context)
             item.name = itemName.text
-            item.image = UIImagePNGRepresentation(itemImage.image!) as NSData?
+            item.image = UIImageJPEGRepresentation(itemImage.image!, 0.1)! as NSData?
         }
         
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
         
         navigationController!.popViewController(animated: true)
     }
- 
+    
     @IBAction func deleteItemTapped(_ sender: AnyObject) {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
@@ -80,5 +84,4 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         navigationController!.popViewController(animated: true)
         
     }
-        
 }
