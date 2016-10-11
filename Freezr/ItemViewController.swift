@@ -18,6 +18,8 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     @IBOutlet weak var deleteItemButton: UIButton!
     
+    @IBOutlet weak var expirationDateTextField: UITextField!
+    
     var imageSelector = UIImagePickerController()
     var item : Item? = nil
     
@@ -25,12 +27,12 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         super.viewDidLoad()
         
         imageSelector.delegate = self
-        
-        
+
         
         if item != nil{
             itemImage.image = UIImage(data: item!.image as! Data)
             itemName.text = item!.name
+            expirationDateTextField.text = item!.expirydate
             
             addItemOrUpdateButton.setTitle("Update item", for: .normal)
         } else {
@@ -61,12 +63,18 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             item!.name = itemName.text
             item!.image = UIImageJPEGRepresentation(itemImage.image!, 0.1)! as NSData?
             
+            //DatePicker
+            item!.expirydate = expirationDateTextField.text
+            
         } else {
             let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
             
             let item = Item(context: context)
             item.name = itemName.text
             item.image = UIImageJPEGRepresentation(itemImage.image!, 0.1)! as NSData?
+            
+            //DatePicker
+            item.expirydate = expirationDateTextField.text
         }
         
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
@@ -84,4 +92,29 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         navigationController!.popViewController(animated: true)
         
     }
+    
+    //Expiry date setup
+    
+    @IBAction func editingExpirationDateTextField(_ sender: UITextField) {
+        let datePickerView:UIDatePicker = UIDatePicker()
+        
+        datePickerView.datePickerMode = UIDatePickerMode.date
+        
+        sender.inputView = datePickerView
+        
+        datePickerView.addTarget(self, action: #selector(ItemViewController.datePickerValueChanged), for: UIControlEvents.valueChanged)
+    }
+    
+    func datePickerValueChanged(sender:UIDatePicker) {
+        
+        let dateFormatter = DateFormatter()
+        
+        dateFormatter.dateStyle = DateFormatter.Style.medium
+        
+        dateFormatter.timeStyle = DateFormatter.Style.none
+        
+        expirationDateTextField.text = dateFormatter.string(from: sender.date)
+        
+    }
+    
 }
