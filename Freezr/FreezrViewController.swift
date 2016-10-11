@@ -38,10 +38,11 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        let cell = UITableViewCell(style: .value1, reuseIdentifier: nil)
         let item = items[indexPath.row]
         cell.textLabel?.text = item.name
         cell.imageView?.image = UIImage(data: item.image as! Data)
+        cell.detailTextLabel?.text = "Expires: \(item.expirydate!)"
         return cell
     }
     

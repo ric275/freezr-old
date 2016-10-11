@@ -64,24 +64,10 @@
                                     <constraint firstAttribute="height" constant="200" id="hYS-4V-lgm"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Item name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5rx-kh-Ue2">
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c9T-2y-KlU">
                                 <state key="normal" title="Add item to Freezr"/>
                                 <connections>
                                     <action selector="addToFreezrTapped:" destination="L68-X7-ABi" eventType="touchUpInside" id="RbN-YI-H0A"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HX1-Qx-yuN">
-                                <state key="normal" title="Delete item">
-                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="addToFreezrTapped:" destination="L68-X7-ABi" eventType="touchUpInside" id="lCN-wk-d9q"/>
-                                    <action selector="deleteItemTapped:" destination="L68-X7-ABi" eventType="touchUpInside" id="dqo-ck-Zis"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Expiration date" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uI7-d4-1Uz">
@@ -92,20 +78,48 @@
                                     <action selector="editingExpirationDateTextField:" destination="L68-X7-ABi" eventType="editingDidBegin" id="n4s-Gc-s7C"/>
                                 </connections>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expires:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S6k-Fu-edo">
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="12"/>
+                                <color key="textColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Item name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5rx-kh-Ue2">
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDl-H8-uue">
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="12"/>
+                                <color key="textColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HX1-Qx-yuN">
+                                <state key="normal" title="Delete item">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="addToFreezrTapped:" destination="L68-X7-ABi" eventType="touchUpInside" id="lCN-wk-d9q"/>
+                                    <action selector="deleteItemTapped:" destination="L68-X7-ABi" eventType="touchUpInside" id="dqo-ck-Zis"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="c9T-2y-KlU" firstAttribute="top" secondItem="uI7-d4-1Uz" secondAttribute="bottom" constant="27" id="9a4-SA-8dv"/>
+                            <constraint firstItem="uI7-d4-1Uz" firstAttribute="top" secondItem="S6k-Fu-edo" secondAttribute="bottom" constant="2" id="0Xz-RT-3jV"/>
+                            <constraint firstItem="S6k-Fu-edo" firstAttribute="centerX" secondItem="ZSs-Xm-hP9" secondAttribute="centerX" id="4do-qe-Pj5"/>
+                            <constraint firstItem="c9T-2y-KlU" firstAttribute="top" secondItem="uI7-d4-1Uz" secondAttribute="bottom" constant="20" id="9a4-SA-8dv"/>
                             <constraint firstItem="HX1-Qx-yuN" firstAttribute="centerX" secondItem="ZSs-Xm-hP9" secondAttribute="centerX" id="D2G-fg-fvt"/>
+                            <constraint firstItem="5rx-kh-Ue2" firstAttribute="top" secondItem="NDl-H8-uue" secondAttribute="bottom" constant="2" id="DUn-X6-q1u"/>
                             <constraint firstItem="5rx-kh-Ue2" firstAttribute="centerX" secondItem="ZSs-Xm-hP9" secondAttribute="centerX" id="Ftc-hm-kcn"/>
+                            <constraint firstItem="NDl-H8-uue" firstAttribute="centerX" secondItem="ZSs-Xm-hP9" secondAttribute="centerX" id="JOi-fu-ZLo"/>
                             <constraint firstItem="uI7-d4-1Uz" firstAttribute="centerX" secondItem="ZSs-Xm-hP9" secondAttribute="centerX" id="LhD-7S-uhT"/>
                             <constraint firstItem="7wE-fg-BPV" firstAttribute="centerX" secondItem="ZSs-Xm-hP9" secondAttribute="centerX" id="QhK-zg-lhI"/>
                             <constraint firstItem="c9T-2y-KlU" firstAttribute="centerX" secondItem="ZSs-Xm-hP9" secondAttribute="centerX" id="SFy-FQ-AFk"/>
                             <constraint firstItem="5rx-kh-Ue2" firstAttribute="width" secondItem="7wE-fg-BPV" secondAttribute="width" id="T5k-Md-HiX"/>
-                            <constraint firstItem="uI7-d4-1Uz" firstAttribute="top" secondItem="5rx-kh-Ue2" secondAttribute="bottom" constant="10" id="bw9-JR-4Fz"/>
+                            <constraint firstItem="uI7-d4-1Uz" firstAttribute="top" secondItem="5rx-kh-Ue2" secondAttribute="bottom" constant="30" id="bw9-JR-4Fz"/>
                             <constraint firstItem="uI7-d4-1Uz" firstAttribute="width" secondItem="5rx-kh-Ue2" secondAttribute="width" id="dtH-OV-gEF"/>
-                            <constraint firstItem="HX1-Qx-yuN" firstAttribute="top" secondItem="c9T-2y-KlU" secondAttribute="bottom" constant="15" id="lQP-7y-EKh"/>
-                            <constraint firstItem="5rx-kh-Ue2" firstAttribute="top" secondItem="7wE-fg-BPV" secondAttribute="bottom" constant="10" id="omB-gL-RAm"/>
+                            <constraint firstItem="HX1-Qx-yuN" firstAttribute="top" secondItem="c9T-2y-KlU" secondAttribute="bottom" constant="10" id="lQP-7y-EKh"/>
+                            <constraint firstItem="5rx-kh-Ue2" firstAttribute="top" secondItem="7wE-fg-BPV" secondAttribute="bottom" constant="30" id="omB-gL-RAm"/>
                             <constraint firstItem="7wE-fg-BPV" firstAttribute="top" secondItem="dlb-8f-5Lo" secondAttribute="bottom" constant="20" id="udq-WQ-Hwj"/>
                         </constraints>
                     </view>
