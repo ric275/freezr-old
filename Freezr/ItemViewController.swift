@@ -27,7 +27,7 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         super.viewDidLoad()
         
         imageSelector.delegate = self
-        addItemOrUpdateButton.isEnabled = false
+        
         
         if item != nil{
             itemImage.image = UIImage(data: item!.image as! Data)
@@ -37,6 +37,7 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             addItemOrUpdateButton.setTitle("Update item", for: .normal)
         } else {
             deleteItemButton.isHidden = true
+            addItemOrUpdateButton.isEnabled = false
         }
         
     }
