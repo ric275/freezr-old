@@ -13,7 +13,7 @@
 		046732241DAAE6FA00EEC292 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 046732231DAAE6FA00EEC292 /* Assets.xcassets */; };
 		046732271DAAE6FA00EEC292 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046732251DAAE6FA00EEC292 /* LaunchScreen.storyboard */; };
 		046732311DAAF38500EEC292 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046732301DAAF38500EEC292 /* ItemViewController.swift */; };
-		04B184E01DAC336600B41081 /* setImagePicture.png in Resources */ = {isa = PBXBuildFile; fileRef = 04B184DF1DAC336600B41081 /* setImagePicture.png */; };
+		04B1854D1DADA99900B41081 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 04B1854C1DADA99900B41081 /* placeholder.png */; };
 		04E4204A1DABF28700390EF5 /* FreezrViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E420491DABF28700390EF5 /* FreezrViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -26,7 +26,7 @@
 		046732261DAAE6FA00EEC292 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		046732281DAAE6FA00EEC292 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		046732301DAAF38500EEC292 /* ItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
-		04B184DF1DAC336600B41081 /* setImagePicture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setImagePicture.png; sourceTree = "<group>"; };
+		04B1854C1DADA99900B41081 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 		04E420491DABF28700390EF5 /* FreezrViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FreezrViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -68,7 +68,7 @@
 				046732251DAAE6FA00EEC292 /* LaunchScreen.storyboard */,
 				046732281DAAE6FA00EEC292 /* Info.plist */,
 				046732201DAAE6FA00EEC292 /* Freezr.xcdatamodeld */,
-				04B184DF1DAC336600B41081 /* setImagePicture.png */,
+				04B1854C1DADA99900B41081 /* placeholder.png */,
 			);
 			path = Freezr;
 			sourceTree = "<group>";
@@ -134,8 +134,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				046732271DAAE6FA00EEC292 /* LaunchScreen.storyboard in Resources */,
-				04B184E01DAC336600B41081 /* setImagePicture.png in Resources */,
 				046732241DAAE6FA00EEC292 /* Assets.xcassets in Resources */,
+				04B1854D1DADA99900B41081 /* placeholder.png in Resources */,
 				0467321F1DAAE6FA00EEC292 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

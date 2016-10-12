@@ -27,7 +27,7 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         super.viewDidLoad()
         
         imageSelector.delegate = self
-
+        addItemOrUpdateButton.isEnabled = false
         
         if item != nil{
             itemImage.image = UIImage(data: item!.image as! Data)
@@ -51,6 +51,8 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         itemImage.image = image
         
         imageSelector.dismiss(animated: true, completion: nil)
+        
+        addItemOrUpdateButton.isEnabled = true
     }
     
     @IBAction func cameraTapped(_ sender: AnyObject) {
