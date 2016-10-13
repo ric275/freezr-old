@@ -32,6 +32,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="My Freezr" id="0jD-6i-UQn">
+                        <barButtonItem key="leftBarButtonItem" title="Settings" id="rhD-nV-Eix">
+                            <connections>
+                                <segue destination="7lV-NW-Ydg" kind="show" identifier="settingsSegue" id="U3O-A6-SUg"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Y7S-Oh-i05">
                             <connections>
                                 <segue destination="L68-X7-ABi" kind="show" identifier="itemSegue" id="o4W-yZ-bNQ"/>
@@ -123,6 +128,7 @@
                             <constraint firstItem="7wE-fg-BPV" firstAttribute="top" secondItem="dlb-8f-5Lo" secondAttribute="bottom" constant="20" id="udq-WQ-Hwj"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" id="wgr-0T-bkV">
                         <rightBarButtonItems>
                             <barButtonItem systemItem="camera" id="bmh-Et-tue">
@@ -137,6 +143,7 @@
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="addItemOrUpdateButton" destination="c9T-2y-KlU" id="lia-n0-er7"/>
                         <outlet property="deleteItemButton" destination="HX1-Qx-yuN" id="52P-1a-Vas"/>
@@ -165,10 +172,38 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gd4-Pv-YN7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="71" y="-127"/>
+            <point key="canvasLocation" x="972" y="-692"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="NUR-lW-pVl">
+            <objects>
+                <viewController id="7lV-NW-Ydg" customClass="SettingsViewController" customModule="Freezr" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="May-4Q-mpv"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZhQ-QB-3Up"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PhM-j4-ubW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Settings" id="0ad-EY-id1">
+                        <barButtonItem key="rightBarButtonItem" title="Item" systemItem="done" id="gXl-Ck-tgt">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="show" identifier="closeSettingsSegue" id="C4X-5I-3c4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r0v-kB-Q4z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="233" y="37"/>
         </scene>
     </scenes>
     <resources>
         <image name="placeholder.png" width="518" height="423"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="C4X-5I-3c4"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -28,6 +28,7 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
         imageSelector.delegate = self
         
+        //self.navigationController?.navigationBar.tintColor = UIColor.red
         
         if item != nil{
             itemImage.image = UIImage(data: item!.image as! Data)

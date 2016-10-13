@@ -61,8 +61,15 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let nextViewController = segue.destination as! ItemViewController
-        nextViewController.item = sender as? Item
+        if segue.identifier == "itemSegue" {
+            
+            let backButton = UIBarButtonItem()
+            backButton.title = "Cancel"
+            navigationItem.backBarButtonItem = backButton
+            
+            let nextViewController = segue.destination as! ItemViewController
+            nextViewController.item = sender as? Item
+        }
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {

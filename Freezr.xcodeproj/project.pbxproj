@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04642E6B1DAFADBF002E7568 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04642E6A1DAFADBF002E7568 /* SettingsViewController.swift */; };
 		0467321A1DAAE6FA00EEC292 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046732191DAAE6FA00EEC292 /* AppDelegate.swift */; };
 		0467321F1DAAE6FA00EEC292 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0467321D1DAAE6FA00EEC292 /* Main.storyboard */; };
 		046732221DAAE6FA00EEC292 /* Freezr.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 046732201DAAE6FA00EEC292 /* Freezr.xcdatamodeld */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04642E6A1DAFADBF002E7568 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		046732161DAAE6FA00EEC292 /* Freezr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Freezr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		046732191DAAE6FA00EEC292 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0467321E1DAAE6FA00EEC292 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				046732191DAAE6FA00EEC292 /* AppDelegate.swift */,
 				04E420491DABF28700390EF5 /* FreezrViewController.swift */,
 				046732301DAAF38500EEC292 /* ItemViewController.swift */,
+				04642E6A1DAFADBF002E7568 /* SettingsViewController.swift */,
 				0467321D1DAAE6FA00EEC292 /* Main.storyboard */,
 				046732231DAAE6FA00EEC292 /* Assets.xcassets */,
 				046732251DAAE6FA00EEC292 /* LaunchScreen.storyboard */,
@@ -150,6 +153,7 @@
 				046732311DAAF38500EEC292 /* ItemViewController.swift in Sources */,
 				0467321A1DAAE6FA00EEC292 /* AppDelegate.swift in Sources */,
 				04E4204A1DABF28700390EF5 /* FreezrViewController.swift in Sources */,
+				04642E6B1DAFADBF002E7568 /* SettingsViewController.swift in Sources */,
 				046732221DAAE6FA00EEC292 /* Freezr.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
