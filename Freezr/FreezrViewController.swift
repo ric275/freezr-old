@@ -14,6 +14,7 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     var items : [Item] = []
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

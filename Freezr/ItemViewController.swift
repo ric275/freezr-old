@@ -20,20 +20,26 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     @IBOutlet weak var expirationDateTextField: UITextField!
     
+    @IBOutlet weak var placeHolderText1: UILabel!
+    
+    @IBOutlet weak var placeHolderText2: UILabel!
+
     var imageSelector = UIImagePickerController()
     var item : Item? = nil
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         imageSelector.delegate = self
         
-        //self.navigationController?.navigationBar.tintColor = UIColor.red
-        
         if item != nil{
             itemImage.image = UIImage(data: item!.image as! Data)
             itemName.text = item!.name
             expirationDateTextField.text = item!.expirydate
+            
+            placeHolderText1.isHidden = true
+            placeHolderText2.isHidden = true
             
             addItemOrUpdateButton.setTitle("Update item", for: .normal)
         } else {
@@ -54,6 +60,9 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
         imageSelector.dismiss(animated: true, completion: nil)
         
+        placeHolderText1.isHidden = true
+        placeHolderText2.isHidden = true
+
         addItemOrUpdateButton.isEnabled = true
     }
     
@@ -120,5 +129,4 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         expirationDateTextField.text = dateFormatter.string(from: sender.date)
         
     }
-    
 }

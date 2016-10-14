@@ -23,6 +23,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().backIndicatorTransitionMaskImage = UIImage()
         UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(UIOffsetMake(-15, 0), for: UIBarMetrics.default)
         
+        UINavigationBar.appearance().tintColor = UIColor.purple
+        
+        UITabBar.appearance().tintColor = UIColor.purple
+        
         return true
     }
     
@@ -95,14 +99,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
-//    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: (Bool) -> Void) {
-//        
-//        if shortcutItem.type == "freezr.appshortcut.add-item" {
-//        
-//        }
-//        
-//        
-//        
-//    }
     
+    private func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: (Bool) -> Void) {
+        
+        if let tabVC = self.window?.rootViewController as? UITabBarController {
+            if shortcutItem.type == "freezr.appshortcut.shopping-list"{
+                tabVC.selectedViewController = ShoppingListViewController()
+            } else if shortcutItem.type == "freezr.appshortcut.add-item" {
+                tabVC.selectedIndex = 0
+                
+            }
+            
+        }
+    }
+
 }
