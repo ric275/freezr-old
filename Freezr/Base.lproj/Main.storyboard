@@ -99,15 +99,6 @@
                                 <color key="textColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HX1-Qx-yuN">
-                                <state key="normal" title="Delete item">
-                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="addToFreezrTapped:" destination="L68-X7-ABi" eventType="touchUpInside" id="lCN-wk-d9q"/>
-                                    <action selector="deleteItemTapped:" destination="L68-X7-ABi" eventType="touchUpInside" id="dqo-ck-Zis"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap 'Photos' to select an image from your Photo Library." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mjx-KS-yfJ">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="351" id="c8q-SY-iNI"/>
@@ -122,28 +113,45 @@
                                 <color key="textColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ja-KZ-i0z">
+                                <state key="normal" title="Add item to Shopping List"/>
+                                <connections>
+                                    <action selector="addToSLTapped:" destination="L68-X7-ABi" eventType="touchUpInside" id="D22-8u-JTu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HX1-Qx-yuN">
+                                <state key="normal" title="Delete item">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="addToFreezrTapped:" destination="L68-X7-ABi" eventType="touchUpInside" id="lCN-wk-d9q"/>
+                                    <action selector="deleteItemTapped:" destination="L68-X7-ABi" eventType="touchUpInside" id="dqo-ck-Zis"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="uI7-d4-1Uz" firstAttribute="top" secondItem="S6k-Fu-edo" secondAttribute="bottom" constant="2" id="0Xz-RT-3jV"/>
                             <constraint firstItem="ZxS-QQ-nTA" firstAttribute="top" secondItem="mjx-KS-yfJ" secondAttribute="bottom" constant="8" id="1bs-7U-odz"/>
+                            <constraint firstItem="HX1-Qx-yuN" firstAttribute="top" secondItem="0ja-KZ-i0z" secondAttribute="bottom" constant="10" id="2qj-ps-eTc"/>
                             <constraint firstItem="S6k-Fu-edo" firstAttribute="centerX" secondItem="ZSs-Xm-hP9" secondAttribute="centerX" id="4do-qe-Pj5"/>
-                            <constraint firstItem="c9T-2y-KlU" firstAttribute="top" secondItem="uI7-d4-1Uz" secondAttribute="bottom" constant="20" id="9a4-SA-8dv"/>
                             <constraint firstItem="ZxS-QQ-nTA" firstAttribute="centerX" secondItem="ZSs-Xm-hP9" secondAttribute="centerX" id="C6O-CP-N0o"/>
-                            <constraint firstItem="HX1-Qx-yuN" firstAttribute="centerX" secondItem="ZSs-Xm-hP9" secondAttribute="centerX" id="D2G-fg-fvt"/>
+                            <constraint firstItem="0ja-KZ-i0z" firstAttribute="centerX" secondItem="ZSs-Xm-hP9" secondAttribute="centerX" id="CwX-oH-DyV"/>
                             <constraint firstItem="5rx-kh-Ue2" firstAttribute="top" secondItem="NDl-H8-uue" secondAttribute="bottom" constant="2" id="DUn-X6-q1u"/>
                             <constraint firstItem="5rx-kh-Ue2" firstAttribute="centerX" secondItem="ZSs-Xm-hP9" secondAttribute="centerX" id="Ftc-hm-kcn"/>
                             <constraint firstItem="NDl-H8-uue" firstAttribute="centerX" secondItem="ZSs-Xm-hP9" secondAttribute="centerX" id="JOi-fu-ZLo"/>
+                            <constraint firstItem="HX1-Qx-yuN" firstAttribute="centerX" secondItem="ZSs-Xm-hP9" secondAttribute="centerX" id="LVP-18-K7Q"/>
                             <constraint firstItem="uI7-d4-1Uz" firstAttribute="centerX" secondItem="ZSs-Xm-hP9" secondAttribute="centerX" id="LhD-7S-uhT"/>
                             <constraint firstItem="7wE-fg-BPV" firstAttribute="centerX" secondItem="ZSs-Xm-hP9" secondAttribute="centerX" id="QhK-zg-lhI"/>
-                            <constraint firstItem="c9T-2y-KlU" firstAttribute="centerX" secondItem="ZSs-Xm-hP9" secondAttribute="centerX" id="SFy-FQ-AFk"/>
                             <constraint firstItem="5rx-kh-Ue2" firstAttribute="width" secondItem="7wE-fg-BPV" secondAttribute="width" id="T5k-Md-HiX"/>
+                            <constraint firstItem="c9T-2y-KlU" firstAttribute="top" secondItem="uI7-d4-1Uz" secondAttribute="bottom" constant="10" id="Tle-r0-ttA"/>
                             <constraint firstItem="mjx-KS-yfJ" firstAttribute="centerX" secondItem="ZSs-Xm-hP9" secondAttribute="centerX" id="Unl-Jd-UHL"/>
                             <constraint firstItem="uI7-d4-1Uz" firstAttribute="top" secondItem="5rx-kh-Ue2" secondAttribute="bottom" constant="30" id="bw9-JR-4Fz"/>
                             <constraint firstItem="uI7-d4-1Uz" firstAttribute="width" secondItem="5rx-kh-Ue2" secondAttribute="width" id="dtH-OV-gEF"/>
+                            <constraint firstItem="c9T-2y-KlU" firstAttribute="centerX" secondItem="ZSs-Xm-hP9" secondAttribute="centerX" id="gH5-3Q-W1E"/>
                             <constraint firstItem="mjx-KS-yfJ" firstAttribute="top" secondItem="dlb-8f-5Lo" secondAttribute="bottom" constant="55" id="i1c-Z2-NQV"/>
-                            <constraint firstItem="HX1-Qx-yuN" firstAttribute="top" secondItem="c9T-2y-KlU" secondAttribute="bottom" constant="10" id="lQP-7y-EKh"/>
                             <constraint firstItem="5rx-kh-Ue2" firstAttribute="top" secondItem="7wE-fg-BPV" secondAttribute="bottom" constant="30" id="omB-gL-RAm"/>
+                            <constraint firstItem="0ja-KZ-i0z" firstAttribute="top" secondItem="c9T-2y-KlU" secondAttribute="bottom" constant="5" id="t5x-5b-Eg9"/>
                             <constraint firstItem="7wE-fg-BPV" firstAttribute="top" secondItem="dlb-8f-5Lo" secondAttribute="bottom" constant="20" id="udq-WQ-Hwj"/>
                         </constraints>
                     </view>
@@ -165,6 +173,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="addItemOrUpdateButton" destination="c9T-2y-KlU" id="lia-n0-er7"/>
+                        <outlet property="addToSLButton" destination="0ja-KZ-i0z" id="GlX-OG-o5N"/>
                         <outlet property="deleteItemButton" destination="HX1-Qx-yuN" id="52P-1a-Vas"/>
                         <outlet property="expirationDateTextField" destination="uI7-d4-1Uz" id="eiH-KK-2Wg"/>
                         <outlet property="itemImage" destination="7wE-fg-BPV" id="rbk-JR-08d"/>
@@ -199,7 +208,7 @@
         <!--Shopping List-->
         <scene sceneID="IMS-CY-4iF">
             <objects>
-                <viewController storyboardIdentifier="Shopping List" id="MxO-2T-A44" customClass="ShoppingListViewController" customModule="Freezr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Shopping List" automaticallyAdjustsScrollViewInsets="NO" id="MxO-2T-A44" customClass="ShoppingListViewController" customModule="Freezr" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KRP-YN-cgu"/>
                         <viewControllerLayoutGuide type="bottom" id="JIs-DF-kkZ"/>
@@ -207,9 +216,23 @@
                     <view key="view" contentMode="scaleToFill" id="fso-0i-WxI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Yfh-gk-bpq">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Yfh-gk-bpq" firstAttribute="leading" secondItem="fso-0i-WxI" secondAttribute="leading" id="Pci-cJ-yZu"/>
+                            <constraint firstItem="JIs-DF-kkZ" firstAttribute="top" secondItem="Yfh-gk-bpq" secondAttribute="bottom" id="SOj-FL-P2r"/>
+                            <constraint firstAttribute="trailing" secondItem="Yfh-gk-bpq" secondAttribute="trailing" id="p0g-JN-Xzv"/>
+                            <constraint firstItem="Yfh-gk-bpq" firstAttribute="top" secondItem="KRP-YN-cgu" secondAttribute="bottom" id="tpr-qG-Ypq"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Shopping List" image="TabBarShoppingIcon" selectedImage="TabBarSelectedShoppingListIcon" id="MWA-6H-pvv"/>
+                    <connections>
+                        <outlet property="shoppingListTableView" destination="Yfh-gk-bpq" id="LLk-jp-8I7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aqW-xg-Bba" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

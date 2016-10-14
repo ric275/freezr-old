@@ -24,6 +24,8 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     @IBOutlet weak var placeHolderText2: UILabel!
 
+    @IBOutlet weak var addToSLButton: UIButton!
+    
     var imageSelector = UIImagePickerController()
     var item : Item? = nil
     
@@ -44,6 +46,7 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             addItemOrUpdateButton.setTitle("Update item", for: .normal)
         } else {
             deleteItemButton.isHidden = true
+            addToSLButton.isHidden = true
             addItemOrUpdateButton.isEnabled = false
         }
         
@@ -129,4 +132,10 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         expirationDateTextField.text = dateFormatter.string(from: sender.date)
         
     }
+    
+    @IBAction func addToSLTapped(_ sender: AnyObject) {
+        
+        
+    }
+    
 }

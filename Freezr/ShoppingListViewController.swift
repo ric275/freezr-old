@@ -9,6 +9,8 @@
 import UIKit
 
 class ShoppingListViewController: UIViewController {
+    
+    @IBOutlet weak var shoppingListTableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
