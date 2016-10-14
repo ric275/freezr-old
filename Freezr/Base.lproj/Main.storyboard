@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="PBQ-Kl-jNr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A320" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="PBQ-Kl-jNr">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -32,7 +32,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="My Freezr" id="0jD-6i-UQn">
-                        <barButtonItem key="leftBarButtonItem" title="Settings" id="rhD-nV-Eix">
+                        <barButtonItem key="leftBarButtonItem" image="SettingsIcon" id="rhD-nV-Eix">
                             <connections>
                                 <segue destination="7lV-NW-Ydg" kind="show" identifier="settingsSegue" id="U3O-A6-SUg"/>
                             </connections>
@@ -54,7 +54,7 @@
         <!--Item View Controller-->
         <scene sceneID="w8V-Y2-EM9">
             <objects>
-                <viewController id="L68-X7-ABi" customClass="ItemViewController" customModule="Freezr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ItemViewController" id="L68-X7-ABi" customClass="ItemViewController" customModule="Freezr" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dlb-8f-5Lo"/>
                         <viewControllerLayoutGuide type="bottom" id="7k6-vA-6KD"/>
@@ -63,7 +63,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="7wE-fg-BPV">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PlaceholderIcon" translatesAutoresizingMaskIntoConstraints="NO" id="7wE-fg-BPV">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="1q8-E7-HfR"/>
                                     <constraint firstAttribute="height" constant="200" id="hYS-4V-lgm"/>
@@ -201,7 +201,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="placeholder.png" width="518" height="423"/>
+        <image name="PlaceholderIcon" width="259" height="211"/>
+        <image name="SettingsIcon" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="C4X-5I-3c4"/>
