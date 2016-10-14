@@ -46,26 +46,37 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let cell = UITableViewCell(style: .value1, reuseIdentifier: nil)
         
         if items.count == 0 {
-            cell.textLabel?.text = "No items in Freezr. Hit '+' to get started! 🍉"
+            cell.textLabel?.text = "No items in Freezr. Tap '+' to get started! 🍉"
         } else {
             let item = items[indexPath.row]
             cell.textLabel?.text = item.name
             cell.imageView?.image = UIImage(data: item.image as! Data)
+            
+            if (item.expirydate?.isEmpty)! {
+              cell.detailTextLabel?.text = "Expires: Unknown"
+            } else {
             cell.detailTextLabel?.text = "Expires: \(item.expirydate!)"
+            }
         }
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let item = items[indexPath.row]
-        performSegue(withIdentifier: "itemSegue", sender: item)
+        
+        if items.count == 0 {
+            print("User tapped the empty cell message! Do nothing :/")
+            tableView.deselectRow(at: indexPath, animated: true)
+        } else {
+            let item = items[indexPath.row]
+            performSegue(withIdentifier: "itemSegue", sender: item)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "itemSegue" {
             
             let backButton = UIBarButtonItem()
-            backButton.title = "Cancel"
+            backButton.title = "Done"
             navigationItem.backBarButtonItem = backButton
             
             let nextViewController = segue.destination as! ItemViewController
