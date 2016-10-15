@@ -63,8 +63,8 @@
 			isa = PBXGroup;
 			children = (
 				046732191DAAE6FA00EEC292 /* AppDelegate.swift */,
-				04E420491DABF28700390EF5 /* FreezrViewController.swift */,
 				046732301DAAF38500EEC292 /* ItemViewController.swift */,
+				04E420491DABF28700390EF5 /* FreezrViewController.swift */,
 				0496E1EB1DB17CE20052E17B /* ShoppingListViewController.swift */,
 				04642E6A1DAFADBF002E7568 /* SettingsViewController.swift */,
 				0467321D1DAAE6FA00EEC292 /* Main.storyboard */,

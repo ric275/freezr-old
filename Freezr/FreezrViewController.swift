@@ -53,9 +53,9 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
             cell.imageView?.image = UIImage(data: item.image as! Data)
             
             if (item.expirydate?.isEmpty)! {
-              cell.detailTextLabel?.text = "Expires: Unknown"
+                cell.detailTextLabel?.text = "Expires: Unknown"
             } else {
-            cell.detailTextLabel?.text = "Expires: \(item.expirydate!)"
+                cell.detailTextLabel?.text = "Expires: \(item.expirydate!)"
             }
         }
         return cell
@@ -98,5 +98,21 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
             
         }
     }
+    
+    
+    //Swipe to add items to shopping list
+    
+    //    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+    //
+    //        let swipeToAdd = UITableViewRowAction(style: .normal, title: "Add to Shopping List") { (action:UITableViewRowAction!, NSIndexPath) in
+    //
+    //            addToSLTapped()
+    //        }
+    //
+    //        swipeToAdd.backgroundColor = UIColor.purple
+    //
+    //        return[swipeToAdd]
+    //        
+    //    }
     
 }

@@ -26,6 +26,8 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
 
     @IBOutlet weak var addToSLButton: UIButton!
     
+    @IBOutlet weak var imageNoticeText: UILabel!
+    
     var imageSelector = UIImagePickerController()
     var item : Item? = nil
     
@@ -42,6 +44,7 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             
             placeHolderText1.isHidden = true
             placeHolderText2.isHidden = true
+            imageNoticeText.isHidden = true
             
             addItemOrUpdateButton.setTitle("Update item", for: .normal)
         } else {
@@ -65,6 +68,7 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
         placeHolderText1.isHidden = true
         placeHolderText2.isHidden = true
+        imageNoticeText.isHidden = true
 
         addItemOrUpdateButton.isEnabled = true
     }
@@ -133,9 +137,49 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
     }
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     @IBAction func addToSLTapped(_ sender: AnyObject) {
         
+            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            
+            let SLItem = ShoppingListItem(context: context)
+            SLItem.name = itemName.text
+            SLItem.image = UIImageJPEGRepresentation(itemImage.image!, 0.1)! as NSData?
         
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        
+        //Add badge to SL icon
+        
+        for item in self.tabBarController!.tabBar.items! {
+            if item.title == "Shopping List" {
+                item.badgeValue = "New!"
+            }
+            
+        }
+        
+        navigationController!.popViewController(animated: true)
     }
     
+
+
+
+
+
+
+
+
+
 }

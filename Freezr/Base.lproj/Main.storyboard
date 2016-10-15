@@ -50,7 +50,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="972" y="38.23088455772114"/>
+            <point key="canvasLocation" x="1911.2" y="38.23088455772114"/>
         </scene>
         <!--Item View Controller-->
         <scene sceneID="w8V-Y2-EM9">
@@ -128,6 +128,11 @@
                                     <action selector="deleteItemTapped:" destination="L68-X7-ABi" eventType="touchUpInside" id="dqo-ck-Zis"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="An image is required to add an item to Freezr." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sHD-Wv-QeC">
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -139,6 +144,7 @@
                             <constraint firstItem="0ja-KZ-i0z" firstAttribute="centerX" secondItem="ZSs-Xm-hP9" secondAttribute="centerX" id="CwX-oH-DyV"/>
                             <constraint firstItem="5rx-kh-Ue2" firstAttribute="top" secondItem="NDl-H8-uue" secondAttribute="bottom" constant="2" id="DUn-X6-q1u"/>
                             <constraint firstItem="5rx-kh-Ue2" firstAttribute="centerX" secondItem="ZSs-Xm-hP9" secondAttribute="centerX" id="Ftc-hm-kcn"/>
+                            <constraint firstItem="sHD-Wv-QeC" firstAttribute="top" secondItem="c9T-2y-KlU" secondAttribute="bottom" constant="5" id="Hlh-kE-eGI"/>
                             <constraint firstItem="NDl-H8-uue" firstAttribute="centerX" secondItem="ZSs-Xm-hP9" secondAttribute="centerX" id="JOi-fu-ZLo"/>
                             <constraint firstItem="HX1-Qx-yuN" firstAttribute="centerX" secondItem="ZSs-Xm-hP9" secondAttribute="centerX" id="LVP-18-K7Q"/>
                             <constraint firstItem="uI7-d4-1Uz" firstAttribute="centerX" secondItem="ZSs-Xm-hP9" secondAttribute="centerX" id="LhD-7S-uhT"/>
@@ -146,6 +152,7 @@
                             <constraint firstItem="5rx-kh-Ue2" firstAttribute="width" secondItem="7wE-fg-BPV" secondAttribute="width" id="T5k-Md-HiX"/>
                             <constraint firstItem="c9T-2y-KlU" firstAttribute="top" secondItem="uI7-d4-1Uz" secondAttribute="bottom" constant="10" id="Tle-r0-ttA"/>
                             <constraint firstItem="mjx-KS-yfJ" firstAttribute="centerX" secondItem="ZSs-Xm-hP9" secondAttribute="centerX" id="Unl-Jd-UHL"/>
+                            <constraint firstItem="sHD-Wv-QeC" firstAttribute="centerX" secondItem="ZSs-Xm-hP9" secondAttribute="centerX" id="WSy-ky-Gbr"/>
                             <constraint firstItem="uI7-d4-1Uz" firstAttribute="top" secondItem="5rx-kh-Ue2" secondAttribute="bottom" constant="30" id="bw9-JR-4Fz"/>
                             <constraint firstItem="uI7-d4-1Uz" firstAttribute="width" secondItem="5rx-kh-Ue2" secondAttribute="width" id="dtH-OV-gEF"/>
                             <constraint firstItem="c9T-2y-KlU" firstAttribute="centerX" secondItem="ZSs-Xm-hP9" secondAttribute="centerX" id="gH5-3Q-W1E"/>
@@ -176,6 +183,7 @@
                         <outlet property="addToSLButton" destination="0ja-KZ-i0z" id="GlX-OG-o5N"/>
                         <outlet property="deleteItemButton" destination="HX1-Qx-yuN" id="52P-1a-Vas"/>
                         <outlet property="expirationDateTextField" destination="uI7-d4-1Uz" id="eiH-KK-2Wg"/>
+                        <outlet property="imageNoticeText" destination="sHD-Wv-QeC" id="JoN-a8-7gs"/>
                         <outlet property="itemImage" destination="7wE-fg-BPV" id="rbk-JR-08d"/>
                         <outlet property="itemName" destination="5rx-kh-Ue2" id="p7S-td-KhJ"/>
                         <outlet property="placeHolderText1" destination="mjx-KS-yfJ" id="hh6-tJ-0Lm"/>
@@ -184,7 +192,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LJv-64-Yz2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1845.5999999999999" y="37.331334332833585"/>
+            <point key="canvasLocation" x="2784.8000000000002" y="37.331334332833585"/>
         </scene>
         <!--Freezr-->
         <scene sceneID="9Kc-4C-O9j">
@@ -229,14 +237,16 @@
                             <constraint firstItem="Yfh-gk-bpq" firstAttribute="top" secondItem="KRP-YN-cgu" secondAttribute="bottom" id="tpr-qG-Ypq"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Shopping List" image="TabBarShoppingIcon" selectedImage="TabBarSelectedShoppingListIcon" id="MWA-6H-pvv"/>
+                    <navigationItem key="navigationItem" title="Shopping List" id="0hs-oc-dkI">
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="M6W-LK-4TD"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="shoppingListTableView" destination="Yfh-gk-bpq" id="LLk-jp-8I7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aqW-xg-Bba" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1265" y="38"/>
+            <point key="canvasLocation" x="-327.19999999999999" y="37.331334332833585"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="x0n-a3-axC">
@@ -249,7 +259,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="PBQ-Kl-jNr" kind="relationship" relationship="viewControllers" id="hzb-r4-N1d"/>
-                        <segue destination="MxO-2T-A44" kind="relationship" relationship="viewControllers" id="HJ2-H7-uMM"/>
+                        <segue destination="eJ7-Jq-VPG" kind="relationship" relationship="viewControllers" id="HJ2-H7-uMM"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ACn-KE-mwV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -279,7 +289,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r0v-kB-Q4z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="233" y="37"/>
+            <point key="canvasLocation" x="1172" y="36.431784107946029"/>
+        </scene>
+        <!--Shopping List-->
+        <scene sceneID="vtq-FB-eWr">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eJ7-Jq-VPG" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Shopping List" image="TabBarShoppingIcon" selectedImage="TabBarSelectedShoppingListIcon" id="MWA-6H-pvv"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hm7-0K-c8J">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="MxO-2T-A44" kind="relationship" relationship="rootViewController" id="HxU-St-iXh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cdc-iN-Ea4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1266.4000000000001" y="37.331334332833585"/>
         </scene>
     </scenes>
     <resources>
