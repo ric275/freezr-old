@@ -22,10 +22,17 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Rrq-PB-Zq1">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No items in Freezr. Tap '+' to get started! 🍉" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="znr-9S-YL5">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="znr-9S-YL5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="68k-Ja-Q0N"/>
                             <constraint firstItem="Rrq-PB-Zq1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Fwz-gq-rA8"/>
+                            <constraint firstItem="znr-9S-YL5" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="THM-Dp-HKY"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Rrq-PB-Zq1" secondAttribute="bottom" id="jEC-DX-NK4"/>
                             <constraint firstAttribute="trailing" secondItem="Rrq-PB-Zq1" secondAttribute="trailing" id="kM6-E4-8pQ"/>
                             <constraint firstItem="Rrq-PB-Zq1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="ufk-ee-OTM"/>
@@ -46,6 +53,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="emptyMessage" destination="znr-9S-YL5" id="Uh8-1I-Dpz"/>
                         <outlet property="itemListTableView" destination="Rrq-PB-Zq1" id="BCj-56-2Mb"/>
                     </connections>
                 </viewController>
@@ -231,19 +239,27 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Yfh-gk-bpq">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your shopping list is empty." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s99-cq-h2M">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="s99-cq-h2M" firstAttribute="centerY" secondItem="fso-0i-WxI" secondAttribute="centerY" id="6yU-Xn-gJ6"/>
                             <constraint firstItem="Yfh-gk-bpq" firstAttribute="leading" secondItem="fso-0i-WxI" secondAttribute="leading" id="Pci-cJ-yZu"/>
                             <constraint firstItem="JIs-DF-kkZ" firstAttribute="top" secondItem="Yfh-gk-bpq" secondAttribute="bottom" id="SOj-FL-P2r"/>
                             <constraint firstAttribute="trailing" secondItem="Yfh-gk-bpq" secondAttribute="trailing" id="p0g-JN-Xzv"/>
                             <constraint firstItem="Yfh-gk-bpq" firstAttribute="top" secondItem="KRP-YN-cgu" secondAttribute="bottom" id="tpr-qG-Ypq"/>
+                            <constraint firstItem="s99-cq-h2M" firstAttribute="centerX" secondItem="fso-0i-WxI" secondAttribute="centerX" id="uhk-MK-Efe"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Shopping List" id="0hs-oc-dkI">
                         <barButtonItem key="rightBarButtonItem" systemItem="trash" id="M6W-LK-4TD"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="emptyMessage" destination="s99-cq-h2M" id="YVT-n9-zeh"/>
                         <outlet property="shoppingListTableView" destination="Yfh-gk-bpq" id="LLk-jp-8I7"/>
                     </connections>
                 </viewController>

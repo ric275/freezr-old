@@ -14,6 +14,8 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBOutlet weak var itemListTableView: UITableView!
     
+    @IBOutlet weak var emptyMessage: UILabel!
+    
     //Variables
     
     var items : [Item] = []
@@ -56,7 +58,7 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let cell = UITableViewCell(style: .value1, reuseIdentifier: nil)
         
         if items.count == 0 {
-            cell.textLabel?.text = "No items in Freezr. Tap '+' to get started! 🍉"
+            cell.textLabel?.text = "You should probably go buy food."
         } else {
             let item = items[indexPath.row]
             cell.textLabel?.text = item.name
@@ -122,6 +124,19 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 tableView.reloadData()
             } catch {}
             
+        }
+    }
+    
+    //Display/hide the table and empty message accordingly.
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        if items.count == 0 {
+            itemListTableView.isHidden = true
+            emptyMessage.isHidden = false
+        } else {
+            emptyMessage.isHidden = true
+            itemListTableView.isHidden = false
         }
     }
     

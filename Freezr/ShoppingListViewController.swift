@@ -14,6 +14,8 @@ class ShoppingListViewController: UIViewController, UITableViewDelegate, UITable
     
     @IBOutlet weak var shoppingListTableView: UITableView!
     
+    @IBOutlet weak var emptyMessage: UILabel!
+    
     //Variables
     
     var SLItems : [ShoppingListItem] = []
@@ -55,7 +57,7 @@ class ShoppingListViewController: UIViewController, UITableViewDelegate, UITable
         let cell = UITableViewCell(style: .value1, reuseIdentifier: nil)
         
         if SLItems.count == 0 {
-            cell.textLabel?.text = "Your Shopping List is empty. Oh well."
+            cell.textLabel?.text = "Guess you bought everything ✔"
             
         } else {
             
@@ -93,9 +95,20 @@ class ShoppingListViewController: UIViewController, UITableViewDelegate, UITable
         
     }
     
-    //Remove badge from SL icon when the view loads.
+    //Display/hide the table and empty message accordingly.
     
     override func viewDidAppear(_ animated: Bool) {
+        
+        if SLItems.count == 0 {
+            shoppingListTableView.isHidden = true
+            emptyMessage.isHidden = false
+        } else {
+            emptyMessage.isHidden = true
+            shoppingListTableView.isHidden = false
+        }
+        
+        //Remove badge from SL icon when the view loads.
+        
         for item in self.tabBarController!.tabBar.items! {
             if item.title == "Shopping List" {
                 item.badgeValue = nil
