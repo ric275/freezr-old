@@ -19,9 +19,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        //Get rid of back arrow and delete the extra space.
+        
         UINavigationBar.appearance().backIndicatorImage = UIImage()
         UINavigationBar.appearance().backIndicatorTransitionMaskImage = UIImage()
         UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(UIOffsetMake(-15, 0), for: UIBarMetrics.default)
+        
+        //Make everything purple.
+        //Purple is bae.
         
         UINavigationBar.appearance().tintColor = UIColor.purple
         
@@ -99,6 +104,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
+    //3D Touch shortcuts which are broken tbh.
     
     private func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: (Bool) -> Void) {
         

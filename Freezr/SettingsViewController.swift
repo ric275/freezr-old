@@ -15,4 +15,7 @@ class SettingsViewController: UIViewController {
         self.navigationItem.hidesBackButton = true
         // Do any additional setup after loading the view.
     }
+
+    //Final declaration:
+
 }

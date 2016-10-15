@@ -10,6 +10,8 @@ import UIKit
 
 class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    //Outlets
+    
     @IBOutlet weak var itemImage: UIImageView!
     
     @IBOutlet weak var itemName: UITextField!
@@ -23,10 +25,12 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     @IBOutlet weak var placeHolderText1: UILabel!
     
     @IBOutlet weak var placeHolderText2: UILabel!
-
+    
     @IBOutlet weak var addToSLButton: UIButton!
     
     @IBOutlet weak var imageNoticeText: UILabel!
+    
+    //Variables
     
     var imageSelector = UIImagePickerController()
     var item : Item? = nil
@@ -36,6 +40,8 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         super.viewDidLoad()
         
         imageSelector.delegate = self
+        
+        //Setup the item view depending on if an existing item is being selected, or a new item is being added.
         
         if item != nil{
             itemImage.image = UIImage(data: item!.image as! Data)
@@ -54,10 +60,20 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         }
         
     }
+    
+    //Select image methods.
+    
     @IBAction func photosTapped(_ sender: AnyObject) {
         imageSelector.sourceType = .photoLibrary
         present(imageSelector, animated: true, completion: nil)
     }
+    
+    @IBAction func cameraTapped(_ sender: AnyObject) {
+        imageSelector.sourceType = .camera
+        present(imageSelector, animated: true, completion: nil)
+    }
+    
+    //Method called when an image has been selected.
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
@@ -69,14 +85,11 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         placeHolderText1.isHidden = true
         placeHolderText2.isHidden = true
         imageNoticeText.isHidden = true
-
+        
         addItemOrUpdateButton.isEnabled = true
     }
     
-    @IBAction func cameraTapped(_ sender: AnyObject) {
-        imageSelector.sourceType = .camera
-        present(imageSelector, animated: true, completion: nil)
-    }
+    //What happens when Add or Update is tapped.
     
     @IBAction func addToFreezrTapped(_ sender: AnyObject) {
         if item != nil {
@@ -101,6 +114,8 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
         navigationController!.popViewController(animated: true)
     }
+    
+    //What happens when delete is tapped.
     
     @IBAction func deleteItemTapped(_ sender: AnyObject) {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -137,27 +152,15 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    //What happens when Add to Shopping List is tapped.
     
     @IBAction func addToSLTapped(_ sender: AnyObject) {
         
-            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-            
-            let SLItem = ShoppingListItem(context: context)
-            SLItem.name = itemName.text
-            SLItem.image = UIImageJPEGRepresentation(itemImage.image!, 0.1)! as NSData?
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        let SLItem = ShoppingListItem(context: context)
+        SLItem.name = itemName.text
+        SLItem.image = UIImageJPEGRepresentation(itemImage.image!, 0.1)! as NSData?
         
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
         
@@ -173,13 +176,6 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         navigationController!.popViewController(animated: true)
     }
     
-
-
-
-
-
-
-
-
-
+    //Final declaration:
+    
 }

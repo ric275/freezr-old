@@ -10,7 +10,11 @@ import UIKit
 
 class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    //Outlets
+    
     @IBOutlet weak var itemListTableView: UITableView!
+    
+    //Variables
     
     var items : [Item] = []
     
@@ -21,6 +25,8 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
         itemListTableView.dataSource = self
         itemListTableView.delegate = self
     }
+    
+    //Retrieve the Items from CoreData.
     
     override func viewWillAppear(_ animated: Bool) {
         
@@ -34,6 +40,8 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
     }
     
+    //Specifies how many rows in the table.
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection: Int) -> Int {
         if items.count == 0 {
             return 1
@@ -41,6 +49,8 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
             return items.count
         }
     }
+    
+    //Specifies what goes in the table cells.
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .value1, reuseIdentifier: nil)
@@ -61,6 +71,8 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return cell
     }
     
+    //What happens when a cell is tapped.
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if items.count == 0 {
@@ -71,6 +83,8 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
             performSegue(withIdentifier: "itemSegue", sender: item)
         }
     }
+    
+    //Sets up the next ViewController (ItemViewController) and sends some item data over.
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "itemSegue" {
@@ -83,6 +97,8 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
             nextViewController.item = sender as? Item
         }
     }
+    
+    //Swipe to delete setup.
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
@@ -112,7 +128,10 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
     //        swipeToAdd.backgroundColor = UIColor.purple
     //
     //        return[swipeToAdd]
-    //        
+    //
     //    }
+    
+    
+    //Final declaration:
     
 }

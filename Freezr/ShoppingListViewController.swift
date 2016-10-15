@@ -10,7 +10,11 @@ import UIKit
 
 class ShoppingListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    //Outlets
+    
     @IBOutlet weak var shoppingListTableView: UITableView!
+    
+    //Variables
     
     var SLItems : [ShoppingListItem] = []
     
@@ -23,6 +27,8 @@ class ShoppingListViewController: UIViewController, UITableViewDelegate, UITable
         // Do any additional setup after loading the view.
     }
     
+    //Retrieve the ShoppingListItems from CoreData.
+    
     override func viewWillAppear(_ animated: Bool) {
         
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -33,16 +39,7 @@ class ShoppingListViewController: UIViewController, UITableViewDelegate, UITable
         } catch {}
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    //Specifies how many rows in the table.
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection: Int) -> Int {
         if SLItems.count == 0 {
@@ -51,6 +48,8 @@ class ShoppingListViewController: UIViewController, UITableViewDelegate, UITable
             return SLItems.count
         }
     }
+    
+    //Specifies what goes in the table cells.
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .value1, reuseIdentifier: nil)
@@ -63,13 +62,12 @@ class ShoppingListViewController: UIViewController, UITableViewDelegate, UITable
             let SLItem = SLItems[indexPath.row]
             cell.textLabel?.text = SLItem.name
             cell.imageView?.image = UIImage(data: SLItem.image as! Data)
-            
-            
-            
         }
         
         return cell
     }
+    
+    //What happens when a cell is tapped.
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
@@ -77,14 +75,18 @@ class ShoppingListViewController: UIViewController, UITableViewDelegate, UITable
         
     }
     
+    //Remove badge from SL icon when the view loads.
+    
     override func viewDidAppear(_ animated: Bool) {
         for item in self.tabBarController!.tabBar.items! {
             if item.title == "Shopping List" {
                 item.badgeValue = nil
             }
-            
+        
         }
     }
+    
+    //Swipe to delete setup.
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
@@ -100,5 +102,7 @@ class ShoppingListViewController: UIViewController, UITableViewDelegate, UITable
             
         }
     }
+    
+    //Final declaration:
     
 }
