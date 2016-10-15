@@ -67,9 +67,27 @@ class ShoppingListViewController: UIViewController, UITableViewDelegate, UITable
         return cell
     }
     
-    //What happens when a cell is tapped.
+    //What happens when a cell is tapped - tick the items.
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let cell = tableView.cellForRow(at: indexPath)
+        
+        if SLItems.count == 0 {
+            print("User selected empty SL message, do not tick!")
+        } else {
+            
+            if (cell?.isSelected)!{
+                cell?.isSelected = false
+                if (cell?.accessoryType == UITableViewCellAccessoryType.none){
+                    cell?.accessoryType = UITableViewCellAccessoryType.checkmark
+                }
+                else
+                {
+                    cell?.accessoryType = UITableViewCellAccessoryType.none
+                }
+            }
+        }
         
         tableView.deselectRow(at: indexPath, animated: true)
         
@@ -82,7 +100,7 @@ class ShoppingListViewController: UIViewController, UITableViewDelegate, UITable
             if item.title == "Shopping List" {
                 item.badgeValue = nil
             }
-        
+            
         }
     }
     

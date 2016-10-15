@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     
     //Outlets
     
@@ -41,6 +41,10 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
         imageSelector.delegate = self
         
+        itemName.delegate = self
+        
+        itemName.returnKeyType = UIReturnKeyType.done
+        
         //Setup the item view depending on if an existing item is being selected, or a new item is being added.
         
         if item != nil{
@@ -58,6 +62,10 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             addToSLButton.isHidden = true
             addItemOrUpdateButton.isEnabled = false
         }
+        
+        //Dismiss the keyboard setup.
+        
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(ItemViewController.dismissKeyboard)))
         
     }
     
@@ -174,6 +182,20 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         }
         
         navigationController!.popViewController(animated: true)
+    }
+    
+    //Dismiss the keyboard functions.
+    
+    func dismissKeyboard() {
+        itemName.resignFirstResponder()
+        
+        //Dismiss date picker.
+        expirationDateTextField.resignFirstResponder()
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        itemName.resignFirstResponder()
+        return true
     }
     
     //Final declaration:

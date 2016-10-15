@@ -33,6 +33,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="8OF-kG-7Fq"/>
                     <navigationItem key="navigationItem" title="My Freezr" id="0jD-6i-UQn">
+                        <barButtonItem key="backBarButtonItem" title="Done" id="942-Rr-lY7"/>
                         <barButtonItem key="leftBarButtonItem" image="SettingsIcon" id="rhD-nV-Eix">
                             <connections>
                                 <segue destination="7lV-NW-Ydg" kind="show" identifier="settingsSegue" id="U3O-A6-SUg"/>
@@ -114,7 +115,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ja-KZ-i0z">
-                                <state key="normal" title="Add item to Shopping List"/>
+                                <state key="normal" title="Add item to Shopping List">
+                                    <color key="titleColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="addToSLTapped:" destination="L68-X7-ABi" eventType="touchUpInside" id="D22-8u-JTu"/>
                                 </connections>
@@ -156,7 +159,7 @@
                             <constraint firstItem="uI7-d4-1Uz" firstAttribute="top" secondItem="5rx-kh-Ue2" secondAttribute="bottom" constant="30" id="bw9-JR-4Fz"/>
                             <constraint firstItem="uI7-d4-1Uz" firstAttribute="width" secondItem="5rx-kh-Ue2" secondAttribute="width" id="dtH-OV-gEF"/>
                             <constraint firstItem="c9T-2y-KlU" firstAttribute="centerX" secondItem="ZSs-Xm-hP9" secondAttribute="centerX" id="gH5-3Q-W1E"/>
-                            <constraint firstItem="mjx-KS-yfJ" firstAttribute="top" secondItem="dlb-8f-5Lo" secondAttribute="bottom" constant="55" id="i1c-Z2-NQV"/>
+                            <constraint firstItem="mjx-KS-yfJ" firstAttribute="top" secondItem="dlb-8f-5Lo" secondAttribute="bottom" constant="80" id="i1c-Z2-NQV"/>
                             <constraint firstItem="5rx-kh-Ue2" firstAttribute="top" secondItem="7wE-fg-BPV" secondAttribute="bottom" constant="30" id="omB-gL-RAm"/>
                             <constraint firstItem="0ja-KZ-i0z" firstAttribute="top" secondItem="c9T-2y-KlU" secondAttribute="bottom" constant="5" id="t5x-5b-Eg9"/>
                             <constraint firstItem="7wE-fg-BPV" firstAttribute="top" secondItem="dlb-8f-5Lo" secondAttribute="bottom" constant="20" id="udq-WQ-Hwj"/>
@@ -279,17 +282,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Settings" id="0ad-EY-id1">
-                        <barButtonItem key="rightBarButtonItem" title="Item" systemItem="done" id="gXl-Ck-tgt">
-                            <connections>
-                                <segue destination="BYZ-38-t0r" kind="show" identifier="closeSettingsSegue" id="C4X-5I-3c4"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Settings" id="0ad-EY-id1"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r0v-kB-Q4z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1172" y="36.431784107946029"/>
+            <point key="canvasLocation" x="1175" y="31"/>
         </scene>
         <!--Shopping List-->
         <scene sceneID="vtq-FB-eWr">
@@ -318,7 +315,4 @@
         <image name="TabBarSelectedShoppingListIcon" width="22" height="22"/>
         <image name="TabBarShoppingIcon" width="22" height="22"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="Lep-ZB-mdj"/>
-    </inferredMetricsTieBreakers>
 </document>

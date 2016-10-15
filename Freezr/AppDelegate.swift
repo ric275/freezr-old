@@ -32,6 +32,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UITabBar.appearance().tintColor = UIColor.purple
         
+        UITableViewCell.appearance().tintColor = UIColor.purple
+        
         return true
     }
     

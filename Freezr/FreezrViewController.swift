@@ -87,6 +87,7 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
     //Sets up the next ViewController (ItemViewController) and sends some item data over.
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         if segue.identifier == "itemSegue" {
             
             let backButton = UIBarButtonItem()
@@ -95,7 +96,16 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
             
             let nextViewController = segue.destination as! ItemViewController
             nextViewController.item = sender as? Item
+            
+            //Hide tab bar in item view.
+            nextViewController.hidesBottomBarWhenPushed = true
+        } else {
+            let nextViewController = segue.destination as! SettingsViewController
+            
+            //Hide tab bar in settings.
+            nextViewController.hidesBottomBarWhenPushed = true
         }
+        
     }
     
     //Swipe to delete setup.
