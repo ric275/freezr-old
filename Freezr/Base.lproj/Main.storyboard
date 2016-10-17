@@ -298,9 +298,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="53l-Gg-A66">
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <state key="normal" title=" Acknowledgements"/>
                                 <connections>
                                     <action selector="ackButtonTapped:" destination="7lV-NW-Ydg" eventType="touchUpInside" id="8ce-D5-rdY"/>
+                                    <segue destination="VHr-ue-ydz" kind="show" id="W7a-RL-Qym"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Freezr is a simple Freezer database app developed by Jack Taylor." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PTk-h4-pkW">
@@ -397,7 +399,9 @@
                             <constraint firstItem="UKK-pP-Pel" firstAttribute="width" secondItem="SIe-86-fZa" secondAttribute="width" id="uw2-kE-OLW"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="About" id="0ad-EY-id1"/>
+                    <navigationItem key="navigationItem" title="About" id="0ad-EY-id1">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="SBv-MT-GVR"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="Img1" destination="Uje-fp-vtC" id="8Uz-x4-iSV"/>
                         <outlet property="aboutView" destination="PhM-j4-ubW" id="Yjk-lX-lpu"/>
@@ -418,6 +422,52 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r0v-kB-Q4z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1173.5999999999999" y="30.134932533733135"/>
+        </scene>
+        <!--Ack View Controller-->
+        <scene sceneID="LiD-VP-nwx">
+            <objects>
+                <viewController id="VHr-ue-ydz" customClass="AckViewController" customModule="Freezr" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="C32-4g-IHO"/>
+                        <viewControllerLayoutGuide type="bottom" id="YDJ-5Y-5tu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PJs-Sm-wOJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Df1-9m-RPx">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="305" id="UDH-Ng-o9h"/>
+                                </constraints>
+                                <string key="text">The awesome food icons used in the app icon and in various places throughout the app were designed by Freepik and kindly supplied by Flaticon.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Likewise, the information icon used on the Freezr page was designed by Chanut is Industries." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bfr-rz-Z57">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Df1-9m-RPx" firstAttribute="centerX" secondItem="PJs-Sm-wOJ" secondAttribute="centerX" id="4At-1d-bbM"/>
+                            <constraint firstItem="Bfr-rz-Z57" firstAttribute="width" secondItem="Df1-9m-RPx" secondAttribute="width" id="K3L-db-B5C"/>
+                            <constraint firstItem="Bfr-rz-Z57" firstAttribute="top" secondItem="Df1-9m-RPx" secondAttribute="bottom" constant="15" id="bre-VW-WHN"/>
+                            <constraint firstItem="Df1-9m-RPx" firstAttribute="top" secondItem="C32-4g-IHO" secondAttribute="bottom" constant="100" id="jvU-qQ-Hj8"/>
+                            <constraint firstItem="Bfr-rz-Z57" firstAttribute="centerX" secondItem="PJs-Sm-wOJ" secondAttribute="centerX" id="n4d-YW-Wmk"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="ackView" destination="PJs-Sm-wOJ" id="8jo-9n-VIn"/>
+                        <outlet property="label1" destination="Df1-9m-RPx" id="m7c-eY-Uov"/>
+                        <outlet property="label2" destination="Bfr-rz-Z57" id="Emt-d0-OQF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rqP-mw-LGK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1173.5999999999999" y="739.88005997001505"/>
         </scene>
         <!--Shopping List-->
         <scene sceneID="vtq-FB-eWr">

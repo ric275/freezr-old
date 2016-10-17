@@ -15,6 +15,7 @@
 		046732271DAAE6FA00EEC292 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046732251DAAE6FA00EEC292 /* LaunchScreen.storyboard */; };
 		046732311DAAF38500EEC292 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046732301DAAF38500EEC292 /* ItemViewController.swift */; };
 		0496E1EC1DB17CE20052E17B /* ShoppingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0496E1EB1DB17CE20052E17B /* ShoppingListViewController.swift */; };
+		04BDC61A1DB595F5009C74A1 /* AckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BDC6191DB595F5009C74A1 /* AckViewController.swift */; };
 		04E4204A1DABF28700390EF5 /* FreezrViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E420491DABF28700390EF5 /* FreezrViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		046732281DAAE6FA00EEC292 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		046732301DAAF38500EEC292 /* ItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 		0496E1EB1DB17CE20052E17B /* ShoppingListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingListViewController.swift; sourceTree = "<group>"; };
+		04BDC6191DB595F5009C74A1 /* AckViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AckViewController.swift; sourceTree = "<group>"; };
 		04E420491DABF28700390EF5 /* FreezrViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FreezrViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -67,6 +69,7 @@
 				04E420491DABF28700390EF5 /* FreezrViewController.swift */,
 				0496E1EB1DB17CE20052E17B /* ShoppingListViewController.swift */,
 				04642E6A1DAFADBF002E7568 /* AboutViewController.swift */,
+				04BDC6191DB595F5009C74A1 /* AckViewController.swift */,
 				0467321D1DAAE6FA00EEC292 /* Main.storyboard */,
 				046732231DAAE6FA00EEC292 /* Assets.xcassets */,
 				046732251DAAE6FA00EEC292 /* LaunchScreen.storyboard */,
@@ -155,6 +158,7 @@
 				04E4204A1DABF28700390EF5 /* FreezrViewController.swift in Sources */,
 				04642E6B1DAFADBF002E7568 /* AboutViewController.swift in Sources */,
 				046732221DAAE6FA00EEC292 /* Freezr.xcdatamodeld in Sources */,
+				04BDC61A1DB595F5009C74A1 /* AckViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
