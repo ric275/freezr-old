@@ -20,6 +20,10 @@ class ShoppingListViewController: UIViewController, UITableViewDelegate, UITable
     
     var SLItems : [ShoppingListItem] = []
     
+    //Define colours
+    
+    let myPurple:UIColor = UIColor(red: 105/255.0, green: 94/255.0, blue: 133/255.0, alpha: 1.0)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -65,6 +69,8 @@ class ShoppingListViewController: UIViewController, UITableViewDelegate, UITable
             cell.textLabel?.text = SLItem.name
             cell.imageView?.image = UIImage(data: SLItem.image as! Data)
         }
+        
+        cell.textLabel?.textColor = myPurple
         
         return cell
     }

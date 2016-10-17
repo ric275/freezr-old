@@ -76,6 +76,7 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         
         cell.textLabel?.textColor = myPurple
+        
         return cell
     }
     
