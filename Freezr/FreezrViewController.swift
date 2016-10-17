@@ -28,6 +28,10 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
         itemListTableView.delegate = self
     }
     
+    //Define colours
+    
+    let myPurple:UIColor = UIColor(red: 105/255.0, green: 94/255.0, blue: 133/255.0, alpha: 1.0)
+    
     //Retrieve the Items from CoreData.
     
     override func viewWillAppear(_ animated: Bool) {
@@ -70,6 +74,8 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 cell.detailTextLabel?.text = "Expires: \(item.expirydate!)"
             }
         }
+        
+        cell.textLabel?.textColor = myPurple
         return cell
     }
     
@@ -102,7 +108,7 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
             //Hide tab bar in item view.
             nextViewController.hidesBottomBarWhenPushed = true
         } else {
-            let nextViewController = segue.destination as! SettingsViewController
+            let nextViewController = segue.destination as! AboutViewController
             
             //Hide tab bar in settings.
             nextViewController.hidesBottomBarWhenPushed = true

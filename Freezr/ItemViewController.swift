@@ -10,6 +10,8 @@ import UIKit
 
 class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     
+    let myPurple:UIColor = UIColor(red: 105/255.0, green: 94/255.0, blue: 133/255.0, alpha: 1.0)
+    
     //Outlets
     
     @IBOutlet weak var itemImage: UIImageView!
@@ -44,6 +46,11 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         itemName.delegate = self
         
         itemName.returnKeyType = UIReturnKeyType.done
+        
+        itemName.textColor = myPurple
+        
+        expirationDateTextField.textColor = myPurple
+        
         
         //Setup the item view depending on if an existing item is being selected, or a new item is being added.
         

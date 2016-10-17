@@ -288,7 +288,7 @@
         <!--Settings-->
         <scene sceneID="NUR-lW-pVl">
             <objects>
-                <viewController id="7lV-NW-Ydg" customClass="SettingsViewController" customModule="Freezr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="7lV-NW-Ydg" customClass="AboutViewController" customModule="Freezr" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="May-4Q-mpv"/>
                         <viewControllerLayoutGuide type="bottom" id="ZhQ-QB-3Up"/>

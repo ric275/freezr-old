@@ -1,5 +1,5 @@
 //
-//  SettingsViewController.swift
+//  AboutViewController.swift
 //  Freezr
 //
 //  Created by Jack Taylor on 13/10/2016.
@@ -8,12 +8,18 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController {
+class AboutViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+    
+        
     }
+    
+    
+    
 
     //Final declaration:
 
