@@ -41,7 +41,7 @@
                     <tabBarItem key="tabBarItem" title="Item" id="8OF-kG-7Fq"/>
                     <navigationItem key="navigationItem" title="My Freezr" id="0jD-6i-UQn">
                         <barButtonItem key="backBarButtonItem" title="Done" id="942-Rr-lY7"/>
-                        <barButtonItem key="leftBarButtonItem" image="SettingsIcon" id="rhD-nV-Eix">
+                        <barButtonItem key="leftBarButtonItem" image="info" id="rhD-nV-Eix">
                             <connections>
                                 <segue destination="7lV-NW-Ydg" kind="show" identifier="settingsSegue" id="U3O-A6-SUg"/>
                             </connections>
@@ -325,10 +325,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="SettingsIcon" width="22" height="22"/>
         <image name="TabBarFreezrIcon" width="22" height="22"/>
         <image name="TabBarSelectedFreezerIcon" width="75" height="75"/>
         <image name="TabBarSelectedShoppingListIcon" width="22" height="22"/>
         <image name="TabBarShoppingIcon" width="22" height="22"/>
+        <image name="info" width="22" height="22"/>
     </resources>
 </document>
