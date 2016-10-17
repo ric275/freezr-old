@@ -58,7 +58,7 @@ class AboutViewController: UIViewController {
             label3.text = "Meow meow"
             label4.text = "Meow meow"
             label5.text = "🐱🐱🐱"
-            aboutView.backgroundColor = UIColor.black
+            aboutView.backgroundColor = UIColor(patternImage: UIImage(named: "tigger")!)
             
         } else {}
         
