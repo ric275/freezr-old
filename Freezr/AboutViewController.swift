@@ -53,7 +53,12 @@ class AboutViewController: UIViewController {
         tapCount = tapCount + 1
         
         if tapCount == 7 {
-            label1.text = "meow"
+            label1.text = "Meow meow"
+            label2.text = "Meow meow"
+            label3.text = "Meow meow"
+            label4.text = "Meow meow"
+            label5.text = "🐱🐱🐱"
+            aboutView.backgroundColor = UIColor.black
             
         } else {}
         
