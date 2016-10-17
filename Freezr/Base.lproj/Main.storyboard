@@ -285,7 +285,7 @@
             </objects>
             <point key="canvasLocation" x="-46" y="-1058"/>
         </scene>
-        <!--Settings-->
+        <!--About-->
         <scene sceneID="NUR-lW-pVl">
             <objects>
                 <viewController id="7lV-NW-Ydg" customClass="AboutViewController" customModule="Freezr" customModuleProvider="target" sceneMemberID="viewController">
@@ -296,13 +296,84 @@
                     <view key="view" contentMode="scaleToFill" id="PhM-j4-ubW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="53l-Gg-A66">
+                                <state key="normal" title=" Acknowledgements"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Freezr is a simple Freezer database app developed by Jack Taylor." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PTk-h4-pkW">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="lDn-gk-DsA"/>
+                                    <constraint firstAttribute="width" constant="350" id="xYR-oF-I7y"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use Freezr to keep track of the food in your Freezer." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HF8-bz-Gzz">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="oG0-Yt-oe4"/>
+                                    <constraint firstAttribute="width" constant="350" id="qVV-aW-pHF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add items directly to the built-in shopping list so you never run out. " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SIe-86-fZa">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="3vV-1q-xnW"/>
+                                    <constraint firstAttribute="width" constant="350" id="qKn-z8-lIV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap shopping list items to tick them off as you buy them." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UKK-pP-Pel">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="RFK-DQ-605"/>
+                                    <constraint firstAttribute="width" constant="350" id="rpz-Od-GzA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thank you so much for trying Freezr!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xvs-1n-f62">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="350" id="AbW-Oz-wFs"/>
+                                    <constraint firstAttribute="height" constant="50" id="FFE-f1-oNx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Xvs-1n-f62" firstAttribute="width" secondItem="UKK-pP-Pel" secondAttribute="width" id="1Om-Qs-ftj"/>
+                            <constraint firstItem="SIe-86-fZa" firstAttribute="centerX" secondItem="PhM-j4-ubW" secondAttribute="centerX" id="4Qm-24-YpA"/>
+                            <constraint firstItem="PTk-h4-pkW" firstAttribute="top" secondItem="May-4Q-mpv" secondAttribute="bottom" constant="15" id="5yp-UV-Gz5"/>
+                            <constraint firstItem="ZhQ-QB-3Up" firstAttribute="top" secondItem="53l-Gg-A66" secondAttribute="bottom" constant="10" id="80E-43-0Kl"/>
+                            <constraint firstItem="PTk-h4-pkW" firstAttribute="centerX" secondItem="PhM-j4-ubW" secondAttribute="centerX" id="BO0-4i-0ky"/>
+                            <constraint firstItem="HF8-bz-Gzz" firstAttribute="centerX" secondItem="PhM-j4-ubW" secondAttribute="centerX" id="F8J-Lc-oJP"/>
+                            <constraint firstItem="53l-Gg-A66" firstAttribute="centerX" secondItem="PhM-j4-ubW" secondAttribute="centerX" id="Id2-Yt-VQH"/>
+                            <constraint firstItem="UKK-pP-Pel" firstAttribute="top" secondItem="SIe-86-fZa" secondAttribute="bottom" constant="2" id="Lt5-29-jB8"/>
+                            <constraint firstItem="Xvs-1n-f62" firstAttribute="top" secondItem="UKK-pP-Pel" secondAttribute="bottom" constant="50" id="Ps9-6b-QId"/>
+                            <constraint firstItem="HF8-bz-Gzz" firstAttribute="top" secondItem="PTk-h4-pkW" secondAttribute="bottom" constant="2" id="fKZ-Z9-851"/>
+                            <constraint firstItem="SIe-86-fZa" firstAttribute="top" secondItem="HF8-bz-Gzz" secondAttribute="bottom" constant="2" id="iEY-tj-ked"/>
+                            <constraint firstItem="Xvs-1n-f62" firstAttribute="centerX" secondItem="PhM-j4-ubW" secondAttribute="centerX" id="k7v-GG-hV4"/>
+                            <constraint firstItem="UKK-pP-Pel" firstAttribute="centerX" secondItem="PhM-j4-ubW" secondAttribute="centerX" id="nHW-WB-Kay"/>
+                            <constraint firstItem="HF8-bz-Gzz" firstAttribute="width" secondItem="PTk-h4-pkW" secondAttribute="width" id="phb-cL-Qnc"/>
+                            <constraint firstItem="SIe-86-fZa" firstAttribute="width" secondItem="HF8-bz-Gzz" secondAttribute="width" id="q9q-rl-VsO"/>
+                            <constraint firstItem="UKK-pP-Pel" firstAttribute="width" secondItem="SIe-86-fZa" secondAttribute="width" id="uw2-kE-OLW"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Settings" id="0ad-EY-id1"/>
+                    <navigationItem key="navigationItem" title="About" id="0ad-EY-id1"/>
+                    <connections>
+                        <outlet property="aboutView" destination="PhM-j4-ubW" id="Yjk-lX-lpu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r0v-kB-Q4z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1175" y="31"/>
+            <point key="canvasLocation" x="1173.5999999999999" y="30.134932533733135"/>
         </scene>
         <!--Shopping List-->
         <scene sceneID="vtq-FB-eWr">

@@ -10,6 +10,8 @@ import UIKit
 
 class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     
+    //Custom Colours
+    
     let myPurple:UIColor = UIColor(red: 105/255.0, green: 94/255.0, blue: 133/255.0, alpha: 1.0)
     
     //Outlets
@@ -36,7 +38,6 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     var imageSelector = UIImagePickerController()
     var item : Item? = nil
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
