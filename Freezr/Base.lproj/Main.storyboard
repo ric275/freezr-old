@@ -348,14 +348,34 @@
                                 <color key="textColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5uB-b2-LCG">
-                                <frame key="frameInset" minX="71" minY="520" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5uB-b2-LCG">
+                                <frame key="frameInset" minX="74" minY="514" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Button" image="raspberry"/>
                                 <connections>
                                     <action selector="raspberryTapped:" destination="7lV-NW-Ydg" eventType="touchUpInside" id="AQh-dG-WLG"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="carrot" translatesAutoresizingMaskIntoConstraints="NO" id="Uje-fp-vtC">
+                                <frame key="frameInset" minX="36" minY="434" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cheese-1" translatesAutoresizingMaskIntoConstraints="NO" id="I8p-aS-JIM">
+                                <frame key="frameInset" minX="273" minY="434" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fish" translatesAutoresizingMaskIntoConstraints="NO" id="gMM-sF-0HZ">
+                                <frame key="frameInset" minX="207" minY="514" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="apple-1" translatesAutoresizingMaskIntoConstraints="NO" id="CHg-WJ-TgP">
+                                <frame key="frameInset" minX="152" minY="434" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sushi-2" translatesAutoresizingMaskIntoConstraints="NO" id="r2l-w9-Ith">
+                                <frame key="frameInset" minX="309" minY="521" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -379,8 +399,15 @@
                     </view>
                     <navigationItem key="navigationItem" title="About" id="0ad-EY-id1"/>
                     <connections>
+                        <outlet property="Img1" destination="Uje-fp-vtC" id="8Uz-x4-iSV"/>
                         <outlet property="aboutView" destination="PhM-j4-ubW" id="Yjk-lX-lpu"/>
                         <outlet property="ackButton" destination="53l-Gg-A66" id="3dQ-Rt-Svf"/>
+                        <outlet property="img1" destination="Uje-fp-vtC" id="eFR-Np-qDl"/>
+                        <outlet property="img2" destination="CHg-WJ-TgP" id="dde-5r-Ei6"/>
+                        <outlet property="img3" destination="I8p-aS-JIM" id="ebt-qE-3HA"/>
+                        <outlet property="img4" destination="5uB-b2-LCG" id="1F0-i3-GPk"/>
+                        <outlet property="img5" destination="gMM-sF-0HZ" id="4Zm-wp-35r"/>
+                        <outlet property="img6" destination="r2l-w9-Ith" id="th3-Nl-dI4"/>
                         <outlet property="label1" destination="PTk-h4-pkW" id="TMF-nZ-qwL"/>
                         <outlet property="label2" destination="HF8-bz-Gzz" id="def-vU-0Is"/>
                         <outlet property="label3" destination="SIe-86-fZa" id="RNT-xV-FYO"/>
@@ -417,6 +444,12 @@
         <image name="TabBarSelectedFreezerIcon" width="75" height="75"/>
         <image name="TabBarSelectedShoppingListIcon" width="22" height="22"/>
         <image name="TabBarShoppingIcon" width="22" height="22"/>
+        <image name="apple-1" width="512" height="512"/>
+        <image name="carrot" width="512" height="512"/>
+        <image name="cheese-1" width="512" height="512"/>
+        <image name="fish" width="22" height="22"/>
         <image name="info" width="22" height="22"/>
+        <image name="raspberry" width="512" height="512"/>
+        <image name="sushi-2" width="512" height="512"/>
     </resources>
 </document>

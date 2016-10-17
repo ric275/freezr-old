@@ -26,6 +26,13 @@ class AboutViewController: UIViewController {
     
     @IBOutlet weak var ackButton: UIButton!
     
+    @IBOutlet weak var img1: UIImageView!
+    @IBOutlet weak var img2: UIImageView!
+    @IBOutlet weak var img3: UIImageView!
+    @IBOutlet weak var img4: UIButton!
+    @IBOutlet weak var img5: UIImageView!
+    @IBOutlet weak var img6: UIImageView!
+    
     //Variables
     
     var tapCount = 0
@@ -45,6 +52,15 @@ class AboutViewController: UIViewController {
         
     }
     
+    func hideImgs() {
+        img1.isHidden = true
+        img2.isHidden = true
+        img3.isHidden = true
+        img4.isHidden = true
+        img5.isHidden = true
+        img6.isHidden = true
+    }
+    
     @IBAction func ackButtonTapped(_ sender: AnyObject) {
     }
     
@@ -59,6 +75,7 @@ class AboutViewController: UIViewController {
             label4.text = "Meow meow"
             label5.text = "🐱🐱🐱"
             aboutView.backgroundColor = UIColor(patternImage: UIImage(named: "tigger")!)
+            hideImgs()
             
         } else {}
         
