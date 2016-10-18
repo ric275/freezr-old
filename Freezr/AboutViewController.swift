@@ -24,8 +24,6 @@ class AboutViewController: UIViewController {
     @IBOutlet weak var label4: UILabel!
     @IBOutlet weak var label5: UILabel!
     
-    @IBOutlet weak var ackButton: UIButton!
-    
     @IBOutlet weak var img1: UIImageView!
     @IBOutlet weak var img2: UIImageView!
     @IBOutlet weak var img3: UIImageView!
@@ -47,9 +45,7 @@ class AboutViewController: UIViewController {
         label3.textColor = UIColor.white
         label4.textColor = UIColor.white
         label5.textColor = UIColor.white
-        ackButton.tintColor = UIColor.white
-        
-        
+                
     }
     
     func hideImgs() {
@@ -59,9 +55,6 @@ class AboutViewController: UIViewController {
         img4.isHidden = true
         img5.isHidden = true
         img6.isHidden = true
-    }
-    
-    @IBAction func ackButtonTapped(_ sender: AnyObject) {
     }
     
     @IBAction func raspberryTapped(_ sender: AnyObject) {

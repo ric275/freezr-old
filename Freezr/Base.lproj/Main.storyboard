@@ -16,7 +16,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Rrq-PB-Zq1">
@@ -70,7 +70,7 @@
                         <viewControllerLayoutGuide type="bottom" id="7k6-vA-6KD"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ZSs-Xm-hP9">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7wE-fg-BPV">
@@ -233,7 +233,7 @@
                         <viewControllerLayoutGuide type="bottom" id="JIs-DF-kkZ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="fso-0i-WxI">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Yfh-gk-bpq">
@@ -294,17 +294,9 @@
                         <viewControllerLayoutGuide type="bottom" id="ZhQ-QB-3Up"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="PhM-j4-ubW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="53l-Gg-A66">
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <state key="normal" title=" Acknowledgements"/>
-                                <connections>
-                                    <action selector="ackButtonTapped:" destination="7lV-NW-Ydg" eventType="touchUpInside" id="8ce-D5-rdY"/>
-                                    <segue destination="VHr-ue-ydz" kind="show" id="W7a-RL-Qym"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Freezr is a simple Freezer database app developed by Jack Taylor." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PTk-h4-pkW">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="lDn-gk-DsA"/>
@@ -384,10 +376,8 @@
                             <constraint firstItem="Xvs-1n-f62" firstAttribute="width" secondItem="UKK-pP-Pel" secondAttribute="width" id="1Om-Qs-ftj"/>
                             <constraint firstItem="SIe-86-fZa" firstAttribute="centerX" secondItem="PhM-j4-ubW" secondAttribute="centerX" id="4Qm-24-YpA"/>
                             <constraint firstItem="PTk-h4-pkW" firstAttribute="top" secondItem="May-4Q-mpv" secondAttribute="bottom" constant="15" id="5yp-UV-Gz5"/>
-                            <constraint firstItem="ZhQ-QB-3Up" firstAttribute="top" secondItem="53l-Gg-A66" secondAttribute="bottom" constant="10" id="80E-43-0Kl"/>
                             <constraint firstItem="PTk-h4-pkW" firstAttribute="centerX" secondItem="PhM-j4-ubW" secondAttribute="centerX" id="BO0-4i-0ky"/>
                             <constraint firstItem="HF8-bz-Gzz" firstAttribute="centerX" secondItem="PhM-j4-ubW" secondAttribute="centerX" id="F8J-Lc-oJP"/>
-                            <constraint firstItem="53l-Gg-A66" firstAttribute="centerX" secondItem="PhM-j4-ubW" secondAttribute="centerX" id="Id2-Yt-VQH"/>
                             <constraint firstItem="UKK-pP-Pel" firstAttribute="top" secondItem="SIe-86-fZa" secondAttribute="bottom" constant="2" id="Lt5-29-jB8"/>
                             <constraint firstItem="Xvs-1n-f62" firstAttribute="top" secondItem="UKK-pP-Pel" secondAttribute="bottom" constant="50" id="Ps9-6b-QId"/>
                             <constraint firstItem="HF8-bz-Gzz" firstAttribute="top" secondItem="PTk-h4-pkW" secondAttribute="bottom" constant="2" id="fKZ-Z9-851"/>
@@ -405,7 +395,6 @@
                     <connections>
                         <outlet property="Img1" destination="Uje-fp-vtC" id="8Uz-x4-iSV"/>
                         <outlet property="aboutView" destination="PhM-j4-ubW" id="Yjk-lX-lpu"/>
-                        <outlet property="ackButton" destination="53l-Gg-A66" id="3dQ-Rt-Svf"/>
                         <outlet property="img1" destination="Uje-fp-vtC" id="eFR-Np-qDl"/>
                         <outlet property="img2" destination="CHg-WJ-TgP" id="dde-5r-Ei6"/>
                         <outlet property="img3" destination="I8p-aS-JIM" id="ebt-qE-3HA"/>
@@ -422,52 +411,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r0v-kB-Q4z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1173.5999999999999" y="30.134932533733135"/>
-        </scene>
-        <!--Ack View Controller-->
-        <scene sceneID="LiD-VP-nwx">
-            <objects>
-                <viewController id="VHr-ue-ydz" customClass="AckViewController" customModule="Freezr" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="C32-4g-IHO"/>
-                        <viewControllerLayoutGuide type="bottom" id="YDJ-5Y-5tu"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="PJs-Sm-wOJ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Df1-9m-RPx">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="305" id="UDH-Ng-o9h"/>
-                                </constraints>
-                                <string key="text">The awesome food icons used in the app icon and in various places throughout the app were designed by Freepik and kindly supplied by Flaticon.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Likewise, the information icon used on the Freezr page was designed by Chanut is Industries." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bfr-rz-Z57">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="Df1-9m-RPx" firstAttribute="centerX" secondItem="PJs-Sm-wOJ" secondAttribute="centerX" id="4At-1d-bbM"/>
-                            <constraint firstItem="Bfr-rz-Z57" firstAttribute="width" secondItem="Df1-9m-RPx" secondAttribute="width" id="K3L-db-B5C"/>
-                            <constraint firstItem="Bfr-rz-Z57" firstAttribute="top" secondItem="Df1-9m-RPx" secondAttribute="bottom" constant="15" id="bre-VW-WHN"/>
-                            <constraint firstItem="Df1-9m-RPx" firstAttribute="top" secondItem="C32-4g-IHO" secondAttribute="bottom" constant="100" id="jvU-qQ-Hj8"/>
-                            <constraint firstItem="Bfr-rz-Z57" firstAttribute="centerX" secondItem="PJs-Sm-wOJ" secondAttribute="centerX" id="n4d-YW-Wmk"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="ackView" destination="PJs-Sm-wOJ" id="8jo-9n-VIn"/>
-                        <outlet property="label1" destination="Df1-9m-RPx" id="m7c-eY-Uov"/>
-                        <outlet property="label2" destination="Bfr-rz-Z57" id="Emt-d0-OQF"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rqP-mw-LGK" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1173.5999999999999" y="739.88005997001505"/>
         </scene>
         <!--Shopping List-->
         <scene sceneID="vtq-FB-eWr">
@@ -490,15 +433,15 @@
         </scene>
     </scenes>
     <resources>
-        <image name="TabBarFreezrIcon" width="22" height="22"/>
-        <image name="TabBarSelectedFreezerIcon" width="75" height="75"/>
-        <image name="TabBarSelectedShoppingListIcon" width="22" height="22"/>
-        <image name="TabBarShoppingIcon" width="22" height="22"/>
+        <image name="TabBarFreezrIcon" width="25" height="25"/>
+        <image name="TabBarSelectedFreezerIcon" width="25" height="25"/>
+        <image name="TabBarSelectedShoppingListIcon" width="25" height="25"/>
+        <image name="TabBarShoppingIcon" width="25" height="25"/>
         <image name="apple-1" width="512" height="512"/>
         <image name="carrot" width="512" height="512"/>
         <image name="cheese-1" width="512" height="512"/>
-        <image name="fish" width="22" height="22"/>
-        <image name="info" width="22" height="22"/>
+        <image name="fish" width="170" height="170"/>
+        <image name="info" width="20" height="20"/>
         <image name="raspberry" width="512" height="512"/>
         <image name="sushi-2" width="512" height="512"/>
     </resources>
