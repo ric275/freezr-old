@@ -9,7 +9,7 @@
 import UIKit
 
 class ShoppingListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
+
     //Outlets
     
     @IBOutlet weak var shoppingListTableView: UITableView!
@@ -68,6 +68,16 @@ class ShoppingListViewController: UIViewController, UITableViewDelegate, UITable
             let SLItem = SLItems[indexPath.row]
             cell.textLabel?.text = SLItem.name
             cell.imageView?.image = UIImage(data: SLItem.image as! Data)
+            
+            //This part works
+            if SLItem.isSelected {
+                cell.accessoryType = .checkmark
+                
+            } else {
+                
+                cell.accessoryType = .none
+                
+            }
         }
         
         cell.textLabel?.textColor = myPurple
@@ -79,26 +89,39 @@ class ShoppingListViewController: UIViewController, UITableViewDelegate, UITable
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let cell = tableView.cellForRow(at: indexPath)
+        let cell = tableView.cellForRow(at: indexPath)!
         
         if SLItems.count == 0 {
             print("User selected empty SL message, do not tick!")
         } else {
             
-            if (cell?.isSelected)!{
-                cell?.isSelected = false
-                if (cell?.accessoryType == UITableViewCellAccessoryType.none){
-                    cell?.accessoryType = UITableViewCellAccessoryType.checkmark
+            //Ticks when I select cell - this works.
+            
+            if (cell.isSelected){
+                cell.isSelected = false
+                if (cell.accessoryType == UITableViewCellAccessoryType.none){
+                    cell.accessoryType = UITableViewCellAccessoryType.checkmark
                 }
                 else
                 {
-                    cell?.accessoryType = UITableViewCellAccessoryType.none
+                    cell.accessoryType = UITableViewCellAccessoryType.none
                 }
             }
+            
+            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            
+            let SLItem = ShoppingListItem(context: context)
+            
+            
+            SLItem.isSelected = true
+            
+            (UIApplication.shared.delegate as! AppDelegate).saveContext()
+            
+            tableView.deselectRow(at: indexPath, animated: true)
+            
+            print(SLItem.isSelected)
+            
         }
-        
-        tableView.deselectRow(at: indexPath, animated: true)
-        
     }
     
     //Display/hide the table and empty message accordingly.
