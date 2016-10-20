@@ -113,7 +113,7 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             item!.image = UIImageJPEGRepresentation(itemImage.image!, 0.1)! as NSData?
             
             //DatePicker
-            item!.expirydate = expirationDateTextField.text
+            item?.expirydate = expirationDateTextField.text
             
         } else {
             let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext

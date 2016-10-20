@@ -24,12 +24,7 @@ class AboutViewController: UIViewController {
     @IBOutlet weak var label4: UILabel!
     @IBOutlet weak var label5: UILabel!
     
-    @IBOutlet weak var img1: UIImageView!
-    @IBOutlet weak var img2: UIImageView!
-    @IBOutlet weak var img3: UIImageView!
     @IBOutlet weak var img4: UIButton!
-    @IBOutlet weak var img5: UIImageView!
-    @IBOutlet weak var img6: UIImageView!
     
     //Variables
     
@@ -37,6 +32,7 @@ class AboutViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view.
         
         aboutView.backgroundColor = myPurple
@@ -48,16 +44,7 @@ class AboutViewController: UIViewController {
                 
     }
     
-    func hideImgs() {
-        img1.isHidden = true
-        img2.isHidden = true
-        img3.isHidden = true
-        img4.isHidden = true
-        img5.isHidden = true
-        img6.isHidden = true
-    }
-    
-    @IBAction func raspberryTapped(_ sender: AnyObject) {
+    @IBAction func easterEggTapped(_ sender: AnyObject) {
         
         tapCount = tapCount + 1
         
@@ -68,7 +55,7 @@ class AboutViewController: UIViewController {
             label4.text = "Meow meow"
             label5.text = "🐱🐱🐱"
             aboutView.backgroundColor = UIColor(patternImage: UIImage(named: "tigger")!)
-            hideImgs()
+            img4.isHidden = true
             
         } else {}
         

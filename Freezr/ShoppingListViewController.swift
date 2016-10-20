@@ -9,12 +9,14 @@
 import UIKit
 
 class ShoppingListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
     //Outlets
     
     @IBOutlet weak var shoppingListTableView: UITableView!
     
-    @IBOutlet weak var emptyMessage: UILabel!
+    @IBOutlet weak var emptyMessage1: UILabel!
+    
+    @IBOutlet weak var emptyMessage2: UILabel!
     
     //Variables
     
@@ -69,15 +71,11 @@ class ShoppingListViewController: UIViewController, UITableViewDelegate, UITable
             cell.textLabel?.text = SLItem.name
             cell.imageView?.image = UIImage(data: SLItem.image as! Data)
             
-            //This part works
-            if SLItem.isSelected {
-                cell.accessoryType = .checkmark
-                
-            } else {
-                
-                cell.accessoryType = .none
-                
-            }
+            //            if SLItem.isChecked {
+            //                cell.accessoryType = .checkmark
+            //            } else {
+            //                cell.accessoryType = .none
+            //            }
         }
         
         cell.textLabel?.textColor = myPurple
@@ -95,8 +93,6 @@ class ShoppingListViewController: UIViewController, UITableViewDelegate, UITable
             print("User selected empty SL message, do not tick!")
         } else {
             
-            //Ticks when I select cell - this works.
-            
             if (cell.isSelected){
                 cell.isSelected = false
                 if (cell.accessoryType == UITableViewCellAccessoryType.none){
@@ -108,18 +104,15 @@ class ShoppingListViewController: UIViewController, UITableViewDelegate, UITable
                 }
             }
             
-            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-            
-            let SLItem = ShoppingListItem(context: context)
-            
-            
-            SLItem.isSelected = true
-            
-            (UIApplication.shared.delegate as! AppDelegate).saveContext()
-            
             tableView.deselectRow(at: indexPath, animated: true)
             
-            print(SLItem.isSelected)
+            //            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            //
+            //            let SLItem = ShoppingListItem(context: context)
+            //
+            //            SLItem.isChecked = true
+            //
+            //            (UIApplication.shared.delegate as! AppDelegate).saveContext()
             
         }
     }
@@ -130,9 +123,11 @@ class ShoppingListViewController: UIViewController, UITableViewDelegate, UITable
         
         if SLItems.count == 0 {
             shoppingListTableView.isHidden = true
-            emptyMessage.isHidden = false
+            emptyMessage1.isHidden = false
+            emptyMessage2.isHidden = false
         } else {
-            emptyMessage.isHidden = true
+            emptyMessage1.isHidden = true
+            emptyMessage2.isHidden = true
             shoppingListTableView.isHidden = false
         }
         

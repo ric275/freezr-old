@@ -16,7 +16,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Rrq-PB-Zq1">
@@ -70,7 +70,7 @@
                         <viewControllerLayoutGuide type="bottom" id="7k6-vA-6KD"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ZSs-Xm-hP9">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7wE-fg-BPV">
@@ -233,33 +233,39 @@
                         <viewControllerLayoutGuide type="bottom" id="JIs-DF-kkZ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="fso-0i-WxI">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Yfh-gk-bpq">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your shopping list is empty." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s99-cq-h2M">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can add items directly from the Freezr." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="81Y-TC-hQD">
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Yfh-gk-bpq">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="s99-cq-h2M" firstAttribute="centerY" secondItem="fso-0i-WxI" secondAttribute="centerY" id="6yU-Xn-gJ6"/>
+                            <constraint firstItem="81Y-TC-hQD" firstAttribute="top" secondItem="s99-cq-h2M" secondAttribute="bottom" constant="5" id="5xu-9B-lkD"/>
+                            <constraint firstItem="81Y-TC-hQD" firstAttribute="centerX" secondItem="fso-0i-WxI" secondAttribute="centerX" id="FrX-oc-Ygw"/>
                             <constraint firstItem="Yfh-gk-bpq" firstAttribute="leading" secondItem="fso-0i-WxI" secondAttribute="leading" id="Pci-cJ-yZu"/>
                             <constraint firstItem="JIs-DF-kkZ" firstAttribute="top" secondItem="Yfh-gk-bpq" secondAttribute="bottom" id="SOj-FL-P2r"/>
+                            <constraint firstItem="s99-cq-h2M" firstAttribute="centerY" secondItem="fso-0i-WxI" secondAttribute="centerY" id="imV-gx-0cl"/>
                             <constraint firstAttribute="trailing" secondItem="Yfh-gk-bpq" secondAttribute="trailing" id="p0g-JN-Xzv"/>
                             <constraint firstItem="Yfh-gk-bpq" firstAttribute="top" secondItem="KRP-YN-cgu" secondAttribute="bottom" id="tpr-qG-Ypq"/>
                             <constraint firstItem="s99-cq-h2M" firstAttribute="centerX" secondItem="fso-0i-WxI" secondAttribute="centerX" id="uhk-MK-Efe"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Shopping List" id="0hs-oc-dkI">
-                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="M6W-LK-4TD"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Shopping List" id="0hs-oc-dkI"/>
                     <connections>
-                        <outlet property="emptyMessage" destination="s99-cq-h2M" id="YVT-n9-zeh"/>
+                        <outlet property="emptyMessage1" destination="s99-cq-h2M" id="omy-ja-dhb"/>
+                        <outlet property="emptyMessage2" destination="81Y-TC-hQD" id="NAR-ns-Uvo"/>
                         <outlet property="shoppingListTableView" destination="Yfh-gk-bpq" id="LLk-jp-8I7"/>
                     </connections>
                 </viewController>
@@ -294,7 +300,7 @@
                         <viewControllerLayoutGuide type="bottom" id="ZhQ-QB-3Up"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="PhM-j4-ubW">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Freezr is a simple Freezer database app developed by Jack Taylor." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PTk-h4-pkW">
@@ -342,44 +348,29 @@
                                 <color key="textColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5uB-b2-LCG">
-                                <frame key="frameInset" minX="74" minY="514" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="raspberry"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5uB-b2-LCG">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="7Fz-5j-raL"/>
+                                    <constraint firstAttribute="height" constant="60" id="7TN-go-1sP"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="ice-cream"/>
                                 <connections>
+                                    <action selector="easterEggTapped:" destination="7lV-NW-Ydg" eventType="touchUpInside" id="rJl-5o-dxM"/>
                                     <action selector="raspberryTapped:" destination="7lV-NW-Ydg" eventType="touchUpInside" id="AQh-dG-WLG"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="carrot" translatesAutoresizingMaskIntoConstraints="NO" id="Uje-fp-vtC">
-                                <frame key="frameInset" minX="36" minY="434" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cheese-1" translatesAutoresizingMaskIntoConstraints="NO" id="I8p-aS-JIM">
-                                <frame key="frameInset" minX="273" minY="434" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fish" translatesAutoresizingMaskIntoConstraints="NO" id="gMM-sF-0HZ">
-                                <frame key="frameInset" minX="207" minY="514" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="apple-1" translatesAutoresizingMaskIntoConstraints="NO" id="CHg-WJ-TgP">
-                                <frame key="frameInset" minX="152" minY="434" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sushi-2" translatesAutoresizingMaskIntoConstraints="NO" id="r2l-w9-Ith">
-                                <frame key="frameInset" minX="309" minY="521" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Xvs-1n-f62" firstAttribute="width" secondItem="UKK-pP-Pel" secondAttribute="width" id="1Om-Qs-ftj"/>
                             <constraint firstItem="SIe-86-fZa" firstAttribute="centerX" secondItem="PhM-j4-ubW" secondAttribute="centerX" id="4Qm-24-YpA"/>
                             <constraint firstItem="PTk-h4-pkW" firstAttribute="top" secondItem="May-4Q-mpv" secondAttribute="bottom" constant="15" id="5yp-UV-Gz5"/>
+                            <constraint firstItem="5uB-b2-LCG" firstAttribute="top" secondItem="Xvs-1n-f62" secondAttribute="bottom" constant="50" id="B3Y-bE-2th"/>
                             <constraint firstItem="PTk-h4-pkW" firstAttribute="centerX" secondItem="PhM-j4-ubW" secondAttribute="centerX" id="BO0-4i-0ky"/>
                             <constraint firstItem="HF8-bz-Gzz" firstAttribute="centerX" secondItem="PhM-j4-ubW" secondAttribute="centerX" id="F8J-Lc-oJP"/>
                             <constraint firstItem="UKK-pP-Pel" firstAttribute="top" secondItem="SIe-86-fZa" secondAttribute="bottom" constant="2" id="Lt5-29-jB8"/>
                             <constraint firstItem="Xvs-1n-f62" firstAttribute="top" secondItem="UKK-pP-Pel" secondAttribute="bottom" constant="50" id="Ps9-6b-QId"/>
+                            <constraint firstItem="5uB-b2-LCG" firstAttribute="centerX" secondItem="PhM-j4-ubW" secondAttribute="centerX" id="Ynm-Ds-16I"/>
                             <constraint firstItem="HF8-bz-Gzz" firstAttribute="top" secondItem="PTk-h4-pkW" secondAttribute="bottom" constant="2" id="fKZ-Z9-851"/>
                             <constraint firstItem="SIe-86-fZa" firstAttribute="top" secondItem="HF8-bz-Gzz" secondAttribute="bottom" constant="2" id="iEY-tj-ked"/>
                             <constraint firstItem="Xvs-1n-f62" firstAttribute="centerX" secondItem="PhM-j4-ubW" secondAttribute="centerX" id="k7v-GG-hV4"/>
@@ -393,14 +384,8 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="SBv-MT-GVR"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="Img1" destination="Uje-fp-vtC" id="8Uz-x4-iSV"/>
                         <outlet property="aboutView" destination="PhM-j4-ubW" id="Yjk-lX-lpu"/>
-                        <outlet property="img1" destination="Uje-fp-vtC" id="eFR-Np-qDl"/>
-                        <outlet property="img2" destination="CHg-WJ-TgP" id="dde-5r-Ei6"/>
-                        <outlet property="img3" destination="I8p-aS-JIM" id="ebt-qE-3HA"/>
                         <outlet property="img4" destination="5uB-b2-LCG" id="1F0-i3-GPk"/>
-                        <outlet property="img5" destination="gMM-sF-0HZ" id="4Zm-wp-35r"/>
-                        <outlet property="img6" destination="r2l-w9-Ith" id="th3-Nl-dI4"/>
                         <outlet property="label1" destination="PTk-h4-pkW" id="TMF-nZ-qwL"/>
                         <outlet property="label2" destination="HF8-bz-Gzz" id="def-vU-0Is"/>
                         <outlet property="label3" destination="SIe-86-fZa" id="RNT-xV-FYO"/>
@@ -437,12 +422,7 @@
         <image name="TabBarSelectedFreezerIcon" width="25" height="25"/>
         <image name="TabBarSelectedShoppingListIcon" width="25" height="25"/>
         <image name="TabBarShoppingIcon" width="25" height="25"/>
-        <image name="apple-1" width="512" height="512"/>
-        <image name="carrot" width="512" height="512"/>
-        <image name="cheese-1" width="512" height="512"/>
-        <image name="fish" width="170" height="170"/>
+        <image name="ice-cream" width="512" height="512"/>
         <image name="info" width="20" height="20"/>
-        <image name="raspberry" width="512" height="512"/>
-        <image name="sushi-2" width="512" height="512"/>
     </resources>
 </document>
