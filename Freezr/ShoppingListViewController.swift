@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ShoppingListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -152,11 +153,29 @@ class ShoppingListViewController: UIViewController, UITableViewDelegate, UITable
             
             do {
                 SLItems = try context.fetch(ShoppingListItem.fetchRequest())
-                tableView.reloadData()
+                shoppingListTableView.reloadData()
             } catch {}
             
         }
     }
+    
+    @IBAction func trashTapped(_ sender: AnyObject) {
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        if SLItems.count > 0 {
+            let allSLItems = SLItems[0] // <------ Need to specify all ShoppingListItems
+            context.delete(allSLItems)
+            (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        } else {
+            print("Nothing to delete")
+        }
+        
+        do {
+            SLItems = try context.fetch(ShoppingListItem.fetchRequest())
+            shoppingListTableView.reloadData()
+        } catch {}
+    }
+    
     
     //Final declaration:
     
