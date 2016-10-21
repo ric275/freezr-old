@@ -112,19 +112,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
-    //3D Touch shortcuts which are broken tbh.
+    //3D Touch shortcuts.
     
     private func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: (Bool) -> Void) {
         
-        if let tabVC = self.window?.rootViewController as? UITabBarController {
-            if shortcutItem.type == "freezr.appshortcut.shopping-list"{
-                tabVC.selectedViewController = ShoppingListViewController()
-            } else if shortcutItem.type == "freezr.appshortcut.add-item" {
-                tabVC.selectedIndex = 0
-                
-            }
             
         }
     }
-    
-}

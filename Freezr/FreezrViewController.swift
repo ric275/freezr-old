@@ -148,20 +148,53 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     
+    
     //Swipe to add items to shopping list
     
-    //    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-    //
-    //        let swipeToAdd = UITableViewRowAction(style: .normal, title: "Add to Shopping List") { (action:UITableViewRowAction!, NSIndexPath) in
-    //
-    //            addToSLTapped()
-    //        }
-    //
-    //        swipeToAdd.backgroundColor = UIColor.purple
-    //
-    //        return[swipeToAdd]
-    //
-    //    }
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        let swipeToAdd = UITableViewRowAction(style: .normal, title: "Shopping List") { (action:UITableViewRowAction!, NSIndexPath) in
+            
+            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            
+            let SLItem = ShoppingListItem(context: context)
+            SLItem.name = self.items[indexPath.row].name
+            SLItem.image = self.items[indexPath.row].image!
+            
+            (UIApplication.shared.delegate as! AppDelegate).saveContext()
+            
+            //Add badge to SL icon
+            
+            for item in self.tabBarController!.tabBar.items! {
+                if item.title == "Shopping List" {
+                    item.badgeValue = "New!"
+                }
+                
+            }
+            
+        }
+        
+        swipeToAdd.backgroundColor = UIColor.purple
+        
+        let swipeToDelete = UITableViewRowAction(style: .normal, title: "Delete") { (action:UITableViewRowAction!, NSIndexPath) in
+            
+            let item = self.items[indexPath.row]
+            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            context.delete(item)
+            (UIApplication.shared.delegate as! AppDelegate).saveContext()
+            
+            do {
+                self.items = try context.fetch(Item.fetchRequest())
+                tableView.reloadData()
+            } catch {}
+        }
+        
+        swipeToDelete.backgroundColor = UIColor.red
+        
+        return[swipeToDelete, swipeToAdd]
+    }
+    
+    
     
     
     //Final declaration:

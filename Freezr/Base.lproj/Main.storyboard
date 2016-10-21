@@ -356,7 +356,6 @@
                                 <state key="normal" title="Button" image="ice-cream"/>
                                 <connections>
                                     <action selector="easterEggTapped:" destination="7lV-NW-Ydg" eventType="touchUpInside" id="rJl-5o-dxM"/>
-                                    <action selector="raspberryTapped:" destination="7lV-NW-Ydg" eventType="touchUpInside" id="AQh-dG-WLG"/>
                                 </connections>
                             </button>
                         </subviews>
