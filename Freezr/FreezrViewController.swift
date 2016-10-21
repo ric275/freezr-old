@@ -117,23 +117,6 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
     }
     
-    //Swipe to delete setup.
-    
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            let item = items[indexPath.row]
-            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-            context.delete(item)
-            (UIApplication.shared.delegate as! AppDelegate).saveContext()
-            
-            do {
-                items = try context.fetch(Item.fetchRequest())
-                tableView.reloadData()
-            } catch {}
-            
-        }
-    }
-    
     //Display/hide the table and empty message accordingly.
     
     override func viewDidAppear(_ animated: Bool) {
@@ -147,11 +130,11 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
     }
     
-    
-    
-    //Swipe to add items to shopping list
+    //Swipe actions
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        //Swipe to add items to shopping list
         
         let swipeToAdd = UITableViewRowAction(style: .normal, title: "Shopping List") { (action:UITableViewRowAction!, NSIndexPath) in
             
@@ -175,6 +158,8 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         
         swipeToAdd.backgroundColor = UIColor.purple
+        
+        //Swipe to delete items from the Freezr.
         
         let swipeToDelete = UITableViewRowAction(style: .normal, title: "Delete") { (action:UITableViewRowAction!, NSIndexPath) in
             
