@@ -116,6 +116,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: (Bool) -> Void) {
         
-            
+
+        
         }
     }

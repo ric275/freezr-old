@@ -16,23 +16,30 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Rrq-PB-Zq1">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No items in Freezr. Tap '+' to get started! 🍉" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="znr-9S-YL5">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="There are no items in Freezr. " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="znr-9S-YL5">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap '+' to get started! 🍉" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="87T-pg-OBX">
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Rrq-PB-Zq1">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="znr-9S-YL5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="68k-Ja-Q0N"/>
                             <constraint firstItem="Rrq-PB-Zq1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Fwz-gq-rA8"/>
+                            <constraint firstItem="87T-pg-OBX" firstAttribute="top" secondItem="znr-9S-YL5" secondAttribute="bottom" constant="5" id="Ppe-If-LEc"/>
                             <constraint firstItem="znr-9S-YL5" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="THM-Dp-HKY"/>
+                            <constraint firstItem="87T-pg-OBX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UY7-4z-E4Z"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Rrq-PB-Zq1" secondAttribute="bottom" id="jEC-DX-NK4"/>
                             <constraint firstAttribute="trailing" secondItem="Rrq-PB-Zq1" secondAttribute="trailing" id="kM6-E4-8pQ"/>
                             <constraint firstItem="Rrq-PB-Zq1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="ufk-ee-OTM"/>
@@ -53,7 +60,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="emptyMessage" destination="znr-9S-YL5" id="Uh8-1I-Dpz"/>
+                        <outlet property="emptyMessage1" destination="znr-9S-YL5" id="0yP-ZO-3xn"/>
+                        <outlet property="emptyMessage2" destination="87T-pg-OBX" id="CSN-MQ-ei7"/>
                         <outlet property="itemListTableView" destination="Rrq-PB-Zq1" id="BCj-56-2Mb"/>
                     </connections>
                 </viewController>
@@ -70,7 +78,7 @@
                         <viewControllerLayoutGuide type="bottom" id="7k6-vA-6KD"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ZSs-Xm-hP9">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7wE-fg-BPV">
@@ -227,13 +235,13 @@
         <!--Shopping List-->
         <scene sceneID="IMS-CY-4iF">
             <objects>
-                <viewController storyboardIdentifier="Shopping List" automaticallyAdjustsScrollViewInsets="NO" id="MxO-2T-A44" customClass="ShoppingListViewController" customModule="Freezr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Shopping List" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="MxO-2T-A44" customClass="ShoppingListViewController" customModule="Freezr" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KRP-YN-cgu"/>
                         <viewControllerLayoutGuide type="bottom" id="JIs-DF-kkZ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="fso-0i-WxI">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your shopping list is empty." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s99-cq-h2M">
@@ -300,7 +308,7 @@
                         <viewControllerLayoutGuide type="bottom" id="ZhQ-QB-3Up"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="PhM-j4-ubW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Freezr is a simple Freezer database app developed by Jack Taylor." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PTk-h4-pkW">
@@ -399,7 +407,7 @@
         <!--Shopping List-->
         <scene sceneID="vtq-FB-eWr">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eJ7-Jq-VPG" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="SL Navigation Controller" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eJ7-Jq-VPG" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Shopping List" image="TabBarShoppingIcon" selectedImage="TabBarSelectedShoppingListIcon" id="MWA-6H-pvv"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hm7-0K-c8J">

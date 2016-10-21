@@ -14,7 +14,9 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBOutlet weak var itemListTableView: UITableView!
     
-    @IBOutlet weak var emptyMessage: UILabel!
+    @IBOutlet weak var emptyMessage1: UILabel!
+    
+    @IBOutlet weak var emptyMessage2: UILabel!
     
     //Variables
     
@@ -123,9 +125,11 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         if items.count == 0 {
             itemListTableView.isHidden = true
-            emptyMessage.isHidden = false
+            emptyMessage1.isHidden = false
+            emptyMessage2.isHidden = false
         } else {
-            emptyMessage.isHidden = true
+            emptyMessage1.isHidden = true
+            emptyMessage2.isHidden = true
             itemListTableView.isHidden = false
         }
     }
@@ -154,6 +158,28 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 }
                 
             }
+            
+            if (self.items[indexPath.row].name?.isEmpty)! {
+                 let alertVC = UIAlertController(title: "Item added", message: "This item has been added to your Shopping List.", preferredStyle: .alert)
+                
+                let okAction = UIAlertAction(title: "Dismiss", style: .default, handler: nil)
+                
+                alertVC.addAction(okAction)
+                
+                self.present(alertVC, animated: true, completion: nil)
+                
+            } else {
+                
+            let alertVC = UIAlertController(title: "Item added", message: "\(self.items[indexPath.row].name!) has been added to your Shopping List.", preferredStyle: .alert)
+                
+                let okAction = UIAlertAction(title: "Dismiss", style: .default, handler: nil)
+                
+                alertVC.addAction(okAction)
+                
+                self.present(alertVC, animated: true, completion: nil)
+            }
+            
+            
             
         }
         
