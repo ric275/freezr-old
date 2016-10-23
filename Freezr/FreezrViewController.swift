@@ -22,6 +22,7 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     var items : [Item] = []
     
+    //var ifDate :Date!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,7 +74,9 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
             if (item.expirydate?.isEmpty)! {
                 cell.detailTextLabel?.text = "Expires: Unknown"
             } else {
-                cell.detailTextLabel?.text = "Expires: \(item.expirydate!)"
+
+                    cell.detailTextLabel?.text = "Expires: \(item.expirydate!)"
+  
             }
         }
         
@@ -116,6 +119,8 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
             //Hide tab bar in settings.
             nextViewController.hidesBottomBarWhenPushed = true
         }
+        
+        
         
     }
     
@@ -160,7 +165,7 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
             }
             
             if (self.items[indexPath.row].name?.isEmpty)! {
-                 let alertVC = UIAlertController(title: "Item added", message: "This item has been added to your Shopping List.", preferredStyle: .alert)
+                let alertVC = UIAlertController(title: "Item added", message: "This item has been added to your Shopping List.", preferredStyle: .alert)
                 
                 let okAction = UIAlertAction(title: "Dismiss", style: .default, handler: nil)
                 
@@ -170,7 +175,7 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 
             } else {
                 
-            let alertVC = UIAlertController(title: "Item added", message: "\(self.items[indexPath.row].name!) has been added to your Shopping List.", preferredStyle: .alert)
+                let alertVC = UIAlertController(title: "Item added", message: "\(self.items[indexPath.row].name!) added to your Shopping List.", preferredStyle: .alert)
                 
                 let okAction = UIAlertAction(title: "Dismiss", style: .default, handler: nil)
                 
@@ -204,6 +209,13 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         return[swipeToDelete, swipeToAdd]
     }
+    
+    
+    
+    
+    
+    
+    
     
     
     

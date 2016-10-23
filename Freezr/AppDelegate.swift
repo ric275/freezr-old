@@ -15,6 +15,7 @@
 
 import UIKit
 import CoreData
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -39,6 +40,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITabBar.appearance().tintColor = UIColor.purple
         
         UITableViewCell.appearance().tintColor = UIColor.purple
+        
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: { granted, error in
+            //Handle the error if there is one - empty for now.
+        })
         
         return true
     }
@@ -116,7 +121,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: (Bool) -> Void) {
         
-
         
+        
+    }
+    
+    func scheduleNotification(at date: Date) {
+        
+        let calendar = Calendar(identifier: .gregorian)
+        let components = calendar.dateComponents(in: .current, from: date)
+        let newComponents = DateComponents(calendar: calendar, timeZone: .current, month: components.month, day: components.day, hour: components.hour, minute: components.minute)
+        
+        let trigger = UNCalendarNotificationTrigger(dateMatching: newComponents, repeats: false)
+        
+        let content = UNMutableNotificationContent()
+        content.title = "Item expired"
+        content.body = "An item in your Freezr has reached its expiry date."
+        content.sound = UNNotificationSound.default()
+        
+        let request = UNNotificationRequest(identifier: "expiryNotification", content: content, trigger: trigger)
+        
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+        UNUserNotificationCenter.current().add(request) {(error) in
+            if let error = error {
+                print("Uh oh! We had an error: \(error)")
+                
+                
+            }
         }
     }
+}

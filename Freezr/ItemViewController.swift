@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     
@@ -51,7 +52,6 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         itemName.textColor = myPurple
         
         expirationDateTextField.textColor = myPurple
-        
         
         //Setup the item view depending on if an existing item is being selected, or a new item is being added.
         
@@ -166,6 +166,19 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
         expirationDateTextField.text = dateFormatter.string(from: sender.date)
         
+//        var firstDate = sender.date
+//        
+//        func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//            let nextViewController = segue.destination as! FreezrViewController
+//            nextViewController.ifDate = firstDate as NSDate!
+//        }
+        
+        //Notif stuff
+        let selectedDate = sender.date
+        let delegate = UIApplication.shared.delegate as? AppDelegate
+        delegate?.scheduleNotification(at: selectedDate)
+        
+        print("HEYYYYYYYY\(selectedDate)")
     }
     
     //What happens when Add to Shopping List is tapped.
@@ -205,6 +218,8 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         itemName.resignFirstResponder()
         return true
     }
+    
+    
     
     
     
