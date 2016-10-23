@@ -206,6 +206,8 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         return true
     }
     
+    
+    
     //Final declaration:
     
 }

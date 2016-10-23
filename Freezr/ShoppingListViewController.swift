@@ -159,22 +159,24 @@ class ShoppingListViewController: UIViewController, UITableViewDelegate, UITable
         }
     }
     
-    @IBAction func trashTapped(_ sender: AnyObject) {
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        
-        if SLItems.count > 0 {
-            let allSLItems = SLItems[0] // <------ Need to specify all ShoppingListItems
-            context.delete(allSLItems)
-            (UIApplication.shared.delegate as! AppDelegate).saveContext()
-        } else {
-            print("Nothing to delete")
-        }
-        
-        do {
-            SLItems = try context.fetch(ShoppingListItem.fetchRequest())
-            shoppingListTableView.reloadData()
-        } catch {}
-    }
+//    @IBAction func trashTapped(_ sender: AnyObject) {
+//        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+//        
+//        if SLItems.count > 0 {
+//            SLItems.removeAll()
+//            let allSLItems =   // <------ Need to specify all objects in entity ShoppingListItems
+//           context.delete(allSLItems)
+//            (UIApplication.shared.delegate as! AppDelegate).saveContext()
+//            
+//        } else {
+//            print("Nothing to delete")
+//        }
+//        
+//        do {
+//            SLItems = try context.fetch(ShoppingListItem.fetchRequest())
+//            shoppingListTableView.reloadData()
+//        } catch {}
+//    }
     
     
     //Final declaration:
