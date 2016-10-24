@@ -173,7 +173,7 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
 //            nextViewController.ifDate = firstDate as NSDate!
 //        }
         
-        //Notif stuff
+        //Send data to the notification func in delegate.
         let selectedDate = sender.date
         let delegate = UIApplication.shared.delegate as? AppDelegate
         delegate?.scheduleNotification(at: selectedDate)
@@ -218,10 +218,6 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         itemName.resignFirstResponder()
         return true
     }
-    
-    
-    
-    
     
     //Final declaration:
     

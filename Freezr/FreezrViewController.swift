@@ -31,7 +31,7 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
         itemListTableView.delegate = self
     }
     
-    //Define colours
+    //Custom colours
     
     let myPurple:UIColor = UIColor(red: 105/255.0, green: 94/255.0, blue: 133/255.0, alpha: 1.0)
     
@@ -119,9 +119,7 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
             //Hide tab bar in settings.
             nextViewController.hidesBottomBarWhenPushed = true
         }
-        
-        
-        
+  
     }
     
     //Display/hide the table and empty message accordingly.
@@ -139,7 +137,7 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
     }
     
-    //Swipe actions
+    //Swipe actions (add to shopping list & delete).
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
@@ -164,6 +162,8 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 
             }
             
+            //Create the alert when an item has been added to the shopping list.
+            
             if (self.items[indexPath.row].name?.isEmpty)! {
                 let alertVC = UIAlertController(title: "Item added", message: "This item has been added to your Shopping List.", preferredStyle: .alert)
                 
@@ -183,9 +183,7 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 
                 self.present(alertVC, animated: true, completion: nil)
             }
-            
-            
-            
+ 
         }
         
         swipeToAdd.backgroundColor = UIColor.purple
@@ -209,16 +207,7 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         return[swipeToDelete, swipeToAdd]
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     
     //Final declaration:
     

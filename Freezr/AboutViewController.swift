@@ -49,10 +49,10 @@ class AboutViewController: UIViewController {
         tapCount = tapCount + 1
         
         if tapCount == 7 {
-            label1.text = "Meow meow"
-            label2.text = "Meow meow"
-            label3.text = "Meow meow"
-            label4.text = "Meow meow"
+            label1.text = "Meow Meow"
+            label2.text = "Meow Meow"
+            label3.text = "Meow Meow"
+            label4.text = "Meow Meow"
             label5.text = "🐱🐱🐱"
             aboutView.backgroundColor = UIColor(patternImage: UIImage(named: "tigger")!)
             img4.isHidden = true
@@ -60,7 +60,6 @@ class AboutViewController: UIViewController {
         } else {}
         
     }
-    
     
     //Final declaration:
     

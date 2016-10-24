@@ -41,6 +41,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UITableViewCell.appearance().tintColor = UIColor.purple
         
+        //Set up notification request.
+        
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: { granted, error in
             //Handle the error if there is one - empty for now.
         })
@@ -124,6 +126,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
     }
+    
+    //Set up notifications.
     
     func scheduleNotification(at date: Date) {
         

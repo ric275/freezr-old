@@ -23,7 +23,7 @@ class ShoppingListViewController: UIViewController, UITableViewDelegate, UITable
     
     var SLItems : [ShoppingListItem] = []
     
-    //Define colours
+    //Custom colours.
     
     let myPurple:UIColor = UIColor(red: 105/255.0, green: 94/255.0, blue: 133/255.0, alpha: 1.0)
     
