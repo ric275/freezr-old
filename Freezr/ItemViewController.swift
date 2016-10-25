@@ -77,18 +77,27 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             
             let dateString = expirationDateTextField.text
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "MMM/dd/yyyy"
-            dateFormatter.timeZone = TimeZone(abbreviation: "GMT+0:00")
+            dateFormatter.dateFormat = "dd/MMM/yyyy"
+            //dateFormatter.timeZone = TimeZone(abbreviation: "GMT+0:00")
             let dateFromString = dateFormatter.date(from: dateString!)
             
             //Change expiry text and colour accordingly.
             
+            if (item?.expirydate?.isEmpty)! {
+                
+                print("No expiry date given - do nothing")
+            
+            } else {
             if today.isGreaterThanDate(dateToCompare: dateFromString!) {
                 expirationDateTextField.textColor = .red
                 expiresLabel.text = "Expired:"
                 expiresLabel.textColor = .red
                 
-            } else {}
+            } else {
+                
+                
+                }
+            }
             
             //If there is not existing item:
             

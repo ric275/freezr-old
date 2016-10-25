@@ -87,8 +87,8 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 
                 let dateString = item.expirydate
                 let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "MMM/dd/yyyy"
-                dateFormatter.timeZone = TimeZone(abbreviation: "GMT+0:00")
+                dateFormatter.dateFormat = "dd/MMM/yyyy"
+                //dateFormatter.timeZone = TimeZone(abbreviation: "GMT+0:00")
                 let dateFromString = dateFormatter.date(from: dateString!)
                 
                 //Change expiry text and colour accordingly.
