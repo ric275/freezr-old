@@ -35,10 +35,13 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     @IBOutlet weak var imageNoticeText: UILabel!
     
+    @IBOutlet weak var expiresLabel: UILabel!
+    
     //Variables
     
     var imageSelector = UIImagePickerController()
     var item : Item? = nil
+    let today = NSDate()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,7 +58,9 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
         //Setup the item view depending on if an existing item is being selected, or a new item is being added.
         
-        if item != nil{
+        //If there is an existing item:
+        
+        if item != nil {
             itemImage.image = UIImage(data: item!.image as! Data)
             itemName.text = item!.name
             expirationDateTextField.text = item!.expirydate
@@ -65,6 +70,28 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             imageNoticeText.isHidden = true
             
             addItemOrUpdateButton.setTitle("Update item", for: .normal)
+            
+            //Expiry text setup.
+            
+            // Convert the String to a NSDate.
+            
+            let dateString = expirationDateTextField.text
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MMM/dd/yyyy"
+            dateFormatter.timeZone = TimeZone(abbreviation: "GMT+0:00")
+            let dateFromString = dateFormatter.date(from: dateString!)
+            
+            //Change expiry text and colour accordingly.
+            
+            if today.isGreaterThanDate(dateToCompare: dateFromString!) {
+                expirationDateTextField.textColor = .red
+                expiresLabel.text = "Expired:"
+                expiresLabel.textColor = .red
+                
+            } else {}
+            
+            //If there is not existing item:
+            
         } else {
             deleteItemButton.isHidden = true
             addToSLButton.isHidden = true
@@ -125,8 +152,6 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
         
         navigationController!.popViewController(animated: true)
-        
-        print("exp \(item?.expirydate)")
     }
     
     //What happens when delete is tapped.
@@ -164,12 +189,12 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
         expirationDateTextField.text = dateFormatter.string(from: sender.date)
         
-//        var firstDate = sender.date
-//        
-//        func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//            let nextViewController = segue.destination as! FreezrViewController
-//            nextViewController.ifDate = firstDate as NSDate!
-//        }
+        //        var firstDate = sender.date
+        //
+        //        func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //            let nextViewController = segue.destination as! FreezrViewController
+        //            nextViewController.ifDate = firstDate as NSDate!
+        //        }
         
         //Send data to the notification func in delegate.
         let selectedDate = sender.date

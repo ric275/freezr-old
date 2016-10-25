@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A320" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="pA8-LR-Dp6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="pA8-LR-Dp6">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -16,7 +16,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="There are no items in Freezr. " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="znr-9S-YL5">
@@ -78,7 +78,7 @@
                         <viewControllerLayoutGuide type="bottom" id="7k6-vA-6KD"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ZSs-Xm-hP9">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7wE-fg-BPV">
@@ -202,6 +202,7 @@
                         <outlet property="addToSLButton" destination="0ja-KZ-i0z" id="GlX-OG-o5N"/>
                         <outlet property="deleteItemButton" destination="HX1-Qx-yuN" id="52P-1a-Vas"/>
                         <outlet property="expirationDateTextField" destination="uI7-d4-1Uz" id="eiH-KK-2Wg"/>
+                        <outlet property="expiresLabel" destination="S6k-Fu-edo" id="uYM-5h-YRe"/>
                         <outlet property="imageNoticeText" destination="sHD-Wv-QeC" id="JoN-a8-7gs"/>
                         <outlet property="itemImage" destination="7wE-fg-BPV" id="rbk-JR-08d"/>
                         <outlet property="itemName" destination="5rx-kh-Ue2" id="p7S-td-KhJ"/>
@@ -241,7 +242,7 @@
                         <viewControllerLayoutGuide type="bottom" id="JIs-DF-kkZ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="fso-0i-WxI">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your shopping list is empty." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s99-cq-h2M">
@@ -314,7 +315,7 @@
                         <viewControllerLayoutGuide type="bottom" id="ZhQ-QB-3Up"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="PhM-j4-ubW">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use Freezr to keep track of the food in your Freezer." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="HF8-bz-Gzz">

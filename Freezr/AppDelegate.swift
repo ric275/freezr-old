@@ -156,8 +156,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
 }
 
-extension NSDate
-{
+//Set up date comparisons (magic).
+
+extension NSDate {
+    
     func isGreaterThanDate(dateToCompare : Date) -> Bool
     {
         var isGreater = false
@@ -173,6 +175,8 @@ extension NSDate
         { isLess = true }
         return isLess
     }
+    
+    //Probably don't need this - but it's useful to have for future.
     
     func addDays(daysToAdd : Int) -> NSDate
     {

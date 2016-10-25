@@ -22,7 +22,7 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     var items : [Item] = []
     
-    //var ifDate :Date!
+    let today = NSDate()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,7 +64,7 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .value1, reuseIdentifier: nil)
-        var today = NSDate()
+        
         
         
         
@@ -78,17 +78,20 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
             if (item.expirydate?.isEmpty)! {
                 cell.textLabel?.textColor = myPurple
                 cell.detailTextLabel?.text = "Expires: Unknown"
+                
             } else {
                 
-                // String to a NSDate
+                //Expiry text setup.
+                
+                // Convert the String to a NSDate.
+                
                 let dateString = item.expirydate
                 let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "MMM/dd/yyyy"
                 dateFormatter.timeZone = TimeZone(abbreviation: "GMT+0:00")
                 let dateFromString = dateFormatter.date(from: dateString!)
                 
-                
-                
+                //Change expiry text and colour accordingly.
                 
                 if today.isGreaterThanDate(dateToCompare: dateFromString!) {
                     cell.textLabel?.textColor = .red
