@@ -192,18 +192,14 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
         let dateFormatter = DateFormatter()
         
+        //Sets it so the entered date is always UK regardless of region so the app doesn't crash when converting the date.
+        dateFormatter.locale = NSLocale(localeIdentifier: "en_GB") as Locale
+        
         dateFormatter.dateStyle = DateFormatter.Style.medium
         
         dateFormatter.timeStyle = DateFormatter.Style.none
         
         expirationDateTextField.text = dateFormatter.string(from: sender.date)
-        
-        //        var firstDate = sender.date
-        //
-        //        func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //            let nextViewController = segue.destination as! FreezrViewController
-        //            nextViewController.ifDate = firstDate as NSDate!
-        //        }
         
         //Send data to the notification func in delegate.
         let selectedDate = sender.date
