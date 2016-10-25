@@ -121,12 +121,43 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     //3D Touch shortcuts.
     
-    private func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: (Bool) -> Void) {
-        
-        
-        
-    }
-    
+    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
+            
+            if shortcutItem.type == "Jack-Taylor.Freezr.add-item" {
+                
+                let sb = UIStoryboard(name: "Main", bundle: nil)
+                
+                let addItemVC = sb.instantiateViewController(withIdentifier: "Tab Bar Controller") as! UITabBarController
+                addItemVC.selectedIndex = 0
+
+                //let addItemVC = sb.instantiateViewController(withIdentifier: "Freezr Navigation Controller") as! UINavigationController
+                //addItemVC.performSegue(withIdentifier: "itemFromNav", sender: nil)
+                
+                
+                let rootVC = UIApplication.shared.keyWindow?.rootViewController
+            
+                rootVC?.present(addItemVC, animated: false, completion: nil)
+            
+            
+            }
+                
+                
+                else if shortcutItem.type == "Jack-Taylor.Freezr.shopping-list" {
+                
+                let sb = UIStoryboard(name: "Main", bundle: nil)
+                
+                let shoppingListVC = sb.instantiateViewController(withIdentifier: "Tab Bar Controller") as! UITabBarController
+                shoppingListVC.selectedIndex = 1
+                
+                let rootVC = UIApplication.shared.keyWindow?.rootViewController
+                
+                rootVC?.present(shoppingListVC, animated: false, completion: nil)
+                
+        }
+                
+            
+        }
+
     //Set up notifications.
     
     func scheduleNotification(at date: Date) {

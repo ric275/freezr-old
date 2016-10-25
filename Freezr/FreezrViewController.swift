@@ -103,7 +103,7 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     cell.detailTextLabel?.text = "Expires: \(item.expirydate!)"
                     cell.detailTextLabel?.textColor = myPurple
                 }
-                
+                  
             }
         }
         
