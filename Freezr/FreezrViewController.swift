@@ -29,6 +29,7 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         itemListTableView.dataSource = self
         itemListTableView.delegate = self
+        
     }
     
     //Custom colours
@@ -63,6 +64,9 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .value1, reuseIdentifier: nil)
+        var today = NSDate()
+        
+        
         
         if items.count == 0 {
             cell.textLabel?.text = "You should probably go buy food."
@@ -72,15 +76,33 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
             cell.imageView?.image = UIImage(data: item.image as! Data)
             
             if (item.expirydate?.isEmpty)! {
+                cell.textLabel?.textColor = myPurple
                 cell.detailTextLabel?.text = "Expires: Unknown"
             } else {
-
+                
+                // String to a NSDate
+                let dateString = item.expirydate
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "MMM/dd/yyyy"
+                dateFormatter.timeZone = TimeZone(abbreviation: "GMT+0:00")
+                let dateFromString = dateFormatter.date(from: dateString!)
+                
+                
+                
+                
+                if today.isGreaterThanDate(dateToCompare: dateFromString!) {
+                    cell.textLabel?.textColor = .red
+                    cell.detailTextLabel?.text = "Expired: \(item.expirydate!)"
+                    cell.detailTextLabel?.textColor = .red
+                    
+                } else {
+                    cell.textLabel?.textColor = myPurple
                     cell.detailTextLabel?.text = "Expires: \(item.expirydate!)"
-  
+                    cell.detailTextLabel?.textColor = myPurple
+                }
+                
             }
         }
-        
-        cell.textLabel?.textColor = myPurple
         
         return cell
     }
@@ -119,7 +141,7 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
             //Hide tab bar in settings.
             nextViewController.hidesBottomBarWhenPushed = true
         }
-  
+        
     }
     
     //Display/hide the table and empty message accordingly.
@@ -183,7 +205,7 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 
                 self.present(alertVC, animated: true, completion: nil)
             }
- 
+            
         }
         
         swipeToAdd.backgroundColor = UIColor.purple
@@ -207,7 +229,7 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         return[swipeToDelete, swipeToAdd]
     }
-
+    
     
     //Final declaration:
     

@@ -111,8 +111,6 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         if item != nil {
             item!.name = itemName.text
             item!.image = UIImageJPEGRepresentation(itemImage.image!, 0.1)! as NSData?
-            
-            //DatePicker
             item?.expirydate = expirationDateTextField.text
             
         } else {
@@ -121,14 +119,14 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             let item = Item(context: context)
             item.name = itemName.text
             item.image = UIImageJPEGRepresentation(itemImage.image!, 0.1)! as NSData?
-            
-            //DatePicker
             item.expirydate = expirationDateTextField.text
         }
         
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
         
         navigationController!.popViewController(animated: true)
+        
+        print("exp \(item?.expirydate)")
     }
     
     //What happens when delete is tapped.
