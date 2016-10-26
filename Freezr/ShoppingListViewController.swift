@@ -180,18 +180,47 @@ class ShoppingListViewController: UIViewController, UITableViewDelegate, UITable
     
     @IBAction func trashTapped(_ sender: AnyObject) {
         
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let alertVC = UIAlertController(title: "Clear Shopping List?", message: "This will permanently delete all of the items from your Shopping List.", preferredStyle: .alert)
         
-        deleteShoppingListItems()
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         
-        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        let confirm = UIAlertAction(title: "Clear Shopping List", style: .destructive, handler: { (action) in
         
-        do {
-            SLItems = try context.fetch(ShoppingListItem.fetchRequest())
-            shoppingListTableView.reloadData()
-        } catch {}
+            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            
+            self.deleteShoppingListItems()
+            
+            (UIApplication.shared.delegate as! AppDelegate).saveContext()
+            
+            do {
+                self.SLItems = try context.fetch(ShoppingListItem.fetchRequest())
+                self.shoppingListTableView.reloadData()
+            } catch {}
+        
+        
+        })
+        
+        alertVC.addAction(cancel)
+        
+        alertVC.addAction(confirm)
+        
+        
+        let emptyAlertVC = UIAlertController(title: "No items to delete!", message: "Your Shopping List is empty.", preferredStyle: .alert)
+        let dismiss = UIAlertAction(title: "Dismiss", style: .cancel, handler: nil)
+        emptyAlertVC.addAction(dismiss)
+        
+        if SLItems.count > 0 {
+        
+        self.present(alertVC, animated: true, completion: nil)
+            
+        } else {
+          
+            self.present(emptyAlertVC, animated: true, completion: nil)
+            
+        }
+        
+        
     }
-    
     
     //Final declaration:
     

@@ -192,7 +192,7 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
             if (self.items[indexPath.row].name?.isEmpty)! {
                 let alertVC = UIAlertController(title: "Item added", message: "This item has been added to your Shopping List.", preferredStyle: .alert)
                 
-                let okAction = UIAlertAction(title: "Dismiss", style: .default, handler: nil)
+                let okAction = UIAlertAction(title: "Dismiss", style: .cancel, handler: nil)
                 
                 alertVC.addAction(okAction)
                 
