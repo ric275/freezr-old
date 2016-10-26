@@ -5,7 +5,7 @@
 //  Created by Jack Taylor on 09/10/2016.
 //  Copyright © 2016 Jack Taylor. All rights reserved.
 //
-//  The awesome food icons used in the app icon and in various places throughout the app were designed by Freepik and kindly supplied by Flaticon.
+//  The awesome food icons used in the app icon were designed by Freepik and kindly supplied by Flaticon.
 //
 //  Likewise, the information icon used on the Freezr page was designed by Chanut is Industries.
 //

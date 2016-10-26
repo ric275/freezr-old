@@ -71,12 +71,11 @@ class ShoppingListViewController: UIViewController, UITableViewDelegate, UITable
             let SLItem = SLItems[indexPath.row]
             cell.textLabel?.text = SLItem.name
             cell.imageView?.image = UIImage(data: SLItem.image as! Data)
-            
-            //            if SLItem.isChecked {
-            //                cell.accessoryType = .checkmark
-            //            } else {
-            //                cell.accessoryType = .none
-            //            }
+            if SLItem.isChecked {
+                cell.accessoryType = .checkmark
+            } else {
+                cell.accessoryType = .none
+            }
         }
         
         cell.textLabel?.textColor = myPurple
@@ -84,37 +83,36 @@ class ShoppingListViewController: UIViewController, UITableViewDelegate, UITable
         return cell
     }
     
-    //What happens when a cell is tapped - tick the items.
+    //What happens when a cell is tapped - tick/untick the items.
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let cell = tableView.cellForRow(at: indexPath)!
         
+        let SLItem = SLItems[indexPath.row]
+        
         if SLItems.count == 0 {
+            
             print("User selected empty SL message, do not tick!")
+            
         } else {
             
-            if (cell.isSelected){
+            if (cell.isSelected) {
                 cell.isSelected = false
                 if (cell.accessoryType == UITableViewCellAccessoryType.none){
                     cell.accessoryType = UITableViewCellAccessoryType.checkmark
+                    SLItem.isChecked = true
                 }
                 else
                 {
                     cell.accessoryType = UITableViewCellAccessoryType.none
+                    SLItem.isChecked = false
                 }
             }
             
+            (UIApplication.shared.delegate as! AppDelegate).saveContext()
+            
             tableView.deselectRow(at: indexPath, animated: true)
-            
-            //            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-            //
-            //            let SLItem = ShoppingListItem(context: context)
-            //
-            //            SLItem.isChecked = true
-            //
-            //            (UIApplication.shared.delegate as! AppDelegate).saveContext()
-            
         }
     }
     
@@ -163,10 +161,17 @@ class ShoppingListViewController: UIViewController, UITableViewDelegate, UITable
 //        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 //        
 //        if SLItems.count > 0 {
-//            SLItems.removeAll()
-//            let allSLItems =   // <------ Need to specify all objects in entity ShoppingListItems
-//           context.delete(allSLItems)
-//            (UIApplication.shared.delegate as! AppDelegate).saveContext()
+//            
+//            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+//            
+//            if
+//            
+//            
+//            
+//            //SLItems.removeAll()
+//            let allSLItems = SLItems[0]  // <------ Need to specify all objects in entity ShoppingListItems
+//                context.delete(allSLItems)
+//                (UIApplication.shared.delegate as! AppDelegate).saveContext()
 //            
 //        } else {
 //            print("Nothing to delete")
