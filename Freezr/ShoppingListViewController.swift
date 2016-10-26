@@ -157,6 +157,8 @@ class ShoppingListViewController: UIViewController, UITableViewDelegate, UITable
         }
     }
     
+    //Delete items from core data setup.
+    
     func deleteShoppingListItems() {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "ShoppingListItem")
@@ -174,23 +176,15 @@ class ShoppingListViewController: UIViewController, UITableViewDelegate, UITable
                 try context.save() } } catch {}
     }
     
+    //What happens when trash is tapped - clear the shopping list.
+    
     @IBAction func trashTapped(_ sender: AnyObject) {
         
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
-        if SLItems.count > 0 {
-            
-            
-            
-//            let allSLItems = SLItems.index(of: ShoppingListItem)  // <------ Need to specify all objects in entity ShoppingListItems
-//                context.delete(allSLItems)
-            
-            deleteShoppingListItems()
-                (UIApplication.shared.delegate as! AppDelegate).saveContext()
-            
-        } else {
-            print("Nothing to delete")
-        }
+        deleteShoppingListItems()
+        
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
         
         do {
             SLItems = try context.fetch(ShoppingListItem.fetchRequest())
