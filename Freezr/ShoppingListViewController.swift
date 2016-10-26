@@ -157,31 +157,46 @@ class ShoppingListViewController: UIViewController, UITableViewDelegate, UITable
         }
     }
     
-//    @IBAction func trashTapped(_ sender: AnyObject) {
-//        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-//        
-//        if SLItems.count > 0 {
-//            
-//            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-//            
-//            if
-//            
-//            
-//            
-//            //SLItems.removeAll()
-//            let allSLItems = SLItems[0]  // <------ Need to specify all objects in entity ShoppingListItems
+    func deleteShoppingListItems() {
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "ShoppingListItem")
+        request.includesPropertyValues = false
+        
+        do {
+            let ShoppingListItems = try context.fetch(request) as! [NSManagedObject]
+            
+            if ShoppingListItems.count > 0 {
+                
+                for result: AnyObject in ShoppingListItems {
+                    context.delete(result as! NSManagedObject)
+                    print("NSManagedObject has been Deleted")
+                }
+                try context.save() } } catch {}
+    }
+    
+    @IBAction func trashTapped(_ sender: AnyObject) {
+        
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        if SLItems.count > 0 {
+            
+            
+            
+//            let allSLItems = SLItems.index(of: ShoppingListItem)  // <------ Need to specify all objects in entity ShoppingListItems
 //                context.delete(allSLItems)
-//                (UIApplication.shared.delegate as! AppDelegate).saveContext()
-//            
-//        } else {
-//            print("Nothing to delete")
-//        }
-//        
-//        do {
-//            SLItems = try context.fetch(ShoppingListItem.fetchRequest())
-//            shoppingListTableView.reloadData()
-//        } catch {}
-//    }
+            
+            deleteShoppingListItems()
+                (UIApplication.shared.delegate as! AppDelegate).saveContext()
+            
+        } else {
+            print("Nothing to delete")
+        }
+        
+        do {
+            SLItems = try context.fetch(ShoppingListItem.fetchRequest())
+            shoppingListTableView.reloadData()
+        } catch {}
+    }
     
     
     //Final declaration:
