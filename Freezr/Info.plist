@@ -2,35 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIApplicationShortcutItems</key>
-	<array>
-		<dict>
-			<key>UIApplicationShortcutItemType</key>
-			<string>Jack-Taylor.Freezr.shopping-list</string>
-			<key>UIApplicationShortcutItemTitle</key>
-			<string>Shopping List</string>
-			<key>UIApplicationShortcutItemSubtitle</key>
-			<string>Open your shopping list</string>
-			<key>UIApplicationShortcutItemIconFile</key>
-			<string>invoice</string>
-		</dict>
-		<dict>
-			<key>UIApplicationShortcutItemType</key>
-			<string>Jack-Taylor.Freezr.add-item</string>
-			<key>UIApplicationShortcutItemTitle</key>
-			<string>Add item</string>
-			<key>UIApplicationShortcutItemSubtitle</key>
-			<string>Add a new item to Freezr</string>
-			<key>UIApplicationShortcutItemIconType</key>
-			<string>UIApplicationShortcutIconTypeAdd</string>
-		</dict>
-	</array>
-	<key>LSApplicationCategoryType</key>
-	<string></string>
-	<key>NSCameraUsageDescription</key>
-	<string>Allows you to take pictures and add them to new items</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Allows use of existing camera roll images for new items</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -47,8 +18,37 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>Allows you to take pictures and add them to new items</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Allows use of existing camera roll images for new items</string>
+	<key>UIApplicationShortcutItems</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>invoice</string>
+			<key>UIApplicationShortcutItemSubtitle</key>
+			<string>Open your shopping list</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Shopping List</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>Jack-Taylor.Freezr.shopping-list</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemIconType</key>
+			<string>UIApplicationShortcutIconTypeAdd</string>
+			<key>UIApplicationShortcutItemSubtitle</key>
+			<string>Add a new item to Freezr</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Add item</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>Jack-Taylor.Freezr.add-item</string>
+		</dict>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

@@ -35,11 +35,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //Make everything purple.
         //Purple is bae.
         
-        UINavigationBar.appearance().tintColor = UIColor.purple
+        UINavigationBar.appearance().tintColor = .purple
         
-        UITabBar.appearance().tintColor = UIColor.purple
+        UITabBar.appearance().tintColor = .purple
         
-        UITableViewCell.appearance().tintColor = UIColor.purple
+        UITableViewCell.appearance().tintColor = .purple
         
         //Set up notification request.
         
@@ -122,39 +122,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //3D Touch shortcuts.
     
     func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
+        
+        if shortcutItem.type == "Jack-Taylor.Freezr.add-item" {
             
-            if shortcutItem.type == "Jack-Taylor.Freezr.add-item" {
-                
-                let sb = UIStoryboard(name: "Main", bundle: nil)
-                
-                let addItemVC = sb.instantiateViewController(withIdentifier: "Tab Bar Controller") as! UITabBarController
+            let sb = UIStoryboard(name: "Main", bundle: nil)
             
-                addItemVC.selectedIndex = 0
-                
-                let rootVC = UIApplication.shared.keyWindow?.rootViewController
+            let addItemVC = sb.instantiateViewController(withIdentifier: "Tab Bar Controller") as! UITabBarController
             
-                rootVC?.present(addItemVC, animated: false, completion: nil)
+            addItemVC.selectedIndex = 0
+            
+            let rootVC = UIApplication.shared.keyWindow?.rootViewController
+            
+            rootVC?.present(addItemVC, animated: false, completion: nil)
             
             
-            }
-                
+        }
+            
+            //Shopping List shortcut.
+            
+        else if shortcutItem.type == "Jack-Taylor.Freezr.shopping-list" {
+            
+            let sb = UIStoryboard(name: "Main", bundle: nil)
+            
+            let shoppingListVC = sb.instantiateViewController(withIdentifier: "Tab Bar Controller") as! UITabBarController
+            shoppingListVC.selectedIndex = 1
+            
+            let rootVC = UIApplication.shared.keyWindow?.rootViewController
+            
+            rootVC?.present(shoppingListVC, animated: false, completion: nil)
+        }
+    }
     
-                else if shortcutItem.type == "Jack-Taylor.Freezr.shopping-list" {
-                
-                let sb = UIStoryboard(name: "Main", bundle: nil)
-                
-                let shoppingListVC = sb.instantiateViewController(withIdentifier: "Tab Bar Controller") as! UITabBarController
-                shoppingListVC.selectedIndex = 1
-                
-                let rootVC = UIApplication.shared.keyWindow?.rootViewController
-                
-                rootVC?.present(shoppingListVC, animated: false, completion: nil)
-                
-        }
-                
-            
-        }
-
     //Set up notifications.
     
     func scheduleNotification(at date: Date) {
@@ -175,12 +173,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
         UNUserNotificationCenter.current().add(request) {(error) in
             if let error = error {
-                print("Uh oh! We had an error: \(error)")
-                
-                
+                print("Notification error: \(error)")
             }
         }
     }
+    
+    //Set up orientations.
     
     var shouldSupportAllOrientation = false
     func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
@@ -196,16 +194,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension NSDate {
     
-    func isGreaterThanDate(dateToCompare : Date) -> Bool
-    {
+    func isGreaterThanDate(dateToCompare : Date) -> Bool {
+        
         var isGreater = false
         if self.compare(dateToCompare as Date) == ComparisonResult.orderedDescending
         { isGreater = true }
         return isGreater
     }
     
-    func isLessThanDate(dateToCompare : Date) -> Bool
-    {
+    func isLessThanDate(dateToCompare : Date) -> Bool {
+        
         var isLess = false
         if self.compare(dateToCompare as Date) == ComparisonResult.orderedAscending
         { isLess = true }
@@ -214,18 +212,17 @@ extension NSDate {
     
     //Probably don't need this - but it's useful to have for future.
     
-    func addDays(daysToAdd : Int) -> NSDate
-    {
+    func addDays(daysToAdd : Int) -> NSDate {
+        
         let secondsInDays : TimeInterval = Double(daysToAdd) * 60 * 60 * 24
         let dateWithDaysAdded : NSDate = self.addingTimeInterval(secondsInDays)
         return dateWithDaysAdded
     }
     
-    func addHours(hoursToAdd : Int) -> NSDate
-    {
+    func addHours(hoursToAdd : Int) -> NSDate {
+        
         let secondsInHours : TimeInterval = Double(hoursToAdd) * 60 * 60
         let dateWithHoursAdded : NSDate = self.addingTimeInterval(secondsInHours)
         return dateWithHoursAdded
     }
 }
-

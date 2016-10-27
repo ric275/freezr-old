@@ -11,11 +11,11 @@ import UserNotifications
 
 class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     
-    //Custom Colours
+    //Custom colours.
     
     let myPurple:UIColor = UIColor(red: 105/255.0, green: 94/255.0, blue: 133/255.0, alpha: 1.0)
     
-    //Outlets
+    //Outlets.
     
     @IBOutlet weak var itemImage: UIImageView!
     
@@ -37,13 +37,16 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     @IBOutlet weak var expiresLabel: UILabel!
     
-    //Variables
+    //Variables.
     
     var imageSelector = UIImagePickerController()
+    
     var item : Item? = nil
+    
     let today = NSDate()
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
         imageSelector.delegate = self
@@ -86,28 +89,28 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             if (item?.expirydate?.isEmpty)! {
                 
                 print("No expiry date given - do nothing")
-            
-            } else {
-            if today.isGreaterThanDate(dateToCompare: dateFromString!) {
-                expirationDateTextField.textColor = .red
-                expiresLabel.text = "Expired:"
-                expiresLabel.textColor = .red
                 
             } else {
                 
+                if today.isGreaterThanDate(dateToCompare: dateFromString!) {
+                    expirationDateTextField.textColor = .red
+                    expiresLabel.text = "Expired:"
+                    expiresLabel.textColor = .red
+                    
+                } else {}
                 
-                }
             }
             
             //If there is not existing item:
             
         } else {
+            
             deleteItemButton.isHidden = true
             addToSLButton.isHidden = true
             addItemOrUpdateButton.isEnabled = false
         }
         
-        //Dismiss the keyboard setup.
+        //Dismiss the keyboard when tapped away (setup).
         
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(ItemViewController.dismissKeyboard)))
         
@@ -144,14 +147,19 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     //What happens when Add or Update is tapped.
     
     @IBAction func addToFreezrTapped(_ sender: AnyObject) {
+        
+        //If updating an exisitng item.
+        
         if item != nil {
             item!.name = itemName.text
-            item!.image = UIImageJPEGRepresentation(itemImage.image!, 0.1)! as NSData?
+            item!.image = UIImageJPEGRepresentation(itemImage.image!, 0.05)! as NSData?
             item?.expirydate = expirationDateTextField.text
             
-        } else {
-            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            //If creating a new item.
             
+        } else {
+            
+            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
             let item = Item(context: context)
             item.name = itemName.text
             item.image = UIImageJPEGRepresentation(itemImage.image!, 0.05)! as NSData? //was 0.1
@@ -206,7 +214,7 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         let delegate = UIApplication.shared.delegate as? AppDelegate
         delegate?.scheduleNotification(at: selectedDate)
         
-        print("HEYYYYYYYY\(selectedDate)")
+        print("Selected date: \(selectedDate)")
     }
     
     //What happens when Add to Shopping List is tapped.
@@ -221,13 +229,12 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
         
-        //Add badge to SL icon
+        //Add badge to SL icon.
         
         for item in self.tabBarController!.tabBar.items! {
             if item.title == "Shopping List" {
                 item.badgeValue = "New!"
             }
-            
         }
         
         navigationController!.popViewController(animated: true)
@@ -236,11 +243,15 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     //Dismiss the keyboard functions.
     
     func dismissKeyboard() {
+        
+        //Dismiss the keyboard.
         itemName.resignFirstResponder()
         
         //Dismiss date picker.
         expirationDateTextField.resignFirstResponder()
     }
+    
+    //Dismiss the keyboard when return is tapped.
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         itemName.resignFirstResponder()

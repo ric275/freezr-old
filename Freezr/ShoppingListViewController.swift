@@ -11,7 +11,7 @@ import CoreData
 
 class ShoppingListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    //Outlets
+    //Outlets.
     
     @IBOutlet weak var shoppingListTableView: UITableView!
     
@@ -19,7 +19,7 @@ class ShoppingListViewController: UIViewController, UITableViewDelegate, UITable
     
     @IBOutlet weak var emptyMessage2: UILabel!
     
-    //Variables
+    //Variables.
     
     var SLItems : [ShoppingListItem] = []
     
@@ -48,9 +48,10 @@ class ShoppingListViewController: UIViewController, UITableViewDelegate, UITable
         } catch {}
     }
     
-    //Specifies how many rows in the table.
+    //Specifies how many rows are in the table.
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection: Int) -> Int {
+        
         if SLItems.count == 0 {
             return 1
         } else {
@@ -61,6 +62,7 @@ class ShoppingListViewController: UIViewController, UITableViewDelegate, UITable
     //Specifies what goes in the table cells.
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = UITableViewCell(style: .value1, reuseIdentifier: nil)
         
         if SLItems.count == 0 {
@@ -71,6 +73,7 @@ class ShoppingListViewController: UIViewController, UITableViewDelegate, UITable
             let SLItem = SLItems[indexPath.row]
             cell.textLabel?.text = SLItem.name
             cell.imageView?.image = UIImage(data: SLItem.image as! Data)
+            
             if SLItem.isChecked {
                 cell.accessoryType = .checkmark
             } else {
@@ -99,13 +102,14 @@ class ShoppingListViewController: UIViewController, UITableViewDelegate, UITable
             
             if (cell.isSelected) {
                 cell.isSelected = false
-                if (cell.accessoryType == UITableViewCellAccessoryType.none){
-                    cell.accessoryType = UITableViewCellAccessoryType.checkmark
+                
+                if (cell.accessoryType == .none) {
+                    cell.accessoryType = .checkmark
                     SLItem.isChecked = true
-                }
-                else
-                {
-                    cell.accessoryType = UITableViewCellAccessoryType.none
+                    
+                } else {
+                    
+                    cell.accessoryType = .none
                     SLItem.isChecked = false
                 }
             }
@@ -136,7 +140,6 @@ class ShoppingListViewController: UIViewController, UITableViewDelegate, UITable
             if item.title == "Shopping List" {
                 item.badgeValue = nil
             }
-            
         }
     }
     
@@ -153,7 +156,6 @@ class ShoppingListViewController: UIViewController, UITableViewDelegate, UITable
                 SLItems = try context.fetch(ShoppingListItem.fetchRequest())
                 shoppingListTableView.reloadData()
             } catch {}
-            
         }
     }
     
@@ -171,7 +173,7 @@ class ShoppingListViewController: UIViewController, UITableViewDelegate, UITable
                 
                 for result: AnyObject in ShoppingListItems {
                     context.delete(result as! NSManagedObject)
-                    print("NSManagedObject has been Deleted")
+                    print("ShoppingListItems have been deleted.")
                 }
                 try context.save() } } catch {}
     }
@@ -185,7 +187,7 @@ class ShoppingListViewController: UIViewController, UITableViewDelegate, UITable
         let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         
         let confirm = UIAlertAction(title: "Clear Shopping List", style: .destructive, handler: { (action) in
-        
+            
             let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
             
             self.deleteShoppingListItems()
@@ -196,30 +198,26 @@ class ShoppingListViewController: UIViewController, UITableViewDelegate, UITable
                 self.SLItems = try context.fetch(ShoppingListItem.fetchRequest())
                 self.shoppingListTableView.reloadData()
             } catch {}
-        
-        
         })
         
         alertVC.addAction(cancel)
         
         alertVC.addAction(confirm)
         
-        
         let emptyAlertVC = UIAlertController(title: "No items to delete!", message: "Your Shopping List is empty.", preferredStyle: .alert)
+        
         let dismiss = UIAlertAction(title: "Dismiss", style: .cancel, handler: nil)
+        
         emptyAlertVC.addAction(dismiss)
         
         if SLItems.count > 0 {
-        
-        self.present(alertVC, animated: true, completion: nil)
+            
+            self.present(alertVC, animated: true, completion: nil)
             
         } else {
-          
-            self.present(emptyAlertVC, animated: true, completion: nil)
             
+            self.present(emptyAlertVC, animated: true, completion: nil)
         }
-        
-        
     }
     
     //Final declaration:

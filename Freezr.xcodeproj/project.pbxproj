@@ -108,7 +108,7 @@
 				TargetAttributes = {
 					046732151DAAE6FA00EEC292 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = RT4QFZ8D57;
+						DevelopmentTeam = D5UEJKHQX3;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -279,13 +279,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = RT4QFZ8D57;
+				DEVELOPMENT_TEAM = D5UEJKHQX3;
 				INFOPLIST_FILE = Freezr/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Jack-Taylor.Freezr";
+				PRODUCT_BUNDLE_IDENTIFIER = blueinkcode.com.Freezr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -293,13 +293,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = RT4QFZ8D57;
+				DEVELOPMENT_TEAM = D5UEJKHQX3;
 				INFOPLIST_FILE = Freezr/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Jack-Taylor.Freezr";
+				PRODUCT_BUNDLE_IDENTIFIER = blueinkcode.com.Freezr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

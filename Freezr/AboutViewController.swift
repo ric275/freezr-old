@@ -11,7 +11,7 @@ import MessageUI
 
 class AboutViewController: UIViewController, MFMailComposeViewControllerDelegate {
     
-    //Custom Colours
+    //Custom colours.
     
     let myPurple:UIColor = UIColor(red: 105/255.0, green: 94/255.0, blue: 133/255.0, alpha: 1.0)
     
@@ -30,7 +30,7 @@ class AboutViewController: UIViewController, MFMailComposeViewControllerDelegate
     
     @IBOutlet weak var feedbackButton: UIButton!
     
-    //Variables
+    //Variables.
     
     var tapCount = 0
     
@@ -105,6 +105,7 @@ class AboutViewController: UIViewController, MFMailComposeViewControllerDelegate
         let mailComposeViewController = self.configuredMailComposeViewController()
         if MFMailComposeViewController.canSendMail() {
             self.present(mailComposeViewController, animated: true, completion: nil)
+            
         } else {
             self.showSendMailErrorAlert()
         }
