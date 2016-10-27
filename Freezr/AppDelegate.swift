@@ -182,6 +182,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
+    var shouldSupportAllOrientation = false
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+        if (shouldSupportAllOrientation == true){
+            return UIInterfaceOrientationMask.all
+        }
+        return UIInterfaceOrientationMask.portrait
+    }
+    
 }
 
 //Set up date comparisons (magic).

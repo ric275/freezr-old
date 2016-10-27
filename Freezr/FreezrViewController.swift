@@ -32,7 +32,7 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
     }
     
-    //Custom colours
+    //Custom colours.
     
     let myPurple:UIColor = UIColor(red: 105/255.0, green: 94/255.0, blue: 133/255.0, alpha: 1.0)
     
@@ -48,6 +48,11 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
         } catch {
             
         }
+        
+        //Orientation setup.
+        
+        let appdelegate = UIApplication.shared.delegate as! AppDelegate
+        appdelegate.shouldSupportAllOrientation = true
     }
     
     //Specifies how many rows in the table.
@@ -103,7 +108,7 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     cell.detailTextLabel?.text = "Expires: \(item.expirydate!)"
                     cell.detailTextLabel?.textColor = myPurple
                 }
-                  
+                
             }
         }
         

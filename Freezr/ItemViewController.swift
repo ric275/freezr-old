@@ -154,7 +154,7 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             
             let item = Item(context: context)
             item.name = itemName.text
-            item.image = UIImageJPEGRepresentation(itemImage.image!, 0.1)! as NSData?
+            item.image = UIImageJPEGRepresentation(itemImage.image!, 0.05)! as NSData? //was 0.1
             item.expirydate = expirationDateTextField.text
         }
         
@@ -217,7 +217,7 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
         let SLItem = ShoppingListItem(context: context)
         SLItem.name = itemName.text
-        SLItem.image = UIImageJPEGRepresentation(itemImage.image!, 0.1)! as NSData?
+        SLItem.image = UIImageJPEGRepresentation(itemImage.image!, 0.05)! as NSData?
         
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
         
@@ -245,6 +245,16 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         itemName.resignFirstResponder()
         return true
+    }
+    
+    //Orientation setup.
+    
+    override func viewDidAppear(_ animated: Bool) {
+        let value = UIInterfaceOrientation.portrait.rawValue
+        UIDevice.current.setValue(value, forKey: "orientation")
+        
+        let appdelegate = UIApplication.shared.delegate as! AppDelegate
+        appdelegate.shouldSupportAllOrientation = false
     }
     
     //Final declaration:

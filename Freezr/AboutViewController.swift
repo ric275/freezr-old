@@ -47,7 +47,7 @@ class AboutViewController: UIViewController, MFMailComposeViewControllerDelegate
         label5.textColor = .white
         label6.textColor = .white
         feedbackButton.tintColor = .white
-                
+        
     }
     
     @IBAction func easterEggTapped(_ sender: AnyObject) {
@@ -75,9 +75,9 @@ class AboutViewController: UIViewController, MFMailComposeViewControllerDelegate
         let mailComposerVC = MFMailComposeViewController()
         mailComposerVC.mailComposeDelegate = self // Extremely important to set the --mailComposeDelegate-- property, NOT the --delegate-- property
         
-        mailComposerVC.setToRecipients(["ajacktaylor@me.com"])
+        mailComposerVC.setToRecipients(["jack@blueinkcode.com"])
         mailComposerVC.setSubject("Freezr Feedback")
-        mailComposerVC.setMessageBody("Please inform us of any bugs or let us know about any feature requests.\n", isHTML: false)
+        mailComposerVC.setMessageBody("*You can use this email to inform us of any bugs or let us know about any feature requests.\n", isHTML: false)
         
         return mailComposerVC
     }
@@ -99,7 +99,7 @@ class AboutViewController: UIViewController, MFMailComposeViewControllerDelegate
     }
     
     //What happens when the feedback button is tapped - send the email.
-   
+    
     @IBAction func sendFeedbackTapped(_ sender: Any) {
         
         let mailComposeViewController = self.configuredMailComposeViewController()
@@ -110,7 +110,16 @@ class AboutViewController: UIViewController, MFMailComposeViewControllerDelegate
         }
     }
     
+    //Orientation setup.
     
+    override func viewDidAppear(_ animated: Bool) {
+        let value = UIInterfaceOrientation.portrait.rawValue
+        UIDevice.current.setValue(value, forKey: "orientation")
+        
+        let appdelegate = UIApplication.shared.delegate as! AppDelegate
+        appdelegate.shouldSupportAllOrientation = false
+    }
+
     //Final declaration:
     
 }
