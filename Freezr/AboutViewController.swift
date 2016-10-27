@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MessageUI
 
-class AboutViewController: UIViewController {
+class AboutViewController: UIViewController, MFMailComposeViewControllerDelegate {
     
     //Custom Colours
     
@@ -23,8 +24,11 @@ class AboutViewController: UIViewController {
     @IBOutlet weak var label3: UILabel!
     @IBOutlet weak var label4: UILabel!
     @IBOutlet weak var label5: UILabel!
+    @IBOutlet weak var label6: UILabel!
     
     @IBOutlet weak var img4: UIButton!
+    
+    @IBOutlet weak var feedbackButton: UIButton!
     
     //Variables
     
@@ -36,11 +40,13 @@ class AboutViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         aboutView.backgroundColor = myPurple
-        label1.textColor = UIColor.white
-        label2.textColor = UIColor.white
-        label3.textColor = UIColor.white
-        label4.textColor = UIColor.white
-        label5.textColor = UIColor.white
+        label1.textColor = .white
+        label2.textColor = .white
+        label3.textColor = .white
+        label4.textColor = .white
+        label5.textColor = .white
+        label6.textColor = .white
+        feedbackButton.tintColor = .white
                 
     }
     
@@ -53,13 +59,57 @@ class AboutViewController: UIViewController {
             label2.text = "Meow Meow"
             label3.text = "Meow Meow"
             label4.text = "Meow Meow"
-            label5.text = "🐱🐱🐱"
+            label5.text = "Meow Meow"
+            label6.text = "🐱🐱🐱"
             aboutView.backgroundColor = UIColor(patternImage: UIImage(named: "tigger")!)
             img4.isHidden = true
+            feedbackButton.isHidden = true
             
         } else {}
         
     }
+    
+    //Setup mail feeback.
+    
+    func configuredMailComposeViewController() -> MFMailComposeViewController {
+        let mailComposerVC = MFMailComposeViewController()
+        mailComposerVC.mailComposeDelegate = self // Extremely important to set the --mailComposeDelegate-- property, NOT the --delegate-- property
+        
+        mailComposerVC.setToRecipients(["ajacktaylor@me.com"])
+        mailComposerVC.setSubject("Freezr Feedback")
+        mailComposerVC.setMessageBody("Please inform us of any bugs or let us know about any feature requests.\n", isHTML: false)
+        
+        return mailComposerVC
+    }
+    
+    //Setup mail alerts.
+    
+    func showSendMailErrorAlert() {
+        let sendMailErrorAlert = UIAlertController(title: "Well this sucks.", message: "We couldn't prepare your email. Please check your mail settings and then try again.", preferredStyle: .alert)
+        let cont = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        sendMailErrorAlert.addAction(cont)
+        self.present(sendMailErrorAlert, animated: true, completion: nil)
+    }
+    
+    //Dismiss the mail ViewController.
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    //What happens when the feedback button is tapped - send the email.
+   
+    @IBAction func sendFeedbackTapped(_ sender: Any) {
+        
+        let mailComposeViewController = self.configuredMailComposeViewController()
+        if MFMailComposeViewController.canSendMail() {
+            self.present(mailComposeViewController, animated: true, completion: nil)
+        } else {
+            self.showSendMailErrorAlert()
+        }
+    }
+    
     
     //Final declaration:
     
