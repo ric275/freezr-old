@@ -128,11 +128,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 let sb = UIStoryboard(name: "Main", bundle: nil)
                 
                 let addItemVC = sb.instantiateViewController(withIdentifier: "Tab Bar Controller") as! UITabBarController
+            
                 addItemVC.selectedIndex = 0
-
-                //let addItemVC = sb.instantiateViewController(withIdentifier: "Freezr Navigation Controller") as! UINavigationController
-                //addItemVC.performSegue(withIdentifier: "itemFromNav", sender: nil)
-                
                 
                 let rootVC = UIApplication.shared.keyWindow?.rootViewController
             
@@ -141,7 +138,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             }
                 
-                
+    
                 else if shortcutItem.type == "Jack-Taylor.Freezr.shopping-list" {
                 
                 let sb = UIStoryboard(name: "Main", bundle: nil)
