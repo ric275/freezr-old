@@ -145,7 +145,7 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
             
         } else {
             
-            let nextViewController = segue.destination as! AboutViewController
+            let nextViewController = segue.destination as! InfoViewController
             
             //Hide tab bar in settings.
             nextViewController.hidesBottomBarWhenPushed = true

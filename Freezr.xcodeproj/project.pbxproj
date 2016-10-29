@@ -16,6 +16,7 @@
 		046732311DAAF38500EEC292 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046732301DAAF38500EEC292 /* ItemViewController.swift */; };
 		0496E1EC1DB17CE20052E17B /* ShoppingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0496E1EB1DB17CE20052E17B /* ShoppingListViewController.swift */; };
 		04E4204A1DABF28700390EF5 /* FreezrViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E420491DABF28700390EF5 /* FreezrViewController.swift */; };
+		04F61DBE1DC566930053E9B9 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F61DBD1DC566930053E9B9 /* InfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		046732301DAAF38500EEC292 /* ItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 		0496E1EB1DB17CE20052E17B /* ShoppingListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingListViewController.swift; sourceTree = "<group>"; };
 		04E420491DABF28700390EF5 /* FreezrViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FreezrViewController.swift; sourceTree = "<group>"; };
+		04F61DBD1DC566930053E9B9 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				04E420491DABF28700390EF5 /* FreezrViewController.swift */,
 				0496E1EB1DB17CE20052E17B /* ShoppingListViewController.swift */,
 				04642E6A1DAFADBF002E7568 /* AboutViewController.swift */,
+				04F61DBD1DC566930053E9B9 /* InfoViewController.swift */,
 				0467321D1DAAE6FA00EEC292 /* Main.storyboard */,
 				046732231DAAE6FA00EEC292 /* Assets.xcassets */,
 				046732251DAAE6FA00EEC292 /* LaunchScreen.storyboard */,
@@ -152,6 +155,7 @@
 				046732311DAAF38500EEC292 /* ItemViewController.swift in Sources */,
 				0467321A1DAAE6FA00EEC292 /* AppDelegate.swift in Sources */,
 				0496E1EC1DB17CE20052E17B /* ShoppingListViewController.swift in Sources */,
+				04F61DBE1DC566930053E9B9 /* InfoViewController.swift in Sources */,
 				04E4204A1DABF28700390EF5 /* FreezrViewController.swift in Sources */,
 				04642E6B1DAFADBF002E7568 /* AboutViewController.swift in Sources */,
 				046732221DAAE6FA00EEC292 /* Freezr.xcdatamodeld in Sources */,
