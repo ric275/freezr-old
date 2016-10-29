@@ -54,8 +54,10 @@ class AboutViewController: UIViewController, MFMailComposeViewControllerDelegate
         
         tapCount = tapCount + 1
         
+        
         if tapCount == 7 {
-            label1.text = "Meow Meow"
+    if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+        label1.text = "\(version)" }
             label2.text = "Meow Meow"
             label3.text = "Meow Meow"
             label4.text = "Meow Meow"
