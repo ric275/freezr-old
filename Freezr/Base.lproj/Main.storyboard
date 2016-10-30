@@ -506,7 +506,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r0v-kB-Q4z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1134" y="739"/>
+            <point key="canvasLocation" x="1134" y="814"/>
         </scene>
         <!--Shopping List-->
         <scene sceneID="vtq-FB-eWr">
