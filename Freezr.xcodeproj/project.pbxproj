@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0443A8181DC652B800B2A7A0 /* Freezr Demo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 0443A8171DC652B800B2A7A0 /* Freezr Demo.mp4 */; };
+		0443A81C1DC65AD400B2A7A0 /* Freezr Demo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 0443A81B1DC65AD400B2A7A0 /* Freezr Demo.mp4 */; };
 		04642E6B1DAFADBF002E7568 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04642E6A1DAFADBF002E7568 /* AboutViewController.swift */; };
 		0467321A1DAAE6FA00EEC292 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046732191DAAE6FA00EEC292 /* AppDelegate.swift */; };
 		0467321F1DAAE6FA00EEC292 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0467321D1DAAE6FA00EEC292 /* Main.storyboard */; };
@@ -21,7 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0443A8171DC652B800B2A7A0 /* Freezr Demo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Freezr Demo.mp4"; sourceTree = "<group>"; };
+		0443A81B1DC65AD400B2A7A0 /* Freezr Demo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Freezr Demo.mp4"; sourceTree = "<group>"; };
 		04642E6A1DAFADBF002E7568 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		046732161DAAE6FA00EEC292 /* Freezr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Freezr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		046732191DAAE6FA00EEC292 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -76,7 +76,7 @@
 				046732231DAAE6FA00EEC292 /* Assets.xcassets */,
 				046732251DAAE6FA00EEC292 /* LaunchScreen.storyboard */,
 				046732281DAAE6FA00EEC292 /* Info.plist */,
-				0443A8171DC652B800B2A7A0 /* Freezr Demo.mp4 */,
+				0443A81B1DC65AD400B2A7A0 /* Freezr Demo.mp4 */,
 				046732201DAAE6FA00EEC292 /* Freezr.xcdatamodeld */,
 			);
 			path = Freezr;
@@ -143,7 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				046732271DAAE6FA00EEC292 /* LaunchScreen.storyboard in Resources */,
-				0443A8181DC652B800B2A7A0 /* Freezr Demo.mp4 in Resources */,
+				0443A81C1DC65AD400B2A7A0 /* Freezr Demo.mp4 in Resources */,
 				046732241DAAE6FA00EEC292 /* Assets.xcassets in Resources */,
 				0467321F1DAAE6FA00EEC292 /* Main.storyboard in Resources */,
 			);
