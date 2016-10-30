@@ -30,23 +30,13 @@
 	<array>
 		<dict>
 			<key>UIApplicationShortcutItemIconFile</key>
-			<string>invoice</string>
+			<string>SLIcon</string>
 			<key>UIApplicationShortcutItemSubtitle</key>
 			<string>Open your shopping list</string>
 			<key>UIApplicationShortcutItemTitle</key>
 			<string>Shopping List</string>
 			<key>UIApplicationShortcutItemType</key>
 			<string>Jack-Taylor.Freezr.shopping-list</string>
-		</dict>
-		<dict>
-			<key>UIApplicationShortcutItemIconType</key>
-			<string>UIApplicationShortcutIconTypeAdd</string>
-			<key>UIApplicationShortcutItemSubtitle</key>
-			<string>Add a new item to Freezr</string>
-			<key>UIApplicationShortcutItemTitle</key>
-			<string>Add item</string>
-			<key>UIApplicationShortcutItemType</key>
-			<string>Jack-Taylor.Freezr.add-item</string>
 		</dict>
 	</array>
 	<key>UILaunchStoryboardName</key>

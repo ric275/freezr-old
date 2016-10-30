@@ -122,25 +122,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //3D Touch shortcuts.
     
     func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
-        
-        if shortcutItem.type == "Jack-Taylor.Freezr.add-item" {
-            
-            let sb = UIStoryboard(name: "Main", bundle: nil)
-            
-            let addItemVC = sb.instantiateViewController(withIdentifier: "Tab Bar Controller") as! UITabBarController
-            
-            addItemVC.selectedIndex = 0
-            
-            let rootVC = UIApplication.shared.keyWindow?.rootViewController
-            
-            rootVC?.present(addItemVC, animated: false, completion: nil)
-            
-            
-        }
             
             //Shopping List shortcut.
             
-        else if shortcutItem.type == "Jack-Taylor.Freezr.shopping-list" {
+        if shortcutItem.type == "Jack-Taylor.Freezr.shopping-list" {
             
             let sb = UIStoryboard(name: "Main", bundle: nil)
             

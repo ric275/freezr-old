@@ -246,11 +246,13 @@
                             <constraint firstItem="ZxS-QQ-nTA" firstAttribute="centerX" secondItem="ZSs-Xm-hP9" secondAttribute="centerX" id="C6O-CP-N0o"/>
                             <constraint firstItem="0ja-KZ-i0z" firstAttribute="centerX" secondItem="ZSs-Xm-hP9" secondAttribute="centerX" id="CwX-oH-DyV"/>
                             <constraint firstItem="5rx-kh-Ue2" firstAttribute="top" secondItem="NDl-H8-uue" secondAttribute="bottom" constant="2" id="DUn-X6-q1u"/>
+                            <constraint firstItem="mjx-KS-yfJ" firstAttribute="top" secondItem="dlb-8f-5Lo" secondAttribute="bottom" constant="80" id="Def-F9-78z"/>
                             <constraint firstItem="5rx-kh-Ue2" firstAttribute="centerX" secondItem="ZSs-Xm-hP9" secondAttribute="centerX" id="Ftc-hm-kcn"/>
                             <constraint firstItem="sHD-Wv-QeC" firstAttribute="top" secondItem="c9T-2y-KlU" secondAttribute="bottom" constant="5" id="Hlh-kE-eGI"/>
                             <constraint firstItem="NDl-H8-uue" firstAttribute="centerX" secondItem="ZSs-Xm-hP9" secondAttribute="centerX" id="JOi-fu-ZLo"/>
                             <constraint firstItem="HX1-Qx-yuN" firstAttribute="centerX" secondItem="ZSs-Xm-hP9" secondAttribute="centerX" id="LVP-18-K7Q"/>
                             <constraint firstItem="uI7-d4-1Uz" firstAttribute="centerX" secondItem="ZSs-Xm-hP9" secondAttribute="centerX" id="LhD-7S-uhT"/>
+                            <constraint firstItem="7wE-fg-BPV" firstAttribute="top" secondItem="dlb-8f-5Lo" secondAttribute="bottom" constant="20" id="Lm6-Cm-TFd"/>
                             <constraint firstItem="7wE-fg-BPV" firstAttribute="centerX" secondItem="ZSs-Xm-hP9" secondAttribute="centerX" id="QhK-zg-lhI"/>
                             <constraint firstItem="5rx-kh-Ue2" firstAttribute="width" secondItem="7wE-fg-BPV" secondAttribute="width" id="T5k-Md-HiX"/>
                             <constraint firstItem="c9T-2y-KlU" firstAttribute="top" secondItem="uI7-d4-1Uz" secondAttribute="bottom" constant="10" id="Tle-r0-ttA"/>
@@ -259,10 +261,8 @@
                             <constraint firstItem="uI7-d4-1Uz" firstAttribute="top" secondItem="5rx-kh-Ue2" secondAttribute="bottom" constant="30" id="bw9-JR-4Fz"/>
                             <constraint firstItem="uI7-d4-1Uz" firstAttribute="width" secondItem="5rx-kh-Ue2" secondAttribute="width" id="dtH-OV-gEF"/>
                             <constraint firstItem="c9T-2y-KlU" firstAttribute="centerX" secondItem="ZSs-Xm-hP9" secondAttribute="centerX" id="gH5-3Q-W1E"/>
-                            <constraint firstItem="mjx-KS-yfJ" firstAttribute="top" secondItem="dlb-8f-5Lo" secondAttribute="bottom" constant="80" id="i1c-Z2-NQV"/>
                             <constraint firstItem="5rx-kh-Ue2" firstAttribute="top" secondItem="7wE-fg-BPV" secondAttribute="bottom" constant="30" id="omB-gL-RAm"/>
                             <constraint firstItem="0ja-KZ-i0z" firstAttribute="top" secondItem="c9T-2y-KlU" secondAttribute="bottom" constant="5" id="t5x-5b-Eg9"/>
-                            <constraint firstItem="7wE-fg-BPV" firstAttribute="top" secondItem="dlb-8f-5Lo" secondAttribute="bottom" constant="20" id="udq-WQ-Hwj"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
