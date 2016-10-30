@@ -11,13 +11,15 @@ import MessageUI
 import AVKit
 import AVFoundation
 
+
+
 class InfoViewController: UITableViewController, MFMailComposeViewControllerDelegate {
     
     //Custom colours.
     
     let myPurple:UIColor = UIColor(red: 105/255.0, green: 94/255.0, blue: 133/255.0, alpha: 1.0)
     
-    var playerViewController = AVPlayerViewController()
+    var playerViewController = LandscapeAVPlayerController()
     var playerView = AVPlayer()
     
     override func viewDidLoad() {
@@ -96,6 +98,9 @@ class InfoViewController: UITableViewController, MFMailComposeViewControllerDele
                 performSegue(withIdentifier: "aboutSegue", sender: nil)
                 
             } else {
+                
+                //What happens when the feedback cell is tapped - send the email.
+                
                 let mailComposeViewController = self.configuredMailComposeViewController()
                 if MFMailComposeViewController.canSendMail() {
                     self.present(mailComposeViewController, animated: true, completion: nil)
@@ -105,6 +110,8 @@ class InfoViewController: UITableViewController, MFMailComposeViewControllerDele
                 }
             }
         } else if indexPath.section == 0 {
+            
+            //What happens when the video cell is tapped - play the video.
             self.present(playerViewController, animated: true) {
                 
                 self.playerViewController.player?.play()
@@ -144,7 +151,7 @@ class InfoViewController: UITableViewController, MFMailComposeViewControllerDele
         
         self.dismiss(animated: true, completion: nil)
     }
-    
+        
     
     
     
@@ -158,4 +165,11 @@ class InfoViewController: UITableViewController, MFMailComposeViewControllerDele
     //}
     
     
+}
+
+class LandscapeAVPlayerController: AVPlayerViewController {
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .landscape
+    }
 }

@@ -7,9 +7,8 @@
 //
 
 import UIKit
-import MessageUI
 
-class AboutViewController: UIViewController, MFMailComposeViewControllerDelegate {
+class AboutViewController: UIViewController {
     
     //Custom colours.
     
@@ -28,8 +27,6 @@ class AboutViewController: UIViewController, MFMailComposeViewControllerDelegate
     
     @IBOutlet weak var img4: UIButton!
     
-    @IBOutlet weak var feedbackButton: UIButton!
-    
     //Variables.
     
     var tapCount = 0
@@ -46,7 +43,6 @@ class AboutViewController: UIViewController, MFMailComposeViewControllerDelegate
         label4.textColor = .white
         label5.textColor = .white
         label6.textColor = .white
-        feedbackButton.tintColor = .white
         
     }
     
@@ -56,8 +52,7 @@ class AboutViewController: UIViewController, MFMailComposeViewControllerDelegate
         
         
         if tapCount == 7 {
-    if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
-        label1.text = "\(version)" }
+            label1.text = "Meow Meow"
             label2.text = "Meow Meow"
             label3.text = "Meow Meow"
             label4.text = "Meow Meow"
@@ -65,52 +60,9 @@ class AboutViewController: UIViewController, MFMailComposeViewControllerDelegate
             label6.text = "🐱🐱🐱"
             aboutView.backgroundColor = UIColor(patternImage: UIImage(named: "tigger")!)
             img4.isHidden = true
-            feedbackButton.isHidden = true
             
         } else {}
         
-    }
-    
-    //Setup mail feeback.
-    
-    func configuredMailComposeViewController() -> MFMailComposeViewController {
-        let mailComposerVC = MFMailComposeViewController()
-        mailComposerVC.mailComposeDelegate = self // Extremely important to set the --mailComposeDelegate-- property, NOT the --delegate-- property
-        
-        mailComposerVC.setToRecipients(["jack@blueinkcode.com"])
-        mailComposerVC.setSubject("Freezr Feedback")
-        mailComposerVC.setMessageBody("*You can use this email to inform us of any bugs or let us know about any feature requests.\n", isHTML: false)
-        
-        return mailComposerVC
-    }
-    
-    //Setup mail alerts.
-    
-    func showSendMailErrorAlert() {
-        let sendMailErrorAlert = UIAlertController(title: "Well this sucks.", message: "We couldn't prepare your email. Please check your mail settings and then try again.", preferredStyle: .alert)
-        let cont = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-        sendMailErrorAlert.addAction(cont)
-        self.present(sendMailErrorAlert, animated: true, completion: nil)
-    }
-    
-    //Dismiss the mail ViewController.
-    
-    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
-        
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-    //What happens when the feedback button is tapped - send the email.
-    
-    @IBAction func sendFeedbackTapped(_ sender: Any) {
-        
-        let mailComposeViewController = self.configuredMailComposeViewController()
-        if MFMailComposeViewController.canSendMail() {
-            self.present(mailComposeViewController, animated: true, completion: nil)
-            
-        } else {
-            self.showSendMailErrorAlert()
-        }
     }
     
     //Orientation setup.
@@ -122,7 +74,7 @@ class AboutViewController: UIViewController, MFMailComposeViewControllerDelegate
         let appdelegate = UIApplication.shared.delegate as! AppDelegate
         appdelegate.shouldSupportAllOrientation = false
     }
-
+    
     //Final declaration:
     
 }
