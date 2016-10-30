@@ -24,6 +24,7 @@ class AboutViewController: UIViewController {
     @IBOutlet weak var label4: UILabel!
     @IBOutlet weak var label5: UILabel!
     @IBOutlet weak var label6: UILabel!
+    @IBOutlet weak var label7: UILabel!
     
     @IBOutlet weak var img4: UIButton!
     
@@ -43,6 +44,7 @@ class AboutViewController: UIViewController {
         label4.textColor = .white
         label5.textColor = .white
         label6.textColor = .white
+        label7.textColor = .white
         
     }
     
@@ -57,7 +59,8 @@ class AboutViewController: UIViewController {
             label3.text = "Meow Meow"
             label4.text = "Meow Meow"
             label5.text = "Meow Meow"
-            label6.text = "🐱🐱🐱"
+            label6.text = "Meow Meow"
+            label7.text = "🐱🐱🐱"
             aboutView.backgroundColor = UIColor(patternImage: UIImage(named: "tigger")!)
             img4.isHidden = true
             
