@@ -18,6 +18,8 @@
 		0496E1EC1DB17CE20052E17B /* ShoppingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0496E1EB1DB17CE20052E17B /* ShoppingListViewController.swift */; };
 		04E4204A1DABF28700390EF5 /* FreezrViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E420491DABF28700390EF5 /* FreezrViewController.swift */; };
 		04F61DBE1DC566930053E9B9 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F61DBD1DC566930053E9B9 /* InfoViewController.swift */; };
+		04FC5AC01DC959A800440657 /* FridgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FC5ABF1DC959A800440657 /* FridgeViewController.swift */; };
+		04FC5AC61DC9622700440657 /* FridgeItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FC5AC51DC9622700440657 /* FridgeItemViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		0496E1EB1DB17CE20052E17B /* ShoppingListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingListViewController.swift; sourceTree = "<group>"; };
 		04E420491DABF28700390EF5 /* FreezrViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FreezrViewController.swift; sourceTree = "<group>"; };
 		04F61DBD1DC566930053E9B9 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		04FC5ABF1DC959A800440657 /* FridgeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FridgeViewController.swift; sourceTree = "<group>"; };
+		04FC5AC51DC9622700440657 /* FridgeItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FridgeItemViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,8 +71,8 @@
 			isa = PBXGroup;
 			children = (
 				046732191DAAE6FA00EEC292 /* AppDelegate.swift */,
-				046732301DAAF38500EEC292 /* ItemViewController.swift */,
-				04E420491DABF28700390EF5 /* FreezrViewController.swift */,
+				04FC5AC41DC95D3E00440657 /* Fridge */,
+				04FC5AC31DC95D3200440657 /* Freezr */,
 				0496E1EB1DB17CE20052E17B /* ShoppingListViewController.swift */,
 				04F61DBD1DC566930053E9B9 /* InfoViewController.swift */,
 				04642E6A1DAFADBF002E7568 /* AboutViewController.swift */,
@@ -80,6 +84,24 @@
 				046732201DAAE6FA00EEC292 /* Freezr.xcdatamodeld */,
 			);
 			path = Freezr;
+			sourceTree = "<group>";
+		};
+		04FC5AC31DC95D3200440657 /* Freezr */ = {
+			isa = PBXGroup;
+			children = (
+				04E420491DABF28700390EF5 /* FreezrViewController.swift */,
+				046732301DAAF38500EEC292 /* ItemViewController.swift */,
+			);
+			name = Freezr;
+			sourceTree = "<group>";
+		};
+		04FC5AC41DC95D3E00440657 /* Fridge */ = {
+			isa = PBXGroup;
+			children = (
+				04FC5AC51DC9622700440657 /* FridgeItemViewController.swift */,
+				04FC5ABF1DC959A800440657 /* FridgeViewController.swift */,
+			);
+			name = Fridge;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -114,7 +136,7 @@
 				TargetAttributes = {
 					046732151DAAE6FA00EEC292 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = D5UEJKHQX3;
+						DevelopmentTeam = 4LK849K8T4;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -161,6 +183,8 @@
 				0496E1EC1DB17CE20052E17B /* ShoppingListViewController.swift in Sources */,
 				04F61DBE1DC566930053E9B9 /* InfoViewController.swift in Sources */,
 				04E4204A1DABF28700390EF5 /* FreezrViewController.swift in Sources */,
+				04FC5AC61DC9622700440657 /* FridgeItemViewController.swift in Sources */,
+				04FC5AC01DC959A800440657 /* FridgeViewController.swift in Sources */,
 				04642E6B1DAFADBF002E7568 /* AboutViewController.swift in Sources */,
 				046732221DAAE6FA00EEC292 /* Freezr.xcdatamodeld in Sources */,
 			);
@@ -287,10 +311,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = D5UEJKHQX3;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 4LK849K8T4;
 				INFOPLIST_FILE = Freezr/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = blueinkcode.com.Freezr;
+				PRODUCT_BUNDLE_IDENTIFIER = com.blueinkcode.FreezrApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -301,10 +327,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = D5UEJKHQX3;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 4LK849K8T4;
 				INFOPLIST_FILE = Freezr/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = blueinkcode.com.Freezr;
+				PRODUCT_BUNDLE_IDENTIFIER = com.blueinkcode.FreezrApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;

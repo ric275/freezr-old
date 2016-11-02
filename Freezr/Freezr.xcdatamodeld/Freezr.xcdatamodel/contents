@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11232" systemVersion="16B2555" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11542" systemVersion="16B2555" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="FridgeItem" representedClassName="FridgeItem" syncable="YES" codeGenerationType="class">
+        <attribute name="expirydate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="Item" representedClassName="Item" syncable="YES" codeGenerationType="class">
         <attribute name="expirydate" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="image" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
@@ -13,5 +18,6 @@
     <elements>
         <element name="Item" positionX="-63" positionY="-18" width="128" height="90"/>
         <element name="ShoppingListItem" positionX="-63" positionY="9" width="128" height="90"/>
+        <element name="FridgeItem" positionX="-63" positionY="18" width="128" height="90"/>
     </elements>
 </model>
