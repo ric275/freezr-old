@@ -292,6 +292,7 @@
                         <outlet property="itemName" destination="5rx-kh-Ue2" id="p7S-td-KhJ"/>
                         <outlet property="placeHolderText1" destination="mjx-KS-yfJ" id="hh6-tJ-0Lm"/>
                         <outlet property="placeHolderText2" destination="ZxS-QQ-nTA" id="z0t-Rl-XSn"/>
+                        <segue destination="FfT-He-CEh" kind="show" identifier="freezrBigPictureSegue" id="vUQ-iT-aYv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LJv-64-Yz2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -617,7 +618,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HYZ-fs-2pJ">
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HYZ-fs-2pJ">
                                 <rect key="frame" x="87.5" y="84" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="5vU-rg-cQT"/>
@@ -750,16 +751,85 @@
                         <outlet property="deleteItemButton" destination="dsg-FX-HGE" id="tWf-8f-7wq"/>
                         <outlet property="expirationDateTextField" destination="UE1-CE-Jta" id="P4l-eS-DAE"/>
                         <outlet property="expiresLabel" destination="fGE-Eq-SB1" id="B0q-x7-sGE"/>
+                        <outlet property="fridgeItemImage" destination="HYZ-fs-2pJ" id="LXW-k7-FTW"/>
+                        <outlet property="fridgeItemName" destination="xi4-FQ-uoD" id="MDq-Sr-Pma"/>
                         <outlet property="imageNoticeText" destination="dpe-4a-a4H" id="G5f-IT-BPS"/>
-                        <outlet property="itemImage" destination="HYZ-fs-2pJ" id="guv-dC-MaH"/>
-                        <outlet property="itemName" destination="xi4-FQ-uoD" id="Cm5-IP-vTl"/>
                         <outlet property="placeHolderText1" destination="WRK-uk-B20" id="Fkv-3k-cXM"/>
                         <outlet property="placeHolderText2" destination="zQh-1M-0aF" id="GrM-OI-yJY"/>
+                        <segue destination="odT-iT-SxA" kind="show" identifier="fridgeBigPictureSegue" id="xdb-BA-k2R"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kIN-Zb-s4i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2634" y="-1565"/>
+        </scene>
+        <!--Fridge Image View Controller-->
+        <scene sceneID="b6v-JJ-MhP">
+            <objects>
+                <viewController storyboardIdentifier="Fridge Image" id="odT-iT-SxA" customClass="FridgeImageViewController" customModule="Freezr" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MzJ-75-h0y"/>
+                        <viewControllerLayoutGuide type="bottom" id="T6u-fI-39z"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qCf-xb-5hx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gup-CE-DCT">
+                                <rect key="frame" x="7.5" y="83" width="360" height="500"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="360" id="OiK-80-zdq"/>
+                                    <constraint firstAttribute="height" constant="500" id="ueI-r5-bAL"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gup-CE-DCT" firstAttribute="centerY" secondItem="qCf-xb-5hx" secondAttribute="centerY" id="bjY-wW-VtT"/>
+                            <constraint firstItem="gup-CE-DCT" firstAttribute="centerX" secondItem="qCf-xb-5hx" secondAttribute="centerX" id="qMp-LH-pGk"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bigImage" destination="gup-CE-DCT" id="oDG-DU-p6C"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Exh-iI-5hX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3501.5999999999999" y="-1566.5667166416792"/>
+        </scene>
+        <!--Freezr Image View Controller-->
+        <scene sceneID="Igf-je-KKS">
+            <objects>
+                <viewController storyboardIdentifier="Freezr Image" id="FfT-He-CEh" customClass="FreezrImageViewController" customModule="Freezr" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0lp-dT-YAR"/>
+                        <viewControllerLayoutGuide type="bottom" id="Lr1-zV-Eh6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BgH-og-tT9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YDJ-4Z-irf">
+                                <rect key="frame" x="8" y="83" width="360" height="500"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="360" id="Sdn-l6-cJW"/>
+                                    <constraint firstAttribute="height" constant="500" id="ah7-3L-mZa"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="YDJ-4Z-irf" firstAttribute="centerX" secondItem="BgH-og-tT9" secondAttribute="centerX" id="aYH-AG-QrW"/>
+                            <constraint firstItem="YDJ-4Z-irf" firstAttribute="centerY" secondItem="BgH-og-tT9" secondAttribute="centerY" id="sQA-L7-jWS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bigImage" destination="YDJ-4Z-irf" id="Kjy-zN-37m"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kUW-CX-CVq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3614" y="38"/>
         </scene>
     </scenes>
     <resources>

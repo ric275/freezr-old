@@ -59,6 +59,8 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
         expirationDateTextField.textColor = myPurple
         
+        itemImage.isUserInteractionEnabled = true
+        
         //Setup the item view depending on if an existing item is being selected, or a new item is being added.
         
         //If there is an existing item:
@@ -114,6 +116,9 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(ItemViewController.dismissKeyboard)))
         
+        //Tap the image (setup).
+        
+        self.itemImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(ItemViewController.imageTapped)))
     }
     
     //Select image methods.
@@ -266,6 +271,28 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
         let appdelegate = UIApplication.shared.delegate as! AppDelegate
         appdelegate.shouldSupportAllOrientation = false
+    }
+    
+    func imageTapped() {
+        
+        performSegue(withIdentifier: "freezrBigPictureSegue", sender: nil)
+    }
+    
+    //Sets up the next ViewController (FridgeImageViewController) and sends some item data over.
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "freezrBigPictureSegue" {
+            
+            let doneButton = UIBarButtonItem()
+            doneButton.title = "Done"
+            navigationItem.backBarButtonItem = doneButton
+            
+            let nextViewController = segue.destination as! FreezrImageViewController
+            
+            nextViewController.image = itemImage.image
+            
+        }
     }
     
     //Final declaration:

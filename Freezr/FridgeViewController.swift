@@ -131,14 +131,23 @@ class FridgeViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
+        let nextViewController = segue.destination as! FridgeItemViewController
+        nextViewController.fridgeItem = sender as? FridgeItem
+        
         if segue.identifier == "fridgeItemSegue" {
             
-            let backButton = UIBarButtonItem()
-            backButton.title = "Done"
-            navigationItem.backBarButtonItem = backButton
+            if nextViewController.fridgeItem != nil {
+                
+                let backButton = UIBarButtonItem()
+                backButton.title = "Done"
+                navigationItem.backBarButtonItem = backButton
+                
+            } else {
+                let backButton = UIBarButtonItem()
+                backButton.title = "Cancel"
+                navigationItem.backBarButtonItem = backButton
+            }
             
-            let nextViewController = segue.destination as! FridgeItemViewController
-            nextViewController.fridgeItem = sender as? FridgeItem
             
             //Hide tab bar in item view.
             nextViewController.hidesBottomBarWhenPushed = true

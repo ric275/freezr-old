@@ -133,12 +133,20 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         if segue.identifier == "itemSegue" {
             
+            let nextViewController = segue.destination as! ItemViewController
+            nextViewController.item = sender as? Item
+            
+            if nextViewController.item != nil {
+            
             let backButton = UIBarButtonItem()
             backButton.title = "Done"
             navigationItem.backBarButtonItem = backButton
-            
-            let nextViewController = segue.destination as! ItemViewController
-            nextViewController.item = sender as? Item
+                
+            } else {
+                let backButton = UIBarButtonItem()
+                backButton.title = "Cancel"
+                navigationItem.backBarButtonItem = backButton
+            }
             
             //Hide tab bar in item view.
             nextViewController.hidesBottomBarWhenPushed = true

@@ -9,7 +9,7 @@
 import UIKit
 import UserNotifications
 
-class FridgeItemViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
+class FridgeItemViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UIGestureRecognizerDelegate {
     
     //Custom colours.
     
@@ -17,9 +17,9 @@ class FridgeItemViewController: UIViewController, UIImagePickerControllerDelegat
     
     //Outlets.
     
-    @IBOutlet weak var itemImage: UIImageView!
+    @IBOutlet weak var fridgeItemImage: UIImageView!
     
-    @IBOutlet weak var itemName: UITextField!
+    @IBOutlet weak var fridgeItemName: UITextField!
     
     @IBOutlet weak var addItemOrUpdateButton: UIButton!
     
@@ -51,21 +51,23 @@ class FridgeItemViewController: UIViewController, UIImagePickerControllerDelegat
         
         imageSelector.delegate = self
         
-        itemName.delegate = self
+        fridgeItemName.delegate = self
         
-        itemName.returnKeyType = UIReturnKeyType.done
+        fridgeItemName.returnKeyType = UIReturnKeyType.done
         
-        itemName.textColor = myPurple
+        fridgeItemName.textColor = myPurple
         
         expirationDateTextField.textColor = myPurple
         
+        fridgeItemImage.isUserInteractionEnabled = true
+
         //Setup the item view depending on if an existing item is being selected, or a new item is being added.
         
         //If there is an existing item:
         
         if fridgeItem != nil {
-            itemImage.image = UIImage(data: fridgeItem!.image as! Data)
-            itemName.text = fridgeItem!.name
+            fridgeItemImage.image = UIImage(data: fridgeItem!.image as! Data)
+            fridgeItemName.text = fridgeItem!.name
             expirationDateTextField.text = fridgeItem!.expirydate
             
             placeHolderText1.isHidden = true
@@ -112,7 +114,11 @@ class FridgeItemViewController: UIViewController, UIImagePickerControllerDelegat
         
         //Dismiss the keyboard when tapped away (setup).
         
-        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(ItemViewController.dismissKeyboard)))
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(FridgeItemViewController.dismissKeyboard)))
+        
+        //Tap the image (setup).
+        
+        self.fridgeItemImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(FridgeItemViewController.imageTapped)))
         
     }
     
@@ -133,7 +139,7 @@ class FridgeItemViewController: UIViewController, UIImagePickerControllerDelegat
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
         
-        itemImage.image = image
+        fridgeItemImage.image = image
         
         imageSelector.dismiss(animated: true, completion: nil)
         
@@ -151,8 +157,8 @@ class FridgeItemViewController: UIViewController, UIImagePickerControllerDelegat
         //If updating an exisitng item.
         
         if fridgeItem != nil {
-            fridgeItem!.name = itemName.text
-            fridgeItem!.image = UIImageJPEGRepresentation(itemImage.image!, 0.05)! as NSData?
+            fridgeItem!.name = fridgeItemName.text
+            fridgeItem!.image = UIImageJPEGRepresentation(fridgeItemImage.image!, 0.05)! as NSData?
             fridgeItem?.expirydate = expirationDateTextField.text
             
             //If creating a new item.
@@ -161,8 +167,8 @@ class FridgeItemViewController: UIViewController, UIImagePickerControllerDelegat
             
             let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
             let item = FridgeItem(context: context)
-            item.name = itemName.text
-            item.image = UIImageJPEGRepresentation(itemImage.image!, 0.05)! as NSData? //was 0.1
+            item.name = fridgeItemName.text
+            item.image = UIImageJPEGRepresentation(fridgeItemImage.image!, 0.05)! as NSData? //was 0.1
             item.expirydate = expirationDateTextField.text
         }
         
@@ -224,8 +230,8 @@ class FridgeItemViewController: UIViewController, UIImagePickerControllerDelegat
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
         let SLItem = ShoppingListItem(context: context)
-        SLItem.name = itemName.text
-        SLItem.image = UIImageJPEGRepresentation(itemImage.image!, 0.05)! as NSData?
+        SLItem.name = fridgeItemName.text
+        SLItem.image = UIImageJPEGRepresentation(fridgeItemImage.image!, 0.05)! as NSData?
         
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
         
@@ -245,7 +251,7 @@ class FridgeItemViewController: UIViewController, UIImagePickerControllerDelegat
     func dismissKeyboard() {
         
         //Dismiss the keyboard.
-        itemName.resignFirstResponder()
+        fridgeItemName.resignFirstResponder()
         
         //Dismiss date picker.
         expirationDateTextField.resignFirstResponder()
@@ -254,7 +260,7 @@ class FridgeItemViewController: UIViewController, UIImagePickerControllerDelegat
     //Dismiss the keyboard when return is tapped.
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        itemName.resignFirstResponder()
+        fridgeItemName.resignFirstResponder()
         return true
     }
     
@@ -267,6 +273,30 @@ class FridgeItemViewController: UIViewController, UIImagePickerControllerDelegat
         let appdelegate = UIApplication.shared.delegate as! AppDelegate
         appdelegate.shouldSupportAllOrientation = false
     }
+    
+    func imageTapped() {
+        
+        performSegue(withIdentifier: "fridgeBigPictureSegue", sender: nil)
+    }
+    
+    //Sets up the next ViewController (FridgeImageViewController) and sends some item data over.
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "fridgeBigPictureSegue" {
+            
+            let doneButton = UIBarButtonItem()
+            doneButton.title = "Done"
+            navigationItem.backBarButtonItem = doneButton
+            
+            let nextViewController = segue.destination as! FridgeImageViewController
+            
+            nextViewController.image = fridgeItemImage.image
+  
+        }
+    }
+    
+    
     
     //Final declaration:
     
