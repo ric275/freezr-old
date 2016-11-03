@@ -148,7 +148,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let content = UNMutableNotificationContent()
         content.title = "Item expired"
-        content.body = "An item in your Freezr has reached its expiry date."
+        content.body = "One of your items has reached its expiry date."
         content.sound = UNNotificationSound.default()
         
         let request = UNNotificationRequest(identifier: "expiryNotification", content: content, trigger: trigger)

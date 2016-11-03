@@ -1,5 +1,5 @@
 //
-//  TableViewController.swift
+//  InfoViewController.swift
 //  Freezr
 //
 //  Created by Jack Taylor on 30/10/2016.
@@ -81,6 +81,7 @@ class InfoViewController: UITableViewController, MFMailComposeViewControllerDele
         if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
             versionCell.detailTextLabel?.text = "\(version)"
             versionCell.detailTextLabel?.textColor = myPurple
+            versionCell.selectionStyle = .none
         }
         
         //Specify which cell goes where.
