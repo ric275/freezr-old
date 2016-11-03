@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -200,7 +201,6 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 if item.title == "Shopping List" {
                     item.badgeValue = "New!"
                 }
-                
             }
             
             //Create the alert when an item has been added to the shopping list.
@@ -228,7 +228,7 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         swipeToAdd.backgroundColor = .purple
         
-        //Swipe to delete items from the Freezr.
+        //Swipe to delete items from the freezer.
         
         let swipeToDelete = UITableViewRowAction(style: .normal, title: "Delete") { (action:UITableViewRowAction!, NSIndexPath) in
             

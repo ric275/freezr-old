@@ -215,10 +215,9 @@ class FridgeItemViewController: UIViewController, UIImagePickerControllerDelegat
         
         expirationDateTextField.text = dateFormatter.string(from: sender.date)
         
-        //Send data to the notification func in delegate.
+        //Send data to the notification func.
         let selectedDate = sender.date
-        let delegate = UIApplication.shared.delegate as? AppDelegate
-        delegate?.scheduleNotification(at: selectedDate)
+        self.scheduleNotification(at: selectedDate)
         
         print("Selected date: \(selectedDate)")
     }
@@ -292,11 +291,37 @@ class FridgeItemViewController: UIViewController, UIImagePickerControllerDelegat
             let nextViewController = segue.destination as! FridgeImageViewController
             
             nextViewController.image = fridgeItemImage.image
-  
-        }
+          }
     }
     
+    //Set up notifications.
     
+    func scheduleNotification(at date: Date) {
+        
+        let calendar = Calendar(identifier: .gregorian)
+        let components = calendar.dateComponents(in: .current, from: date)
+        let newComponents = DateComponents(calendar: calendar, timeZone: .current, month: components.month, day: components.day, hour: components.hour, minute: components.minute)
+        
+        let trigger = UNCalendarNotificationTrigger(dateMatching: newComponents, repeats: false)
+        
+        let content = UNMutableNotificationContent()
+        content.title = "Item expired"
+        if (fridgeItemName.text?.isEmpty)! {
+            content.body = "An item in your fridge has reached its expiry date."
+        } else {
+            content.body = "\(fridgeItemName.text!) has expired in your fridge."
+        }
+        content.sound = UNNotificationSound.default()
+        
+        let request = UNNotificationRequest(identifier: "expiryNotification", content: content, trigger: trigger)
+        
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+        UNUserNotificationCenter.current().add(request) {(error) in
+            if let error = error {
+                print("Notification error: \(error)")
+            }
+        }
+    }
     
     //Final declaration:
     

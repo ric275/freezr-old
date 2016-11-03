@@ -5,11 +5,10 @@
 //  Created by Jack Taylor on 09/10/2016.
 //  Copyright © 2016 Jack Taylor. All rights reserved.
 //
-//  Likewise, the information icon used on the Freezr page was designed by Chanut is Industries.
+//  The information icon used on the Freezr page was designed by Chanut is Industries.
 //
 //  Meow meow meow meow 🐱
 //
-
 
 import UIKit
 import CoreData
@@ -120,9 +119,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //3D Touch shortcuts.
     
     func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
-            
-            //Shopping List shortcut.
-            
+        
+        //Shopping List shortcut.
+        
         if shortcutItem.type == "Jack-Taylor.Freezr.shopping-list" {
             
             let sb = UIStoryboard(name: "Main", bundle: nil)
@@ -136,31 +135,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
-    //Set up notifications.
-    
-    func scheduleNotification(at date: Date) {
-        
-        let calendar = Calendar(identifier: .gregorian)
-        let components = calendar.dateComponents(in: .current, from: date)
-        let newComponents = DateComponents(calendar: calendar, timeZone: .current, month: components.month, day: components.day, hour: components.hour, minute: components.minute)
-        
-        let trigger = UNCalendarNotificationTrigger(dateMatching: newComponents, repeats: false)
-        
-        let content = UNMutableNotificationContent()
-        content.title = "Item expired"
-        content.body = "One of your items has reached its expiry date."
-        content.sound = UNNotificationSound.default()
-        
-        let request = UNNotificationRequest(identifier: "expiryNotification", content: content, trigger: trigger)
-        
-        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
-        UNUserNotificationCenter.current().add(request) {(error) in
-            if let error = error {
-                print("Notification error: \(error)")
-            }
-        }
-    }
-    
     //Set up orientations.
     
     var shouldSupportAllOrientation = false
@@ -170,7 +144,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         return UIInterfaceOrientationMask.portrait
     }
-    
 }
 
 //Set up date comparisons (magic).

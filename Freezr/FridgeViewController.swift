@@ -183,7 +183,7 @@ class FridgeViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
-        //Swipe to add items to shopping list
+        //Swipe to add items to shopping list.
         
         let swipeToAdd = UITableViewRowAction(style: .normal, title: "Shopping List") { (action:UITableViewRowAction!, NSIndexPath) in
             
@@ -201,7 +201,6 @@ class FridgeViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 if item.title == "Shopping List" {
                     item.badgeValue = "New!"
                 }
-                
             }
             
             //Create the alert when an item has been added to the shopping list.
@@ -229,7 +228,7 @@ class FridgeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         swipeToAdd.backgroundColor = .purple
         
-        //Swipe to delete items from the Freezr.
+        //Swipe to delete items from the fridge.
         
         let swipeToDelete = UITableViewRowAction(style: .normal, title: "Delete") { (action:UITableViewRowAction!, NSIndexPath) in
             
