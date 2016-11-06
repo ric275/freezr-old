@@ -16,11 +16,14 @@ class InfoViewController: UITableViewController, MFMailComposeViewControllerDele
     //Custom colours.
     
     let myPurple:UIColor = UIColor(red: 105/255.0, green: 94/255.0, blue: 133/255.0, alpha: 1.0)
+
     
     //Variables.
     
     var playerViewController = LandscapeAVPlayerController()
     var playerView = AVPlayer()
+    var fridgeSwitch = UISwitch()
+    var freezerSwitch = UISwitch()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +36,11 @@ class InfoViewController: UITableViewController, MFMailComposeViewControllerDele
             let fileURL = NSURL(fileURLWithPath: urlPath)
             playerView = AVPlayer(url: fileURL as URL)
             playerViewController.player = playerView
+            
+            fridgeSwitch.onTintColor = .purple
+            freezerSwitch.onTintColor = .purple
+
+            
         }
     }
     
@@ -40,13 +48,15 @@ class InfoViewController: UITableViewController, MFMailComposeViewControllerDele
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         
-        return 3
+        return 4
     }
     
     //Specifies how many rows are in the table.
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 1 {
+            return 2
+        } else if section == 2 {
             return 2
         } else {
             return 1
@@ -63,6 +73,8 @@ class InfoViewController: UITableViewController, MFMailComposeViewControllerDele
         let aboutCell = UITableViewCell(style: .value1, reuseIdentifier: nil)
         let feedbackCell = UITableViewCell(style: .value1, reuseIdentifier: nil)
         let versionCell = UITableViewCell(style: .value1, reuseIdentifier: nil)
+        let freezerNotifCell = UITableViewCell(style: .value1, reuseIdentifier: nil)
+        let fridgeNotifCell = UITableViewCell(style: .value1, reuseIdentifier: nil)
         
         howCell.textLabel?.text = "Video: How to use Freezr"
         howCell.textLabel?.textColor = .purple
@@ -84,6 +96,16 @@ class InfoViewController: UITableViewController, MFMailComposeViewControllerDele
             versionCell.selectionStyle = .none
         }
         
+        fridgeNotifCell.textLabel?.text = "Fridge"
+        fridgeNotifCell.textLabel?.textColor = .purple
+        fridgeNotifCell.selectionStyle = .none
+        fridgeNotifCell.accessoryView = fridgeSwitch
+        
+        freezerNotifCell.textLabel?.text = "Freezer"
+        freezerNotifCell.textLabel?.textColor = .purple
+        freezerNotifCell.selectionStyle = .none
+        freezerNotifCell.accessoryView = freezerSwitch
+        
         //Specify which cell goes where.
         
         if indexPath.section == 0 {
@@ -94,8 +116,15 @@ class InfoViewController: UITableViewController, MFMailComposeViewControllerDele
             } else {
                 return feedbackCell
             }
+        } else if indexPath.section == 2 {
+            if indexPath.row == 0 {
+                return fridgeNotifCell
+            } else {
+                return freezerNotifCell
+            }
+        } else {
+            return versionCell
         }
-        return versionCell
     }
     
     //Specify what happens when a cell is tapped.
@@ -172,8 +201,35 @@ class InfoViewController: UITableViewController, MFMailComposeViewControllerDele
         navigationItem.backBarButtonItem = backButton
     }
     
-    //Final-ish declaration:
+    @IBAction func fridgeSwitch(_ sender: UISwitch) {
+        
+        if (sender.isOn == true) {
+            
+            print("hey")
+        } else {
+            print("nooo")
+        }
+    }
     
+    @IBAction func freezerSwitch(_ sender: UISwitch) {
+        
+        if (sender.isOn == true) {
+            
+            print("hey")
+        } else {
+            print("nooo")
+        }
+        
+    }
+    
+    
+
+
+
+
+
+//Final-ish declaration:
+
 }
 
 //Custom class for making the video player landscape.
