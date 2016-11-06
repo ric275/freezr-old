@@ -83,7 +83,6 @@ class FridgeItemViewController: UIViewController, UIImagePickerControllerDelegat
             let dateString = expirationDateTextField.text
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "dd/MMM/yyyy"
-            //dateFormatter.timeZone = TimeZone(abbreviation: "GMT+0:00")
             let dateFromString = dateFormatter.date(from: dateString!)
             
             //Change expiry text and colour accordingly.
