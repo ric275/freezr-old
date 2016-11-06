@@ -313,9 +313,12 @@ class FridgeItemViewController: UIViewController, UIImagePickerControllerDelegat
         }
         content.sound = UNNotificationSound.default()
         
-        let request = UNNotificationRequest(identifier: "expiryNotification", content: content, trigger: trigger)
+        let random = Int(arc4random_uniform(900000))
         
-        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+        let identifier = NSString.localizedUserNotificationString(forKey: "\(random)", arguments: nil)
+        
+        let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
+        
         UNUserNotificationCenter.current().add(request) {(error) in
             if let error = error {
                 print("Notification error: \(error)")

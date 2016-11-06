@@ -10,13 +10,14 @@ import UIKit
 import MessageUI
 import AVKit
 import AVFoundation
+import UserNotifications
 
 class InfoViewController: UITableViewController, MFMailComposeViewControllerDelegate {
     
     //Custom colours.
     
     let myPurple:UIColor = UIColor(red: 105/255.0, green: 94/255.0, blue: 133/255.0, alpha: 1.0)
-
+    
     
     //Variables.
     
@@ -24,6 +25,7 @@ class InfoViewController: UITableViewController, MFMailComposeViewControllerDele
     var playerView = AVPlayer()
     var fridgeSwitch = UISwitch()
     var freezerSwitch = UISwitch()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +41,6 @@ class InfoViewController: UITableViewController, MFMailComposeViewControllerDele
             
             fridgeSwitch.onTintColor = .purple
             freezerSwitch.onTintColor = .purple
-
             
         }
     }
@@ -101,10 +102,28 @@ class InfoViewController: UITableViewController, MFMailComposeViewControllerDele
         fridgeNotifCell.selectionStyle = .none
         fridgeNotifCell.accessoryView = fridgeSwitch
         
+        fridgeSwitch.addTarget(self, action: #selector(InfoViewController.fridgeSwitchFlipped), for: .valueChanged );
+        fridgeSwitch.tag = 0
+        
+        if UserDefaults.standard.bool(forKey: "fridgeSwitchOn") == true {
+            fridgeSwitch.isOn = true
+        } else {
+            fridgeSwitch.isOn = false
+        }
+        
         freezerNotifCell.textLabel?.text = "Freezer"
         freezerNotifCell.textLabel?.textColor = .purple
         freezerNotifCell.selectionStyle = .none
         freezerNotifCell.accessoryView = freezerSwitch
+        
+        freezerSwitch.addTarget(self, action: #selector(InfoViewController.freezerSwitchFlipped), for: .valueChanged );
+        freezerSwitch.tag = 1
+        
+        if UserDefaults.standard.bool(forKey: "freezerSwitchOn") == true {
+            freezerSwitch.isOn = true
+        } else {
+            freezerSwitch.isOn = false
+        }
         
         //Specify which cell goes where.
         
@@ -201,35 +220,58 @@ class InfoViewController: UITableViewController, MFMailComposeViewControllerDele
         navigationItem.backBarButtonItem = backButton
     }
     
-    @IBAction func fridgeSwitch(_ sender: UISwitch) {
+    
+    func fridgeSwitchFlipped(sender: AnyObject) {
         
-        if (sender.isOn == true) {
+        let fridgeSwitch = sender as! UISwitch
+        if fridgeSwitch.tag == 0 {
             
-            print("hey")
-        } else {
-            print("nooo")
+            if UserDefaults.standard.bool(forKey: "fridgeSwitchOn") == true {
+                
+                UserDefaults.standard.set(false, forKey: "fridgeSwitchOn")
+                print(UserDefaults.standard.bool(forKey: "fridgeSwitchOn"))
+                
+                
+            } else {
+                
+                UserDefaults.standard.set(true, forKey: "fridgeSwitchOn")
+                print(UserDefaults.standard.bool(forKey: "fridgeSwitchOn"))
+                
+            }
+            
         }
     }
     
-    @IBAction func freezerSwitch(_ sender: UISwitch) {
+    func freezerSwitchFlipped(sender: AnyObject) {
         
-        if (sender.isOn == true) {
+        let freezerSwitch = sender as! UISwitch
+        if freezerSwitch.tag == 1 {
             
-            print("hey")
-        } else {
-            print("nooo")
+            if UserDefaults.standard.bool(forKey: "freezerSwitchOn") == true {
+                
+                UserDefaults.standard.set(false, forKey: "freezerSwitchOn")
+                print(UserDefaults.standard.bool(forKey: "freezerSwitchOn"))
+                
+            } else {
+                
+                UserDefaults.standard.set(true, forKey: "freezerSwitchOn")
+                print(UserDefaults.standard.bool(forKey: "freezerSwitchOn"))
+                
+            }
+            
         }
-        
     }
     
     
-
-
-
-
-
-//Final-ish declaration:
-
+    
+    
+    
+    
+    
+    
+    
+    
+    //Final-ish declaration:
 }
 
 //Custom class for making the video player landscape.

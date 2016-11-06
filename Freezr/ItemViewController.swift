@@ -217,7 +217,6 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         //Send data to the notification func.
         let selectedDate = sender.date
         self.scheduleNotification(at: selectedDate)
-        
         print("Selected date: \(selectedDate)")
     }
     
@@ -297,7 +296,7 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     //Set up notifications.
     
     func scheduleNotification(at date: Date) {
-        
+    
         let calendar = Calendar(identifier: .gregorian)
         let components = calendar.dateComponents(in: .current, from: date)
         let newComponents = DateComponents(calendar: calendar, timeZone: .current, month: components.month, day: components.day, hour: components.hour, minute: components.minute)
@@ -307,16 +306,21 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         let content = UNMutableNotificationContent()
         content.title = "Item expired"
         if (itemName.text?.isEmpty)! {
-            content.body = "An item in your freezr has reached its expiry date."
+            content.body = "An item in your freezer has reached its expiry date."
         } else {
-            content.body = "\(itemName.text!) has expired in your Freezr."
+            content.body = "\(itemName.text!) has expired in your freezer."
         }
         content.sound = UNNotificationSound.default()
         
-        let request = UNNotificationRequest(identifier: "expiryNotification", content: content, trigger: trigger)
+        let random = Int(arc4random_uniform(900000))
         
-        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
-        UNUserNotificationCenter.current().add(request) {(error) in
+        let identifier = NSString.localizedUserNotificationString(forKey: "\(random)", arguments: nil)
+
+        let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
+        
+        UNUserNotificationCenter.current().add(request) {
+            
+            (error) in
             if let error = error {
                 print("Notification error: \(error)")
             }
