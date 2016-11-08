@@ -91,6 +91,8 @@ class FridgeViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 dateFormatter.dateFormat = "dd/MMM/yyyy"
                 //dateFormatter.timeZone = TimeZone(abbreviation: "GMT+0:00")
                 let dateFromString = dateFormatter.date(from: dateString!)
+                //Fridge is just one week, rather than two:
+                let oneWeek = dateFromString?.addingTimeInterval(-604800)
                 
                 //Change expiry text and colour accordingly.
                 
@@ -98,6 +100,11 @@ class FridgeViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     cell.textLabel?.textColor = .red
                     cell.detailTextLabel?.text = "Expired: \(fridgeItem.expirydate!)"
                     cell.detailTextLabel?.textColor = .red
+                    
+                } else if today.isGreaterThanDate(dateToCompare: oneWeek!) {
+                    
+                    cell.detailTextLabel?.text = "Expires: \(fridgeItem.expirydate!)"
+                    cell.detailTextLabel?.textColor = .orange
                     
                 } else {
                     

@@ -84,6 +84,7 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "dd/MMM/yyyy"
             let dateFromString = dateFormatter.date(from: dateString!)
+            let twoWeeks = dateFromString?.addingTimeInterval(-1209600)
             
             //Change expiry text and colour accordingly.
             
@@ -97,6 +98,11 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
                     expirationDateTextField.textColor = .red
                     expiresLabel.text = "Expired:"
                     expiresLabel.textColor = .red
+                    
+                } else if today.isGreaterThanDate(dateToCompare: twoWeeks!) {
+                    expirationDateTextField.textColor = .orange
+                    expiresLabel.text = "Expiring soon:"
+                    expiresLabel.textColor = .orange
                     
                 } else {}
                 
@@ -301,7 +307,7 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     //Set up notifications.
     
     func scheduleNotification(at date: Date) {
-    
+        
         let calendar = Calendar(identifier: .gregorian)
         let components = calendar.dateComponents(in: .current, from: date)
         let newComponents = DateComponents(calendar: calendar, timeZone: .current, month: components.month, day: components.day, hour: components.hour, minute: components.minute)
@@ -320,7 +326,7 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         let random = Int(arc4random_uniform(900000))
         
         let identifier = NSString.localizedUserNotificationString(forKey: "\(random)", arguments: nil)
-
+        
         let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
         
         UNUserNotificationCenter.current().add(request) {

@@ -92,6 +92,7 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 dateFormatter.dateFormat = "dd/MMM/yyyy"
                 //dateFormatter.timeZone = TimeZone(abbreviation: "GMT+0:00")
                 let dateFromString = dateFormatter.date(from: dateString!)
+                let twoWeeks = dateFromString?.addingTimeInterval(-1209600)
                 
                 //Change expiry text and colour accordingly.
                 
@@ -100,19 +101,25 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     cell.detailTextLabel?.text = "Expired: \(item.expirydate!)"
                     cell.detailTextLabel?.textColor = .red
                     
+                } else if today.isGreaterThanDate(dateToCompare: twoWeeks!) {
+                    
+                    cell.detailTextLabel?.text = "Expires: \(item.expirydate!)"
+                    cell.detailTextLabel?.textColor = .orange
+                    
                 } else {
                     
                     cell.textLabel?.textColor = myPurple
                     cell.detailTextLabel?.text = "Expires: \(item.expirydate!)"
                     cell.detailTextLabel?.textColor = myPurple
                 }
-                
             }
+            
         }
         
         return cell
     }
-    
+
+
     //What happens when a cell is tapped.
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -138,10 +145,10 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
             nextViewController.item = sender as? Item
             
             if nextViewController.item != nil {
-            
-            let backButton = UIBarButtonItem()
-            backButton.title = "Done"
-            navigationItem.backBarButtonItem = backButton
+                
+                let backButton = UIBarButtonItem()
+                backButton.title = "Done"
+                navigationItem.backBarButtonItem = backButton
                 
             } else {
                 let backButton = UIBarButtonItem()
