@@ -155,7 +155,10 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
         } else {
             
             let nextViewController = segue.destination as! InfoViewController
-            nextViewController.navigationItem.title = "Info"
+            nextViewController.navigationItem.title = "Settings"
+            let backButton = UIBarButtonItem()
+            backButton.title = "Done"
+            nextViewController.navigationItem.backBarButtonItem = backButton
             
             //Hide tab bar in settings.
             nextViewController.hidesBottomBarWhenPushed = true

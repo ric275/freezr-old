@@ -49,16 +49,20 @@ class InfoViewController: UITableViewController, MFMailComposeViewControllerDele
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         
-        return 4
+        return 5
     }
     
     //Specifies how many rows are in the table.
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 1 {
+        if section == 0 {
+            return 1
+        } else if section == 1 {
             return 2
         } else if section == 2 {
             return 2
+        } else if section == 3 {
+            return 4
         } else {
             return 1
         }
@@ -76,6 +80,11 @@ class InfoViewController: UITableViewController, MFMailComposeViewControllerDele
         let versionCell = UITableViewCell(style: .value1, reuseIdentifier: nil)
         let freezerNotifCell = UITableViewCell(style: .value1, reuseIdentifier: nil)
         let fridgeNotifCell = UITableViewCell(style: .value1, reuseIdentifier: nil)
+        let preFreqNeverCell = UITableViewCell(style: .value1, reuseIdentifier: nil)
+        let preFreq2WeekCell = UITableViewCell(style: .value1, reuseIdentifier: nil)
+        let preFreq1WeekCell = UITableViewCell(style: .value1, reuseIdentifier: nil)
+        let preFreq2DayCell = UITableViewCell(style: .value1, reuseIdentifier: nil)
+        
         
         howCell.textLabel?.text = "Video: How to use Freezr"
         howCell.textLabel?.textColor = .purple
@@ -125,6 +134,31 @@ class InfoViewController: UITableViewController, MFMailComposeViewControllerDele
             freezerSwitch.isOn = false
         }
         
+        preFreqNeverCell.textLabel?.text = "Never"
+        preFreqNeverCell.textLabel?.textColor = .purple
+        if UserDefaults.standard.bool(forKey: "preFreqNeverTicked") == true {
+            preFreqNeverCell.accessoryType = .checkmark
+        }
+        
+        preFreq2WeekCell.textLabel?.text = "2 Weeks Before"
+        preFreq2WeekCell.textLabel?.textColor = .purple
+        if UserDefaults.standard.bool(forKey: "preFreq2WeekTicked") == true {
+            preFreq2WeekCell.accessoryType = .checkmark
+        }
+        
+        preFreq1WeekCell.textLabel?.text = "1 Week Before"
+        preFreq1WeekCell.textLabel?.textColor = .purple
+        if UserDefaults.standard.bool(forKey: "preFreq1WeekTicked") == true {
+            preFreq1WeekCell.accessoryType = .checkmark
+        }
+        
+        preFreq2DayCell.textLabel?.text = "2 Days Before"
+        preFreq2DayCell.textLabel?.textColor = .purple
+        if UserDefaults.standard.bool(forKey: "preFreq2DayTicked") == true {
+            preFreq2DayCell.accessoryType = .checkmark
+        }
+        
+        
         //Specify which cell goes where.
         
         if indexPath.section == 0 {
@@ -140,6 +174,16 @@ class InfoViewController: UITableViewController, MFMailComposeViewControllerDele
                 return fridgeNotifCell
             } else {
                 return freezerNotifCell
+            }
+        } else if indexPath.section == 3 {
+            if indexPath.row == 0 {
+                return preFreqNeverCell
+            } else if indexPath.row == 1 {
+                return preFreq2WeekCell
+            } else if indexPath.row == 2 {
+                return preFreq1WeekCell
+            } else {
+                return preFreq2DayCell
             }
         } else {
             return versionCell
@@ -175,8 +219,69 @@ class InfoViewController: UITableViewController, MFMailComposeViewControllerDele
                 
                 self.playerViewController.player?.play()
             }
+            
+            //What happens when the preFreq cells are tapped - tick them and set UserDefaults.
+
+        } else if indexPath.section == 3 {
+            if indexPath.row == 0 {
+                
+                let cell = tableView.cellForRow(at: indexPath)!
+                if (cell.isSelected) {
+                    cell.isSelected = false
+                    
+                    if (cell.accessoryType == .none) {
+                        cell.accessoryType = .checkmark
+                        UserDefaults.standard.set(true, forKey: "preFreqNeverTicked")
+                        
+                    } else {
+                        cell.accessoryType = .none
+                        UserDefaults.standard.set(false, forKey: "preFreqNeverTicked")
+                    }
+                }
+            } else if indexPath.row == 1 {
+                let cell = tableView.cellForRow(at: indexPath)!
+                if (cell.isSelected) {
+                    cell.isSelected = false
+                    
+                    if (cell.accessoryType == .none) {
+                        cell.accessoryType = .checkmark
+                        UserDefaults.standard.set(true, forKey: "preFreq2WeekTicked")
+                        
+                    } else {
+                        cell.accessoryType = .none
+                        UserDefaults.standard.set(false, forKey: "preFreq2WeekTicked")
+                    }
+                }
+            } else if indexPath.row == 2 {
+                let cell = tableView.cellForRow(at: indexPath)!
+                if (cell.isSelected) {
+                    cell.isSelected = false
+                    
+                    if (cell.accessoryType == .none) {
+                        cell.accessoryType = .checkmark
+                        UserDefaults.standard.set(true, forKey: "preFreq1WeekTicked")
+                        
+                    } else {
+                        cell.accessoryType = .none
+                        UserDefaults.standard.set(false, forKey: "preFreq1WeekTicked")
+                    }
+                }
+            } else {
+                let cell = tableView.cellForRow(at: indexPath)!
+                if (cell.isSelected) {
+                    cell.isSelected = false
+                    
+                    if (cell.accessoryType == .none) {
+                        cell.accessoryType = .checkmark
+                        UserDefaults.standard.set(true, forKey: "preFreq2DayTicked")
+                        
+                    } else {
+                        cell.accessoryType = .none
+                        UserDefaults.standard.set(false, forKey: "preFreq2DayTicked")
+                    }
+                }
+            }
         }
-        
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
