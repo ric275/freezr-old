@@ -174,6 +174,10 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             item.name = itemName.text
             item.image = UIImageJPEGRepresentation(itemImage.image!, 0.05)! as NSData? //was 0.1
             item.expirydate = expirationDateTextField.text
+            
+            let random = Int(arc4random_uniform(900000))
+            item.notifID = "\(random)"
+            print("ID: \(item.notifID!)")
         }
         
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
@@ -186,6 +190,7 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     @IBAction func deleteItemTapped(_ sender: AnyObject) {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
+        //UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["\(itemImage.image)"])
         context.delete(item!)
         
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
@@ -323,10 +328,12 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         }
         content.sound = UNNotificationSound.default()
         
-        let random = Int(arc4random_uniform(900000))
+        //let random = Int(arc4random_uniform(900000))
         
-        let identifier = NSString.localizedUserNotificationString(forKey: "\(random)", arguments: nil)
+        let identifier = NSString.localizedUserNotificationString(forKey: "\(item?.notifID)", arguments: nil)
         
+        print("IDDDDDDDDDDDDD: \(identifier)")
+
         let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
         
         UNUserNotificationCenter.current().add(request) {
@@ -337,6 +344,36 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             }
         }
     }
+    
+    func deleteNot() {
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     func pre2WeekNotification(at date: Date) {
         
@@ -433,7 +470,7 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             }
         }
     }
-    
+
     //Final declaration:
     
 }

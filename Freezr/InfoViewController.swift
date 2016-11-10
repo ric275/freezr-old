@@ -232,6 +232,12 @@ class InfoViewController: UITableViewController, MFMailComposeViewControllerDele
                     if (cell.accessoryType == .none) {
                         cell.accessoryType = .checkmark
                         UserDefaults.standard.set(true, forKey: "preFreqNeverTicked")
+                        //
+                        UserDefaults.standard.set(false, forKey: "preFreq2WeekTicked")
+                        UserDefaults.standard.set(false, forKey: "preFreq1WeekTicked")
+                        UserDefaults.standard.set(false, forKey: "preFreq2DayTicked")
+                        
+                        
                         
                     } else {
                         cell.accessoryType = .none
@@ -246,6 +252,8 @@ class InfoViewController: UITableViewController, MFMailComposeViewControllerDele
                     if (cell.accessoryType == .none) {
                         cell.accessoryType = .checkmark
                         UserDefaults.standard.set(true, forKey: "preFreq2WeekTicked")
+                        //
+                        UserDefaults.standard.set(false, forKey: "preFreqNeverTicked")
                         
                     } else {
                         cell.accessoryType = .none
@@ -260,6 +268,8 @@ class InfoViewController: UITableViewController, MFMailComposeViewControllerDele
                     if (cell.accessoryType == .none) {
                         cell.accessoryType = .checkmark
                         UserDefaults.standard.set(true, forKey: "preFreq1WeekTicked")
+                        //
+                        UserDefaults.standard.set(false, forKey: "preFreqNeverTicked")
                         
                     } else {
                         cell.accessoryType = .none
@@ -274,6 +284,8 @@ class InfoViewController: UITableViewController, MFMailComposeViewControllerDele
                     if (cell.accessoryType == .none) {
                         cell.accessoryType = .checkmark
                         UserDefaults.standard.set(true, forKey: "preFreq2DayTicked")
+                        //
+                        UserDefaults.standard.set(false, forKey: "preFreqNeverTicked")
                         
                     } else {
                         cell.accessoryType = .none
