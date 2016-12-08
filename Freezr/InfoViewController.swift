@@ -221,7 +221,7 @@ class InfoViewController: UITableViewController, MFMailComposeViewControllerDele
             }
             
             //What happens when the preFreq cells are tapped - tick them and set UserDefaults.
-
+            
         } else if indexPath.section == 3 {
             if indexPath.row == 0 {
                 
@@ -378,15 +378,6 @@ class InfoViewController: UITableViewController, MFMailComposeViewControllerDele
             
         }
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     //Final-ish declaration:
 }

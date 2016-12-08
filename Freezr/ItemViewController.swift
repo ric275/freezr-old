@@ -45,6 +45,11 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     let today = NSDate()
     
+    var selectedDate : Date? = nil
+    var twoWeeks : Date? = nil
+    var oneWeek : Date? = nil
+    var twoDays : Date? = nil
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -152,6 +157,7 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         imageNoticeText.isHidden = true
         
         addItemOrUpdateButton.isEnabled = true
+        
     }
     
     //What happens when Add or Update is tapped.
@@ -175,9 +181,27 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             item.image = UIImageJPEGRepresentation(itemImage.image!, 0.05)! as NSData? //was 0.1
             item.expirydate = expirationDateTextField.text
             
-            let random = Int(arc4random_uniform(900000))
-            item.notifID = "\(random)"
-            print("ID: \(item.notifID!)")
+            (UIApplication.shared.delegate as! AppDelegate).saveContext()
+            
+            if selectedDate != nil {
+                
+                if UserDefaults.standard.bool(forKey: "freezerSwitchOn") == true {
+                    self.scheduleNotification(at: self.selectedDate!)
+                }
+                
+                if UserDefaults.standard.bool(forKey: "preFreq2WeekTicked") == true {
+                    self.pre2WeekNotification(at: self.twoWeeks!)
+                }
+                
+                if UserDefaults.standard.bool(forKey: "preFreq1WeekTicked") == true {
+                    self.pre1WeekNotification(at: oneWeek!)
+                }
+                
+                if UserDefaults.standard.bool(forKey: "preFreq2DayTicked") == true {
+                    self.pre2DayNotification(at: twoDays!)
+                }
+            }
+            
         }
         
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
@@ -190,7 +214,8 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     @IBAction func deleteItemTapped(_ sender: AnyObject) {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
-        //UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["\(itemImage.image)"])
+        //UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["\(item?.notifID!)"])
+        
         context.delete(item!)
         
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
@@ -211,6 +236,8 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         datePickerView.addTarget(self, action: #selector(ItemViewController.datePickerValueChanged), for: UIControlEvents.valueChanged)
     }
     
+    //DATE CHANGED
+    
     func datePickerValueChanged(sender:UIDatePicker) {
         
         let dateFormatter = DateFormatter()
@@ -225,14 +252,11 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         expirationDateTextField.text = dateFormatter.string(from: sender.date)
         
         //Send data to the notification func.
-        let selectedDate = sender.date
-        let twoWeeks = sender.date.addingTimeInterval(-1209600)
-        let oneWeek = sender.date.addingTimeInterval(-604800)
-        let twoDays = sender.date.addingTimeInterval(-172800)
-        self.scheduleNotification(at: selectedDate)
-        self.pre2WeekNotification(at: twoWeeks)
-        self.pre1WeekNotification(at: oneWeek)
-        self.pre2DayNotification(at: twoDays)
+        selectedDate = sender.date
+        twoWeeks = sender.date.addingTimeInterval(-1209600)
+        oneWeek = sender.date.addingTimeInterval(-604800)
+        twoDays = sender.date.addingTimeInterval(-172800)
+        
         print("Selected date: \(selectedDate)")
     }
     
@@ -328,76 +352,14 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         }
         content.sound = UNNotificationSound.default()
         
-        //let random = Int(arc4random_uniform(900000))
-        
-        let identifier = NSString.localizedUserNotificationString(forKey: "\(item?.notifID)", arguments: nil)
-        
-        print("IDDDDDDDDDDDDD: \(identifier)")
-
-        let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
-        
-        UNUserNotificationCenter.current().add(request) {
-            
-            (error) in
-            if let error = error {
-                print("Notification error: \(error)")
-            }
-        }
-    }
-    
-    func deleteNot() {
-        
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    func pre2WeekNotification(at date: Date) {
-        
-        let calendar = Calendar(identifier: .gregorian)
-        let components = calendar.dateComponents(in: .current, from: date)
-        let newComponents = DateComponents(calendar: calendar, timeZone: .current, month: components.month, day: components.day, hour: components.hour, minute: components.minute)
-        
-        let trigger = UNCalendarNotificationTrigger(dateMatching: newComponents, repeats: false)
-        
-        let content = UNMutableNotificationContent()
-        content.title = "Item expiring soon"
-        if (itemName.text?.isEmpty)! {
-            content.body = "An item in your freezer will expire in 2 weeks."
-        } else {
-            content.body = "\(itemName.text!) (in your freezer) will expire in 2 weeks."
-        }
-        content.sound = UNNotificationSound.default()
-        
         let random = Int(arc4random_uniform(900000))
         
         let identifier = NSString.localizedUserNotificationString(forKey: "\(random)", arguments: nil)
         
         let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
         
+        print("IDDDDDDDDDDDDD: \(identifier)")
+        
         UNUserNotificationCenter.current().add(request) {
             
             (error) in
@@ -405,72 +367,113 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
                 print("Notification error: \(error)")
             }
         }
+    }
+    
+    func pre2WeekNotification(at date: Date) {
+        
+        if UserDefaults.standard.bool(forKey: "preFreq2WeekTicked") == true {
+            
+            let calendar = Calendar(identifier: .gregorian)
+            let components = calendar.dateComponents(in: .current, from: date)
+            let newComponents = DateComponents(calendar: calendar, timeZone: .current, month: components.month, day: components.day, hour: components.hour, minute: components.minute)
+            
+            let trigger = UNCalendarNotificationTrigger(dateMatching: newComponents, repeats: false)
+            
+            let content = UNMutableNotificationContent()
+            content.title = "Item expiring soon"
+            if (itemName.text?.isEmpty)! {
+                content.body = "An item in your freezer will expire in 2 weeks."
+            } else {
+                content.body = "\(itemName.text!) (in your freezer) will expire in 2 weeks."
+            }
+            content.sound = UNNotificationSound.default()
+            
+            let random = Int(arc4random_uniform(900000))
+            
+            let identifier = NSString.localizedUserNotificationString(forKey: "\(random)", arguments: nil)
+            
+            let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
+            
+            UNUserNotificationCenter.current().add(request) {
+                
+                (error) in
+                if let error = error {
+                    print("Notification error: \(error)")
+                }
+            }
+        } else {}
     }
     
     func pre1WeekNotification(at date: Date) {
         
-        let calendar = Calendar(identifier: .gregorian)
-        let components = calendar.dateComponents(in: .current, from: date)
-        let newComponents = DateComponents(calendar: calendar, timeZone: .current, month: components.month, day: components.day, hour: components.hour, minute: components.minute)
-        
-        let trigger = UNCalendarNotificationTrigger(dateMatching: newComponents, repeats: false)
-        
-        let content = UNMutableNotificationContent()
-        content.title = "Item expiring soon"
-        if (itemName.text?.isEmpty)! {
-            content.body = "An item in your freezer will expire in 1 week."
-        } else {
-            content.body = "\(itemName.text!) (in your freezer) will expire in 1 week."
-        }
-        content.sound = UNNotificationSound.default()
-        
-        let random = Int(arc4random_uniform(900000))
-        
-        let identifier = NSString.localizedUserNotificationString(forKey: "\(random)", arguments: nil)
-        
-        let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
-        
-        UNUserNotificationCenter.current().add(request) {
+        if UserDefaults.standard.bool(forKey: "preFreq1WeekTicked") == true {
             
-            (error) in
-            if let error = error {
-                print("Notification error: \(error)")
+            let calendar = Calendar(identifier: .gregorian)
+            let components = calendar.dateComponents(in: .current, from: date)
+            let newComponents = DateComponents(calendar: calendar, timeZone: .current, month: components.month, day: components.day, hour: components.hour, minute: components.minute)
+            
+            let trigger = UNCalendarNotificationTrigger(dateMatching: newComponents, repeats: false)
+            
+            let content = UNMutableNotificationContent()
+            content.title = "Item expiring soon"
+            if (itemName.text?.isEmpty)! {
+                content.body = "An item in your freezer will expire in 1 week."
+            } else {
+                content.body = "\(itemName.text!) (in your freezer) will expire in 1 week."
             }
-        }
+            content.sound = UNNotificationSound.default()
+            
+            let random = Int(arc4random_uniform(900000))
+            
+            let identifier = NSString.localizedUserNotificationString(forKey: "\(random)", arguments: nil)
+            
+            let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
+            
+            UNUserNotificationCenter.current().add(request) {
+                
+                (error) in
+                if let error = error {
+                    print("Notification error: \(error)")
+                }
+            }
+        } else {}
     }
     
     func pre2DayNotification(at date: Date) {
         
-        let calendar = Calendar(identifier: .gregorian)
-        let components = calendar.dateComponents(in: .current, from: date)
-        let newComponents = DateComponents(calendar: calendar, timeZone: .current, month: components.month, day: components.day, hour: components.hour, minute: components.minute)
-        
-        let trigger = UNCalendarNotificationTrigger(dateMatching: newComponents, repeats: false)
-        
-        let content = UNMutableNotificationContent()
-        content.title = "Item expiring very soon"
-        if (itemName.text?.isEmpty)! {
-            content.body = "An item in your freezer will expire in just 2 days."
-        } else {
-            content.body = "\(itemName.text!) (in your freezer) will expire in just 2 days."
-        }
-        content.sound = UNNotificationSound.default()
-        
-        let random = Int(arc4random_uniform(900000))
-        
-        let identifier = NSString.localizedUserNotificationString(forKey: "\(random)", arguments: nil)
-        
-        let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
-        
-        UNUserNotificationCenter.current().add(request) {
+        if UserDefaults.standard.bool(forKey: "preFreq2DayTicked") == true {
             
-            (error) in
-            if let error = error {
-                print("Notification error: \(error)")
+            let calendar = Calendar(identifier: .gregorian)
+            let components = calendar.dateComponents(in: .current, from: date)
+            let newComponents = DateComponents(calendar: calendar, timeZone: .current, month: components.month, day: components.day, hour: components.hour, minute: components.minute)
+            
+            let trigger = UNCalendarNotificationTrigger(dateMatching: newComponents, repeats: false)
+            
+            let content = UNMutableNotificationContent()
+            content.title = "Item expiring very soon"
+            if (itemName.text?.isEmpty)! {
+                content.body = "An item in your freezer will expire in just 2 days."
+            } else {
+                content.body = "\(itemName.text!) (in your freezer) will expire in just 2 days."
             }
-        }
+            content.sound = UNNotificationSound.default()
+            
+            let random = Int(arc4random_uniform(900000))
+            
+            let identifier = NSString.localizedUserNotificationString(forKey: "\(random)", arguments: nil)
+            
+            let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
+            
+            UNUserNotificationCenter.current().add(request) {
+                
+                (error) in
+                if let error = error {
+                    print("Notification error: \(error)")
+                }
+            }
+        } else {}
     }
-
+    
     //Final declaration:
     
 }
