@@ -5,8 +5,6 @@
 //  Created by Jack Taylor on 09/10/2016.
 //  Copyright © 2016 Jack Taylor. All rights reserved.
 //
-//  The information icon used on the Freezr page was designed by Chanut is Industries.
-//
 //  Meow meow meow meow 🐱
 //
 
