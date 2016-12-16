@@ -70,7 +70,35 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
         //If there is an existing item:
         
+        
+            
+        
         if item != nil {
+            
+            //Xmas - delete from here.
+            
+            if item!.name == "Hibble Bibble" {
+                
+                itemName.borderStyle = .none
+                itemImage.image = UIImage(named: "emma")
+                itemName.text = "Merry Xmas Emma 🎁❄️"
+                expirationDateTextField.borderStyle = .none
+                expirationDateTextField.text = "...and a meowy New Year 😘"
+                itemName.textColor = .red
+                expirationDateTextField.textColor = .red
+                
+                placeHolderText1.isHidden = true
+                placeHolderText2.isHidden = true
+                imageNoticeText.isHidden = true
+                
+                addItemOrUpdateButton.isHidden = true
+                addToSLButton.isHidden = true
+                deleteItemButton.isHidden = true
+                
+                
+            } else {
+                
+            //Keep from here.
             itemImage.image = UIImage(data: item!.image as! Data)
             itemName.text = item!.name
             expirationDateTextField.text = item!.expirydate
@@ -110,10 +138,11 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
                     expiresLabel.textColor = .orange
                     
                 } else {}
-                
+            
+            }
             }
             
-            //If there is not existing item:
+            //If there is not an existing item:
             
         } else {
             
@@ -121,6 +150,7 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             addToSLButton.isHidden = true
             addItemOrUpdateButton.isEnabled = false
         }
+            
         
         //Dismiss the keyboard when tapped away (setup).
         
