@@ -92,10 +92,12 @@ class InfoViewController: UITableViewController, MFMailComposeViewControllerDele
         
         aboutCell.textLabel?.text = "About Freezr"
         aboutCell.textLabel?.textColor = .purple
+        aboutCell.textLabel?.font = UIFont(name: "AutourOne-Regular", size: 14)
         aboutCell.accessoryType =  .disclosureIndicator
         
         feedbackCell.textLabel?.text = "Send Feedback"
         feedbackCell.textLabel?.textColor = .purple
+        feedbackCell.textLabel?.font = UIFont(name: "AutourOne-Regular", size: 14)
         feedbackCell.accessoryType =  .disclosureIndicator
         
         versionCell.textLabel?.text = "App Version:"

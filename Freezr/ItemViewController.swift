@@ -35,7 +35,11 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     @IBOutlet weak var imageNoticeText: UILabel!
     
+    @IBOutlet weak var nameLabel: UILabel!
+    
     @IBOutlet weak var expiresLabel: UILabel!
+    
+    @IBOutlet var bck: UIView!
     
     //Variables.
     
@@ -70,77 +74,51 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
         //If there is an existing item:
         
-        
-            
-        
+    
         if item != nil {
             
-            //Xmas - delete from here.
-            
-            if item!.name == "Hibble Bibble" {
-                
-                itemName.borderStyle = .none
-                itemImage.image = UIImage(named: "emma")
-                itemName.text = "Merry Xmas Emma 🎁❄️"
-                expirationDateTextField.borderStyle = .none
-                expirationDateTextField.text = "...and a meowy New Year 😘"
-                itemName.textColor = .red
-                expirationDateTextField.textColor = .red
+                itemImage.image = UIImage(data: item!.image as! Data)
+                itemName.text = item!.name
+                expirationDateTextField.text = item!.expirydate
                 
                 placeHolderText1.isHidden = true
                 placeHolderText2.isHidden = true
                 imageNoticeText.isHidden = true
                 
-                addItemOrUpdateButton.isHidden = true
-                addToSLButton.isHidden = true
-                deleteItemButton.isHidden = true
+                addItemOrUpdateButton.setTitle("Update item", for: .normal)
                 
+                //Expiry text setup.
                 
-            } else {
+                // Convert the String to a NSDate.
                 
-            //Keep from here.
-            itemImage.image = UIImage(data: item!.image as! Data)
-            itemName.text = item!.name
-            expirationDateTextField.text = item!.expirydate
-            
-            placeHolderText1.isHidden = true
-            placeHolderText2.isHidden = true
-            imageNoticeText.isHidden = true
-            
-            addItemOrUpdateButton.setTitle("Update item", for: .normal)
-            
-            //Expiry text setup.
-            
-            // Convert the String to a NSDate.
-            
-            let dateString = expirationDateTextField.text
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "dd/MMM/yyyy"
-            let dateFromString = dateFormatter.date(from: dateString!)
-            let twoWeeks = dateFromString?.addingTimeInterval(-1209600)
-            
-            //Change expiry text and colour accordingly.
-            
-            if (item?.expirydate?.isEmpty)! {
+                let dateString = expirationDateTextField.text
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "dd/MMM/yyyy"
+                let dateFromString = dateFormatter.date(from: dateString!)
+                let twoWeeks = dateFromString?.addingTimeInterval(-1209600)
                 
-                print("No expiry date given - do nothing")
+                //Change expiry text and colour accordingly.
                 
-            } else {
-                
-                if today.isGreaterThanDate(dateToCompare: dateFromString!) {
-                    expirationDateTextField.textColor = .red
-                    expiresLabel.text = "Expired:"
-                    expiresLabel.textColor = .red
+                if (item?.expirydate?.isEmpty)! {
                     
-                } else if today.isGreaterThanDate(dateToCompare: twoWeeks!) {
-                    expirationDateTextField.textColor = .orange
-                    expiresLabel.text = "Expiring soon:"
-                    expiresLabel.textColor = .orange
+                    print("No expiry date given - do nothing")
                     
-                } else {}
+                } else {
+                    
+                    if today.isGreaterThanDate(dateToCompare: dateFromString!) {
+                        expirationDateTextField.textColor = .red
+                        expiresLabel.text = "Expired:"
+                        expiresLabel.textColor = .red
+                        
+                    } else if today.isGreaterThanDate(dateToCompare: twoWeeks!) {
+                        expirationDateTextField.textColor = .orange
+                        expiresLabel.text = "Expiring soon:"
+                        expiresLabel.textColor = .orange
+                        
+                    } else {}
+                    
+                }
             
-            }
-            }
             
             //If there is not an existing item:
             
@@ -150,7 +128,7 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             addToSLButton.isHidden = true
             addItemOrUpdateButton.isEnabled = false
         }
-            
+        
         
         //Dismiss the keyboard when tapped away (setup).
         
