@@ -170,7 +170,8 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     //What happens when Add or Update is tapped.
     
-    @IBAction func addToFreezrTapped(_ sender: AnyObject) {
+    
+    @IBAction func addToFreezerTapped(_ sender: Any) {
         
         //If updating an exisitng item.
         
