@@ -8,6 +8,7 @@
 
 import UIKit
 import UserNotifications
+import AVFoundation
 
 class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     
@@ -53,6 +54,8 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     var twoWeeks : Date? = nil
     var oneWeek : Date? = nil
     var twoDays : Date? = nil
+    
+    var audioPlayer = AVAudioPlayer()
     
     override func viewDidLoad() {
         
@@ -214,6 +217,36 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         }
         
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        
+        //Create the alert sound
+        
+        let alertSound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "addSound", ofType: "mp3")!)
+        
+        //Set up sound playback
+        
+        do {
+        try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient)
+        } catch {
+            print("sound error1")
+        }
+        
+        do {
+        try AVAudioSession.sharedInstance().setActive(true)
+        } catch {
+        print("sound error2")
+        }
+        
+        //Play sound
+        
+        do {
+           try audioPlayer = AVAudioPlayer(contentsOf: alertSound as URL)
+        } catch {
+            print("Playback error")
+        }
+        
+        audioPlayer.volume = 0.02
+        audioPlayer.prepareToPlay()
+        audioPlayer.play()
         
         navigationController!.popViewController(animated: true)
     }
