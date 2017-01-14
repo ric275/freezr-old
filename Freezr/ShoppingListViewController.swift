@@ -3,7 +3,7 @@
 //  Freezr
 //
 //  Created by Jack Taylor on 14/10/2016.
-//  Copyright © 2016 Jack Taylor. All rights reserved.
+//  Copyright © 2017 Jack Taylor. All rights reserved.
 //
 
 import UIKit
@@ -82,6 +82,7 @@ class ShoppingListViewController: UIViewController, UITableViewDelegate, UITable
         }
         
         cell.textLabel?.textColor = myPurple
+        cell.textLabel?.font = UIFont(name: "Gill Sans", size: 17)
         
         return cell
     }

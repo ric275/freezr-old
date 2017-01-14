@@ -3,7 +3,7 @@
 //  Freezr
 //
 //  Created by Jack Taylor on 09/10/2016.
-//  Copyright © 2016 Jack Taylor. All rights reserved.
+//  Copyright © 2017 Jack Taylor. All rights reserved.
 //
 
 import UIKit
@@ -75,6 +75,9 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
         } else {
             let item = items[indexPath.row]
             cell.textLabel?.text = item.name
+            cell.textLabel?.font = UIFont(name: "Gill Sans", size: 17)
+            cell.detailTextLabel?.font = UIFont(name: "Gill Sans", size: 17)
+            cell.textLabel?.textColor = myPurple
             cell.imageView?.image = UIImage(data: item.image as! Data)
             
             if (item.expirydate?.isEmpty)! {
@@ -108,7 +111,6 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     
                 } else {
                     
-                    cell.textLabel?.textColor = myPurple
                     cell.detailTextLabel?.text = "Expires: \(item.expirydate!)"
                     cell.detailTextLabel?.textColor = myPurple
                 }

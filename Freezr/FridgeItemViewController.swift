@@ -3,11 +3,12 @@
 //  Freezr
 //
 //  Created by Jack Taylor on 01/11/2016.
-//  Copyright © 2016 Jack Taylor. All rights reserved.
+//  Copyright © 2017 Jack Taylor. All rights reserved.
 //
 
 import UIKit
 import UserNotifications
+import AVFoundation
 
 class FridgeItemViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UIGestureRecognizerDelegate {
     
@@ -49,6 +50,8 @@ class FridgeItemViewController: UIViewController, UIImagePickerControllerDelegat
     var twoWeeks : Date? = nil
     var oneWeek : Date? = nil
     var twoDays : Date? = nil
+    
+    var audioPlayer = AVAudioPlayer()
     
     override func viewDidLoad() {
         
@@ -203,6 +206,44 @@ class FridgeItemViewController: UIViewController, UIImagePickerControllerDelegat
         }
         
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        
+        //SOUNDS
+        
+        //Create the alert sound
+        
+        let alertSound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "addSound", ofType: "mp3")!)
+        
+        //Set up sound playback
+        
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient)
+        } catch {
+            print("sound error1")
+        }
+        
+        do {
+            try AVAudioSession.sharedInstance().setActive(true)
+        } catch {
+            print("sound error2")
+        }
+        
+        //Play sound
+        
+        if UserDefaults.standard.bool(forKey: "soundSwitchOn") == false {
+            
+            do {
+                try audioPlayer = AVAudioPlayer(contentsOf: alertSound as URL)
+            } catch {
+                print("Playback error")
+            }
+            
+            audioPlayer.volume = 0.07
+            audioPlayer.prepareToPlay()
+            audioPlayer.play()
+            
+        } else {
+            print("sounds off")
+        }
         
         navigationController!.popViewController(animated: true)
         

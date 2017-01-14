@@ -3,7 +3,7 @@
 //  Freezr
 //
 //  Created by Jack Taylor on 30/10/2016.
-//  Copyright © 2016 Jack Taylor. All rights reserved.
+//  Copyright © 2017 Jack Taylor. All rights reserved.
 //
 
 import UIKit
@@ -25,6 +25,7 @@ class InfoViewController: UITableViewController, MFMailComposeViewControllerDele
     var playerView = AVPlayer()
     var fridgeSwitch = UISwitch()
     var freezerSwitch = UISwitch()
+    var soundSwitch = UISwitch()
     
     
     override func viewDidLoad() {
@@ -41,6 +42,7 @@ class InfoViewController: UITableViewController, MFMailComposeViewControllerDele
             
             fridgeSwitch.onTintColor = .purple
             freezerSwitch.onTintColor = .purple
+            soundSwitch.onTintColor = .purple
             
         }
     }
@@ -49,7 +51,7 @@ class InfoViewController: UITableViewController, MFMailComposeViewControllerDele
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         
-        return 5
+        return 6
     }
     
     //Specifies how many rows are in the table.
@@ -84,6 +86,7 @@ class InfoViewController: UITableViewController, MFMailComposeViewControllerDele
         let preFreq2WeekCell = UITableViewCell(style: .value1, reuseIdentifier: nil)
         let preFreq1WeekCell = UITableViewCell(style: .value1, reuseIdentifier: nil)
         let preFreq2DayCell = UITableViewCell(style: .value1, reuseIdentifier: nil)
+        let soundCell = UITableViewCell(style: .value1, reuseIdentifier: nil)
         
         
         howCell.textLabel?.text = "Video: How to use Freezr"
@@ -169,6 +172,20 @@ class InfoViewController: UITableViewController, MFMailComposeViewControllerDele
             preFreq2DayCell.accessoryType = .checkmark
         }
         
+        soundCell.textLabel?.text = "Disable Sound Effects"
+        soundCell.textLabel?.textColor = .purple
+        soundCell.textLabel?.font = UIFont(name: "Gill Sans", size: 17)
+        soundCell.selectionStyle = .none
+        soundCell.accessoryView = soundSwitch
+        
+        soundSwitch.addTarget(self, action: #selector(InfoViewController.soundSwitchFlipped), for: .valueChanged );
+        soundSwitch.tag = 2
+        
+        if UserDefaults.standard.bool(forKey: "soundSwitchOn") == true {
+            soundSwitch.isOn = true
+        } else {
+            soundSwitch.isOn = false
+        }
         
         //Specify which cell goes where.
         
@@ -196,6 +213,8 @@ class InfoViewController: UITableViewController, MFMailComposeViewControllerDele
             } else {
                 return preFreq2DayCell
             }
+        } else if indexPath.section == 4 {
+            return soundCell
         } else {
             return versionCell
         }
@@ -384,6 +403,27 @@ class InfoViewController: UITableViewController, MFMailComposeViewControllerDele
                 
                 UserDefaults.standard.set(true, forKey: "freezerSwitchOn")
                 print(UserDefaults.standard.bool(forKey: "freezerSwitchOn"))
+                
+            }
+            
+        }
+    }
+    
+    func soundSwitchFlipped(sender: AnyObject) {
+        
+        let soundSwitch = sender as! UISwitch
+        if soundSwitch.tag == 2 {
+            
+            if UserDefaults.standard.bool(forKey: "soundSwitchOn") == true {
+                
+                UserDefaults.standard.set(false, forKey: "soundSwitchOn")
+                print(UserDefaults.standard.bool(forKey: "soundSwitchOn"))
+                
+                
+            } else {
+                
+                UserDefaults.standard.set(true, forKey: "soundSwitchOn")
+                print(UserDefaults.standard.bool(forKey: "soundSwitchOn"))
                 
             }
             

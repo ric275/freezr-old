@@ -3,7 +3,7 @@
 //  Freezr
 //
 //  Created by Jack Taylor on 09/10/2016.
-//  Copyright © 2016 Jack Taylor. All rights reserved.
+//  Copyright © 2017 Jack Taylor. All rights reserved.
 //
 
 import UIKit
@@ -218,6 +218,8 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
         
+        //SOUNDS
+        
         //Create the alert sound
         
         let alertSound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "addSound", ofType: "mp3")!)
@@ -238,15 +240,21 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
         //Play sound
         
+        if UserDefaults.standard.bool(forKey: "soundSwitchOn") == false {
+            
         do {
            try audioPlayer = AVAudioPlayer(contentsOf: alertSound as URL)
         } catch {
             print("Playback error")
         }
         
-        audioPlayer.volume = 0.02
+        audioPlayer.volume = 0.07
         audioPlayer.prepareToPlay()
         audioPlayer.play()
+            
+        } else {
+        print("sounds off")
+        }
         
         navigationController!.popViewController(animated: true)
     }

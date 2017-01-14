@@ -3,7 +3,7 @@
 //  Freezr
 //
 //  Created by Jack Taylor on 01/11/2016.
-//  Copyright © 2016 Jack Taylor. All rights reserved.
+//  Copyright © 2017 Jack Taylor. All rights reserved.
 //
 
 import UIKit
@@ -74,6 +74,9 @@ class FridgeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         } else {
             let fridgeItem = fridgeItems[indexPath.row]
             cell.textLabel?.text = fridgeItem.name
+            cell.textLabel?.font = UIFont(name: "Gill Sans", size: 17)
+            cell.detailTextLabel?.font = UIFont(name: "Gill Sans", size: 17)
+            cell.textLabel?.textColor = myPurple
             cell.imageView?.image = UIImage(data: fridgeItem.image as! Data)
             
             if (fridgeItem.expirydate?.isEmpty)! {
@@ -108,7 +111,6 @@ class FridgeViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     
                 } else {
                     
-                    cell.textLabel?.textColor = myPurple
                     cell.detailTextLabel?.text = "Expires: \(fridgeItem.expirydate!)"
                     cell.detailTextLabel?.textColor = myPurple
                 }
