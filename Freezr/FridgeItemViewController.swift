@@ -258,6 +258,44 @@ class FridgeItemViewController: UIViewController, UIImagePickerControllerDelegat
         
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
         
+        //SOUNDS
+        
+        //Create the alert sound
+        
+        let alertSound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "deleteSound", ofType: "mp3")!)
+        
+        //Set up sound playback
+        
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient)
+        } catch {
+            print("sound error1")
+        }
+        
+        do {
+            try AVAudioSession.sharedInstance().setActive(true)
+        } catch {
+            print("sound error2")
+        }
+        
+        //Play sound
+        
+        if UserDefaults.standard.bool(forKey: "soundSwitchOn") == false {
+            
+            do {
+                try audioPlayer = AVAudioPlayer(contentsOf: alertSound as URL)
+            } catch {
+                print("Playback error")
+            }
+            
+            audioPlayer.volume = 0.07
+            audioPlayer.prepareToPlay()
+            audioPlayer.play()
+            
+        } else {
+            print("sounds off")
+        }
+        
         navigationController!.popViewController(animated: true)
         
     }
@@ -307,6 +345,44 @@ class FridgeItemViewController: UIViewController, UIImagePickerControllerDelegat
         SLItem.image = UIImageJPEGRepresentation(fridgeItemImage.image!, 0.05)! as NSData?
         
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        
+        //SOUNDS
+        
+        //Create the alert sound
+        
+        let alertSound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "shoppingListSound", ofType: "mp3")!)
+        
+        //Set up sound playback
+        
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient)
+        } catch {
+            print("sound error1")
+        }
+        
+        do {
+            try AVAudioSession.sharedInstance().setActive(true)
+        } catch {
+            print("sound error2")
+        }
+        
+        //Play sound
+        
+        if UserDefaults.standard.bool(forKey: "soundSwitchOn") == false {
+            
+            do {
+                try audioPlayer = AVAudioPlayer(contentsOf: alertSound as URL)
+            } catch {
+                print("Playback error")
+            }
+            
+            audioPlayer.volume = 0.07
+            audioPlayer.prepareToPlay()
+            audioPlayer.play()
+            
+        } else {
+            print("sounds off")
+        }
         
         //Add badge to SL icon.
         

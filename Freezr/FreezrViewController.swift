@@ -8,6 +8,7 @@
 
 import UIKit
 import UserNotifications
+import AVFoundation
 
 class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -24,6 +25,8 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var items : [Item] = []
     
     let today = NSDate()
+    
+    var audioPlayer = AVAudioPlayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -207,6 +210,44 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
             SLItem.image = self.items[indexPath.row].image!
             
             (UIApplication.shared.delegate as! AppDelegate).saveContext()
+            
+            //SOUNDS
+            
+            //Create the alert sound
+            
+            let alertSound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "shoppingListSound", ofType: "mp3")!)
+            
+            //Set up sound playback
+            
+            do {
+                try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient)
+            } catch {
+                print("sound error1")
+            }
+            
+            do {
+                try AVAudioSession.sharedInstance().setActive(true)
+            } catch {
+                print("sound error2")
+            }
+            
+            //Play sound
+            
+            if UserDefaults.standard.bool(forKey: "soundSwitchOn") == false {
+                
+                do {
+                    try self.audioPlayer = AVAudioPlayer(contentsOf: alertSound as URL)
+                } catch {
+                    print("Playback error")
+                }
+                
+                self.audioPlayer.volume = 0.07
+                self.audioPlayer.prepareToPlay()
+                self.audioPlayer.play()
+                
+            } else {
+                print("sounds off")
+            }
             
             //Add badge to SL icon
             
