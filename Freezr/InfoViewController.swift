@@ -102,6 +102,9 @@ class InfoViewController: UITableViewController, MFMailComposeViewControllerDele
         feedbackCell.textLabel?.text = "Send Feedback"
         feedbackCell.textLabel?.textColor = .purple
         feedbackCell.textLabel?.font = UIFont(name: "Gill Sans", size: 17)
+        feedbackCell.detailTextLabel?.text = "jack@blueinkcode.com"
+        feedbackCell.detailTextLabel?.textColor = myPurple
+        feedbackCell.detailTextLabel?.font = UIFont(name: "Gill Sans", size: 17)
         feedbackCell.accessoryType =  .disclosureIndicator
         
         versionCell.textLabel?.text = "App Version:"
