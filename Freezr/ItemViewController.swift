@@ -80,7 +80,7 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
         if item != nil {
             
-                itemImage.image = UIImage(data: item!.image as! Data)
+                itemImage.image = UIImage(data: item!.image! as Data)
                 itemName.text = item!.name
                 expirationDateTextField.text = item!.expirydate
                 

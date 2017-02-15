@@ -72,13 +72,14 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         if items.count == 0 {
             cell.textLabel?.text = "You should probably go buy food."
+            cell.textLabel?.font = UIFont(name: "Gill Sans", size: 17)
         } else {
             let item = items[indexPath.row]
             cell.textLabel?.text = item.name
             cell.textLabel?.font = UIFont(name: "Gill Sans", size: 17)
             cell.detailTextLabel?.font = UIFont(name: "Gill Sans", size: 17)
             cell.textLabel?.textColor = myPurple
-            cell.imageView?.image = UIImage(data: item.image as! Data)
+            cell.imageView?.image = UIImage(data: item.image! as Data)
             
             if (item.expirydate?.isEmpty)! {
                 cell.textLabel?.textColor = myPurple

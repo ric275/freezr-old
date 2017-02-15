@@ -71,6 +71,7 @@ class FridgeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         if fridgeItems.count == 0 {
             cell.textLabel?.text = "You should probably go buy food."
+            cell.textLabel?.font = UIFont(name: "Gill Sans", size: 17)
         } else {
             let fridgeItem = fridgeItems[indexPath.row]
             cell.textLabel?.text = fridgeItem.name
