@@ -476,7 +476,7 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         } else {
             content.body = "\(itemName.text!) has expired in your freezer."
         }
-        content.sound = UNNotificationSound.default()
+        content.sound = UNNotificationSound.init(named: "notifSound.mp3")
         
         let random = Int(arc4random_uniform(900000))
         
@@ -512,7 +512,7 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             } else {
                 content.body = "\(itemName.text!) (in your freezer) will expire in 2 weeks."
             }
-            content.sound = UNNotificationSound.default()
+            content.sound = UNNotificationSound.init(named: "notifSound.mp3")
             
             let random = Int(arc4random_uniform(900000))
             
@@ -547,7 +547,7 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             } else {
                 content.body = "\(itemName.text!) (in your freezer) will expire in 1 week."
             }
-            content.sound = UNNotificationSound.default()
+            content.sound = UNNotificationSound.init(named: "notifSound.mp3")
             
             let random = Int(arc4random_uniform(900000))
             
@@ -582,7 +582,7 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             } else {
                 content.body = "\(itemName.text!) (in your freezer) will expire in just 2 days."
             }
-            content.sound = UNNotificationSound.default()
+            content.sound = UNNotificationSound.init(named: "notifSound.mp3")
             
             let random = Int(arc4random_uniform(900000))
             

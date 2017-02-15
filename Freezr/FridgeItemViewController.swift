@@ -461,7 +461,7 @@ class FridgeItemViewController: UIViewController, UIImagePickerControllerDelegat
         } else {
             content.body = "\(fridgeItemName.text!) has expired in your fridge."
         }
-        content.sound = UNNotificationSound.default()
+        content.sound = UNNotificationSound.init(named: "notifSound.mp3")
         
         let random = Int(arc4random_uniform(900000))
         
@@ -493,7 +493,7 @@ class FridgeItemViewController: UIViewController, UIImagePickerControllerDelegat
             } else {
                 content.body = "\(fridgeItemName.text!) (in your fridge) will expire in 2 weeks."
             }
-            content.sound = UNNotificationSound.default()
+            content.sound = UNNotificationSound.init(named: "notifSound.mp3")
             
             let random = Int(arc4random_uniform(900000))
             
@@ -528,7 +528,7 @@ class FridgeItemViewController: UIViewController, UIImagePickerControllerDelegat
             } else {
                 content.body = "\(fridgeItemName.text!) (in your fridge) will expire in 1 week."
             }
-            content.sound = UNNotificationSound.default()
+            content.sound = UNNotificationSound.init(named: "notifSound.mp3")
             
             let random = Int(arc4random_uniform(900000))
             
@@ -563,7 +563,7 @@ class FridgeItemViewController: UIViewController, UIImagePickerControllerDelegat
             } else {
                 content.body = "\(fridgeItemName.text!) (in your fridge) will expire in just 2 days."
             }
-            content.sound = UNNotificationSound.default()
+            content.sound = UNNotificationSound.init(named: "notifSound.mp3")
             
             let random = Int(arc4random_uniform(900000))
             
