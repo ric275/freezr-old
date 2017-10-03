@@ -326,7 +326,7 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     //DATE CHANGED
     
-    func datePickerValueChanged(sender:UIDatePicker) {
+    @objc func datePickerValueChanged(sender:UIDatePicker) {
         
         let dateFormatter = DateFormatter()
         
@@ -345,7 +345,7 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         oneWeek = sender.date.addingTimeInterval(-604800)
         twoDays = sender.date.addingTimeInterval(-172800)
         
-        print("Selected date: \(selectedDate)")
+        print("Selected date: \(selectedDate!)")
     }
     
     //What happens when Add to Shopping List is tapped.
@@ -411,7 +411,7 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     //Dismiss the keyboard functions.
     
-    func dismissKeyboard() {
+    @objc func dismissKeyboard() {
         
         //Dismiss the keyboard.
         itemName.resignFirstResponder()
@@ -437,7 +437,7 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         appdelegate.shouldSupportAllOrientation = false
     }
     
-    func imageTapped() {
+    @objc func imageTapped() {
         
         performSegue(withIdentifier: "freezrBigPictureSegue", sender: nil)
     }

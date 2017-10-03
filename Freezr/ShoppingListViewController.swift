@@ -72,7 +72,7 @@ class ShoppingListViewController: UIViewController, UITableViewDelegate, UITable
             
             let SLItem = SLItems[indexPath.row]
             cell.textLabel?.text = SLItem.name
-            cell.imageView?.image = UIImage(data: SLItem.image as! Data)
+            cell.imageView?.image = UIImage(data: SLItem.image! as Data)
             
             if SLItem.isChecked {
                 cell.accessoryType = .checkmark

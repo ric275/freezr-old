@@ -397,7 +397,7 @@ class FridgeItemViewController: UIViewController, UIImagePickerControllerDelegat
     
     //Dismiss the keyboard functions.
     
-    func dismissKeyboard() {
+    @objc func dismissKeyboard() {
         
         //Dismiss the keyboard.
         fridgeItemName.resignFirstResponder()
@@ -423,7 +423,7 @@ class FridgeItemViewController: UIViewController, UIImagePickerControllerDelegat
         appdelegate.shouldSupportAllOrientation = false
     }
     
-    func imageTapped() {
+    @objc func imageTapped() {
         
         performSegue(withIdentifier: "fridgeBigPictureSegue", sender: nil)
     }

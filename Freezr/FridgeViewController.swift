@@ -81,7 +81,7 @@ class FridgeViewController: UIViewController, UITableViewDelegate, UITableViewDa
             cell.textLabel?.font = UIFont(name: "Gill Sans", size: 17)
             cell.detailTextLabel?.font = UIFont(name: "Gill Sans", size: 17)
             cell.textLabel?.textColor = myPurple
-            cell.imageView?.image = UIImage(data: fridgeItem.image as! Data)
+            cell.imageView?.image = UIImage(data: fridgeItem.image! as Data)
             
             if (fridgeItem.expirydate?.isEmpty)! {
                 cell.textLabel?.textColor = myPurple
