@@ -3,7 +3,7 @@
 //  Freezr
 //
 //  Created by Jack Taylor on 09/10/2016.
-//  Copyright © 2017 Jack Taylor. All rights reserved.
+//  Copyright © 2016 Jack Taylor. All rights reserved.
 //
 
 import UIKit
@@ -264,7 +264,7 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     @IBAction func deleteItemTapped(_ sender: AnyObject) {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
-        //UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["\(item?.notifID!)"])
+        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["jack"])
         
         context.delete(item!)
         
@@ -480,7 +480,7 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
         let random = Int(arc4random_uniform(900000))
         
-        let identifier = NSString.localizedUserNotificationString(forKey: "\(random)", arguments: nil)
+        let identifier = NSString.localizedUserNotificationString(forKey: "jack", arguments: nil)
         
         let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
         
