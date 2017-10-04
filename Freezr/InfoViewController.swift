@@ -371,7 +371,7 @@ class InfoViewController: UITableViewController, MFMailComposeViewControllerDele
     }
     
     
-    func fridgeSwitchFlipped(sender: AnyObject) {
+    @objc func fridgeSwitchFlipped(sender: AnyObject) {
         
         let fridgeSwitch = sender as! UISwitch
         if fridgeSwitch.tag == 0 {
@@ -392,7 +392,7 @@ class InfoViewController: UITableViewController, MFMailComposeViewControllerDele
         }
     }
     
-    func freezerSwitchFlipped(sender: AnyObject) {
+    @objc func freezerSwitchFlipped(sender: AnyObject) {
         
         let freezerSwitch = sender as! UISwitch
         if freezerSwitch.tag == 1 {
@@ -412,7 +412,7 @@ class InfoViewController: UITableViewController, MFMailComposeViewControllerDele
         }
     }
     
-    func soundSwitchFlipped(sender: AnyObject) {
+    @objc func soundSwitchFlipped(sender: AnyObject) {
         
         let soundSwitch = sender as! UISwitch
         if soundSwitch.tag == 2 {
