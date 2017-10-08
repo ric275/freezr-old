@@ -34,6 +34,13 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
         itemListTableView.dataSource = self
         itemListTableView.delegate = self
         
+        if #available(iOS 11.0, *) {
+            navigationController?.navigationBar.prefersLargeTitles = true
+        } else {
+            // Fallback on earlier versions
+        }
+
+        
     }
     
     //Custom colours.
@@ -137,7 +144,7 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
         } else {
             
             let item = items[indexPath.row]
-            performSegue(withIdentifier: "itemSegue", sender: item)
+            performSegue(withIdentifier: "itemSegue2", sender: item)
         }
     }
     
@@ -145,9 +152,9 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "itemSegue" {
+        if segue.identifier == "itemSegue2" {
             
-            let nextViewController = segue.destination as! ItemViewController
+            let nextViewController = segue.destination as! ViewedFreezerItemVC
             nextViewController.item = sender as? Item
             
             if nextViewController.item != nil {

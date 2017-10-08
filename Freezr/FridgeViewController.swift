@@ -33,6 +33,12 @@ class FridgeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         itemListTableView.dataSource = self
         itemListTableView.delegate = self
         
+        if #available(iOS 11.0, *) {
+            navigationController?.navigationBar.prefersLargeTitles = true
+        } else {
+            // Fallback on earlier versions
+        }
+        
     }
     
     //Custom colours.

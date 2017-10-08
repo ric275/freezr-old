@@ -31,6 +31,12 @@ class InfoViewController: UITableViewController, MFMailComposeViewControllerDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if #available(iOS 11.0, *) {
+            navigationController?.navigationBar.prefersLargeTitles = true
+        } else {
+            // Fallback on earlier versions
+        }
+        
         //Video setup.
         
         let urlPathString:String? = Bundle.main.path(forResource: "Freezr Demo", ofType: "mp4")

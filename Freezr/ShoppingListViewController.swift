@@ -33,6 +33,12 @@ class ShoppingListViewController: UIViewController, UITableViewDelegate, UITable
         shoppingListTableView.dataSource = self
         shoppingListTableView.delegate = self
         
+        if #available(iOS 11.0, *) {
+            navigationController?.navigationBar.prefersLargeTitles = true
+        } else {
+            // Fallback on earlier versions
+        }
+        
         // Do any additional setup after loading the view.
     }
     
