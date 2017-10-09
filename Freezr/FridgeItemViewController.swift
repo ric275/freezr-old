@@ -172,7 +172,7 @@ class FridgeItemViewController: UIViewController, UIImagePickerControllerDelegat
         
         if fridgeItem != nil {
             fridgeItem!.name = fridgeItemName.text
-            fridgeItem!.image = UIImageJPEGRepresentation(fridgeItemImage.image!, 0.05)! as NSData?
+            fridgeItem!.image = UIImageJPEGRepresentation(fridgeItemImage.image!, 0.05)!
             fridgeItem?.expirydate = expirationDateTextField.text
             
             //If creating a new item.
@@ -182,7 +182,7 @@ class FridgeItemViewController: UIViewController, UIImagePickerControllerDelegat
             let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
             let item = FridgeItem(context: context)
             item.name = fridgeItemName.text
-            item.image = UIImageJPEGRepresentation(fridgeItemImage.image!, 0.05)! as NSData? //was 0.1
+            item.image = UIImageJPEGRepresentation(fridgeItemImage.image!, 0.05)! //as NSData? //was 0.1
             item.expirydate = expirationDateTextField.text
         }
         
@@ -342,7 +342,7 @@ class FridgeItemViewController: UIViewController, UIImagePickerControllerDelegat
         
         let SLItem = ShoppingListItem(context: context)
         SLItem.name = fridgeItemName.text
-        SLItem.image = UIImageJPEGRepresentation(fridgeItemImage.image!, 0.05)! as NSData?
+        SLItem.image = UIImageJPEGRepresentation(fridgeItemImage.image!, 0.05)!
         
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
         

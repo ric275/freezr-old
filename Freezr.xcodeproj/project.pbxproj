@@ -27,6 +27,7 @@
 		04F61DBE1DC566930053E9B9 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F61DBD1DC566930053E9B9 /* InfoViewController.swift */; };
 		04FC5AC01DC959A800440657 /* FridgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FC5ABF1DC959A800440657 /* FridgeViewController.swift */; };
 		04FC5AC61DC9622700440657 /* FridgeItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FC5AC51DC9622700440657 /* FridgeItemViewController.swift */; };
+		04FCD12D1F8BE33B009EB95A /* circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 048A9C5C1F8ABB6500D3A85E /* circle.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -188,6 +189,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04FCD12D1F8BE33B009EB95A /* circle.png in Resources */,
 				046732271DAAE6FA00EEC292 /* LaunchScreen.storyboard in Resources */,
 				0443A81C1DC65AD400B2A7A0 /* Freezr Demo.mp4 in Resources */,
 				04EC76101E54D1AA0076E840 /* shoppingListSound.mp3 in Resources */,

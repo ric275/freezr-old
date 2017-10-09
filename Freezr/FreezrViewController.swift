@@ -36,9 +36,11 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         if #available(iOS 11.0, *) {
             navigationController?.navigationBar.prefersLargeTitles = true
+            //navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.purple]
         } else {
             // Fallback on earlier versions
         }
+        
 
         
     }
@@ -164,14 +166,17 @@ class FreezrViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 navigationItem.backBarButtonItem = backButton
                 
             } else {
-                let backButton = UIBarButtonItem()
-                backButton.title = "Cancel"
-                navigationItem.backBarButtonItem = backButton
+                
+                //let backButton = UIBarButtonItem()
+                //backButton.title = "Cancel"
+                //navigationItem.backBarButtonItem = backButton
             }
             
             //Hide tab bar in item view.
             nextViewController.hidesBottomBarWhenPushed = true
             
+        } else if segue.identifier == "itemSegue" {
+            //segue.destination as! ItemViewController
         } else {
             
             let nextViewController = segue.destination as! InfoViewController

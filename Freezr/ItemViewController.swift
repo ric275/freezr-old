@@ -22,6 +22,8 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     @IBOutlet weak var itemName: UITextField!
     
+    @IBOutlet weak var itemQuantity: UITextField!
+    
     @IBOutlet weak var addItemOrUpdateButton: UIButton!
     
     @IBOutlet weak var deleteItemButton: UIButton!
@@ -32,13 +34,13 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     @IBOutlet weak var placeHolderText2: UILabel!
     
-    @IBOutlet weak var addToSLButton: UIButton!
-    
     @IBOutlet weak var imageNoticeText: UILabel!
     
     @IBOutlet weak var nameLabel: UILabel!
     
     @IBOutlet weak var expiresLabel: UILabel!
+    
+    @IBOutlet weak var quantityLabel: UILabel!
     
     @IBOutlet var bck: UIView!
     
@@ -73,7 +75,7 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
         itemImage.isUserInteractionEnabled = true
         
-        //Setup the item view depending on if an existing item is being selected, or a new item is being added.
+        //Setup the item view depending on if an existing item is being edited, or a new item is being added.
         
         //If there is an existing item:
         
@@ -128,7 +130,6 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         } else {
             
             deleteItemButton.isHidden = true
-            addToSLButton.isHidden = true
             addItemOrUpdateButton.isEnabled = false
         }
         
@@ -180,7 +181,7 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
         if item != nil {
             item!.name = itemName.text
-            item!.image = UIImageJPEGRepresentation(itemImage.image!, 0.05)! as NSData?
+            item!.image = UIImageJPEGRepresentation(itemImage.image!, 0.05)! as Data? //was NSData
             item?.expirydate = expirationDateTextField.text
             
             //If creating a new item.
@@ -190,8 +191,9 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
             let item = Item(context: context)
             item.name = itemName.text
-            item.image = UIImageJPEGRepresentation(itemImage.image!, 0.05)! as NSData? //was 0.1
+            item.image = UIImageJPEGRepresentation(itemImage.image!, 0.05)! as Data? //was 0.1 and NSData
             item.expirydate = expirationDateTextField.text
+            item.quantity = itemQuantity.text
             
             (UIApplication.shared.delegate as! AppDelegate).saveContext()
             
@@ -356,7 +358,7 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
         let SLItem = ShoppingListItem(context: context)
         SLItem.name = itemName.text
-        SLItem.image = UIImageJPEGRepresentation(itemImage.image!, 0.05)! as NSData?
+        SLItem.image = UIImageJPEGRepresentation(itemImage.image!, 0.05)! as Data? //was NSData
         
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
         
