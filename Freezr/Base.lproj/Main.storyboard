@@ -42,7 +42,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Rrq-PB-Zq1">
-                                <rect key="frame" x="0.0" y="64" width="414" height="623"/>
+                                <rect key="frame" x="0.0" y="63.999999999999993" width="414" height="623"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
@@ -246,15 +246,6 @@
                                     <action selector="editingExpirationDateTextField:" destination="L68-X7-ABi" eventType="editingDidBegin" id="n4s-Gc-s7C"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add quantity" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kfb-xg-SMi">
-                                <rect key="frame" x="147" y="397" width="204" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
-                                <connections>
-                                    <action selector="editingExpirationDateTextField:" destination="L68-X7-ABi" eventType="editingDidBegin" id="CBd-iW-Msj"/>
-                                </connections>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Expires:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S6k-Fu-edo">
                                 <rect key="frame" x="33" y="362" width="84" height="22"/>
                                 <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="19"/>
@@ -313,9 +304,8 @@
                                 <color key="textColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ZX-qz-Q4d">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ZX-qz-Q4d">
                                 <rect key="frame" x="178" y="603" width="58" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="17"/>
                                 <state key="normal" title="Delete">
                                     <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -325,14 +315,22 @@
                                     <action selector="deleteItemTapped:" destination="50X-2Q-R6b" eventType="touchUpInside" id="Xeg-Ys-bse"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add quantity" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M9b-QH-P8a">
+                                <rect key="frame" x="147" y="400" width="204" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Kfb-xg-SMi" firstAttribute="width" secondItem="uI7-d4-1Uz" secondAttribute="width" id="2ea-tU-cd2"/>
                             <constraint firstItem="uI7-d4-1Uz" firstAttribute="top" secondItem="5rx-kh-Ue2" secondAttribute="bottom" constant="8" id="2f0-9E-mSJ"/>
-                            <constraint firstItem="VFK-tj-ygG" firstAttribute="top" secondItem="Kfb-xg-SMi" secondAttribute="bottom" constant="49" id="8pf-Jz-Yif"/>
+                            <constraint firstItem="7k6-vA-6KD" firstAttribute="top" secondItem="9ZX-qz-Q4d" secondAttribute="bottom" constant="8" id="6JA-Y7-wSb"/>
                             <constraint firstItem="5rx-kh-Ue2" firstAttribute="top" secondItem="7wE-fg-BPV" secondAttribute="bottom" constant="35" id="ACs-Bp-nbW"/>
+                            <constraint firstItem="9ZX-qz-Q4d" firstAttribute="centerX" secondItem="ZSs-Xm-hP9" secondAttribute="centerX" id="Cin-uF-jGY"/>
                             <constraint firstItem="NDl-H8-uue" firstAttribute="top" secondItem="7wE-fg-BPV" secondAttribute="bottom" constant="35" id="Jgj-g0-gMm"/>
+                            <constraint firstItem="M9b-QH-P8a" firstAttribute="top" secondItem="uI7-d4-1Uz" secondAttribute="bottom" constant="11" id="Kuk-Ku-fZG"/>
+                            <constraint firstItem="VFK-tj-ygG" firstAttribute="top" secondItem="M9b-QH-P8a" secondAttribute="bottom" constant="46" id="MBx-AO-SID"/>
                             <constraint firstItem="McK-js-lft" firstAttribute="centerX" secondItem="ZSs-Xm-hP9" secondAttribute="centerX" id="QT2-pM-bFP"/>
                             <constraint firstItem="McK-js-lft" firstAttribute="top" secondItem="dlb-8f-5Lo" secondAttribute="bottom" constant="62" id="Qks-yj-0Pf"/>
                             <constraint firstItem="VFK-tj-ygG" firstAttribute="centerX" secondItem="ZSs-Xm-hP9" secondAttribute="centerX" id="RHd-qV-rvv"/>
@@ -340,15 +338,15 @@
                             <constraint firstItem="uI7-d4-1Uz" firstAttribute="leading" secondItem="S6k-Fu-edo" secondAttribute="trailing" constant="30" id="SvR-sU-9jN"/>
                             <constraint firstItem="gKi-NB-IFu" firstAttribute="centerX" secondItem="ZSs-Xm-hP9" secondAttribute="centerX" id="WsK-7e-132"/>
                             <constraint firstItem="5rx-kh-Ue2" firstAttribute="leading" secondItem="NDl-H8-uue" secondAttribute="trailing" constant="33" id="Ydz-vD-AvK"/>
+                            <constraint firstItem="M9b-QH-P8a" firstAttribute="width" secondItem="uI7-d4-1Uz" secondAttribute="width" id="Zmy-ZJ-F8o"/>
                             <constraint firstItem="uI7-d4-1Uz" firstAttribute="width" secondItem="5rx-kh-Ue2" secondAttribute="width" id="dtH-OV-gEF"/>
-                            <constraint firstItem="Kfb-xg-SMi" firstAttribute="leading" secondItem="meh-Zw-OxV" secondAttribute="trailing" constant="19" id="jkA-Bg-kNN"/>
                             <constraint firstItem="gKi-NB-IFu" firstAttribute="top" secondItem="VFK-tj-ygG" secondAttribute="bottom" constant="5" id="m2g-vv-sR5"/>
                             <constraint firstItem="mQP-c0-GzI" firstAttribute="top" secondItem="McK-js-lft" secondAttribute="bottom" constant="8" id="ozZ-iA-H6h"/>
-                            <constraint firstItem="Kfb-xg-SMi" firstAttribute="top" secondItem="uI7-d4-1Uz" secondAttribute="bottom" constant="8" id="s32-WS-ewx"/>
                             <constraint firstItem="7wE-fg-BPV" firstAttribute="centerX" secondItem="ZSs-Xm-hP9" secondAttribute="centerX" id="t4z-aq-Jd6"/>
                             <constraint firstItem="7wE-fg-BPV" firstAttribute="top" secondItem="dlb-8f-5Lo" secondAttribute="bottom" constant="22" id="t5y-xn-e7u"/>
                             <constraint firstItem="S6k-Fu-edo" firstAttribute="top" secondItem="NDl-H8-uue" secondAttribute="bottom" constant="19" id="ueh-KE-jyr"/>
                             <constraint firstItem="meh-Zw-OxV" firstAttribute="top" secondItem="S6k-Fu-edo" secondAttribute="bottom" constant="16" id="yCh-Rn-SAg"/>
+                            <constraint firstItem="M9b-QH-P8a" firstAttribute="leading" secondItem="meh-Zw-OxV" secondAttribute="trailing" constant="19" id="zym-jv-cBh"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -376,7 +374,7 @@
                         <outlet property="imageNoticeText" destination="gKi-NB-IFu" id="owY-0C-fU3"/>
                         <outlet property="itemImage" destination="7wE-fg-BPV" id="rbk-JR-08d"/>
                         <outlet property="itemName" destination="5rx-kh-Ue2" id="p7S-td-KhJ"/>
-                        <outlet property="itemQuantity" destination="Kfb-xg-SMi" id="WLz-80-JzN"/>
+                        <outlet property="itemQuantity" destination="M9b-QH-P8a" id="rzK-MS-xr2"/>
                         <outlet property="nameLabel" destination="NDl-H8-uue" id="HoP-Ov-J2s"/>
                         <outlet property="placeHolderText1" destination="McK-js-lft" id="2pa-ft-de2"/>
                         <outlet property="placeHolderText2" destination="mQP-c0-GzI" id="Rho-oB-KtW"/>
@@ -997,7 +995,7 @@
                                 <rect key="frame" x="364" y="92" width="30" height="30"/>
                                 <state key="normal" title="Edit"/>
                                 <connections>
-                                    <segue destination="L68-X7-ABi" kind="show" identifier="editItemSegue" id="IHZ-gF-OkU"/>
+                                    <action selector="editTapped:" destination="YH7-Qf-LAI" eventType="touchUpInside" id="u8q-jS-sTf"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1030,6 +1028,7 @@
                         <outlet property="itemImage" destination="2o0-XV-wQi" id="F9F-xY-yXT"/>
                         <outlet property="itemNameLabel" destination="APO-38-8aB" id="avP-Li-YfT"/>
                         <outlet property="quantityLabel" destination="JUa-cG-8C1" id="5eg-Dk-45d"/>
+                        <segue destination="L68-X7-ABi" kind="show" identifier="editItemSegue" id="2Ko-hF-q58"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xE9-Mm-d5B" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1049,6 +1048,6 @@
         <image name="ice-cream" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="IHZ-gF-OkU"/>
+        <segue reference="o4W-yZ-bNQ"/>
     </inferredMetricsTieBreakers>
 </document>

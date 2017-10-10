@@ -50,4 +50,71 @@ class ViewedFreezerItemVC: UIViewController {
         }
    
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    //Sets up the next ViewController (ItemViewController) and sends some item data over.
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "editItemSegue" {
+            
+            let nextViewController = segue.destination as! ItemViewController
+            nextViewController.item = sender as? Item
+            
+            if nextViewController.item != nil {
+                
+                let backButton = UIBarButtonItem()
+                backButton.title = "Cancel"
+                navigationItem.backBarButtonItem = backButton
+                
+            } else {}
+            
+            //Hide tab bar in item view.
+            nextViewController.hidesBottomBarWhenPushed = true
+            
+        
+        } else {}
+    }
+    
+    
+    @IBAction func editTapped(_ sender: Any) {
+        
+        performSegue(withIdentifier: "editItemSegue", sender: item)
+        
+        
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }

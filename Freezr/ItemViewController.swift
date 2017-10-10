@@ -85,6 +85,7 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
                 itemImage.image = UIImage(data: item!.image! as Data)
                 itemName.text = item!.name
                 expirationDateTextField.text = item!.expirydate
+                itemQuantity.text = item!.quantity
                 
                 placeHolderText1.isHidden = true
                 placeHolderText2.isHidden = true
@@ -180,9 +181,10 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         //If updating an exisitng item.
         
         if item != nil {
-            item!.name = itemName.text
+            item?.name = itemName.text
             item!.image = UIImageJPEGRepresentation(itemImage.image!, 0.05)! as Data? //was NSData
             item?.expirydate = expirationDateTextField.text
+            item?.quantity = itemQuantity.text
             
             //If creating a new item.
             
@@ -258,7 +260,8 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         print("sounds off")
         }
         
-        navigationController!.popViewController(animated: true)
+        navigationController?.popToRootViewController(animated: true)
+        
     }
     
     //What happens when delete is tapped.
@@ -310,8 +313,9 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             print("sounds off")
         }
         
-        navigationController!.popViewController(animated: true)
+        navigationController?.popToRootViewController(animated: true)
         
+      
     }
     
     //Expiry date setup
@@ -420,13 +424,18 @@ class ItemViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
         //Dismiss date picker.
         expirationDateTextField.resignFirstResponder()
+        
+        //Dismiss quatity picker.
+        itemQuantity.resignFirstResponder()
     }
     
     //Dismiss the keyboard when return is tapped.
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         itemName.resignFirstResponder()
+        itemQuantity.resignFirstResponder()
         return true
+
     }
     
     //Orientation setup.
