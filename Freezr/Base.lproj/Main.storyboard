@@ -42,7 +42,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Rrq-PB-Zq1">
-                                <rect key="frame" x="0.0" y="63.999999999999993" width="414" height="623"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="623"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
@@ -252,7 +252,7 @@
                                 <color key="textColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5rx-kh-Ue2">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5rx-kh-Ue2">
                                 <rect key="frame" x="147" y="321" width="204" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="16"/>
@@ -264,15 +264,6 @@
                                 <color key="textColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VFK-tj-ygG">
-                                <rect key="frame" x="106" y="476" width="202" height="36"/>
-                                <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="20"/>
-                                <state key="normal" title="Add item to freezer"/>
-                                <connections>
-                                    <action selector="addToFreezerTapped:" destination="L68-X7-ABi" eventType="touchUpInside" id="S43-Xy-524"/>
-                                    <action selector="addToFridgeTapped:" destination="50X-2Q-R6b" eventType="touchUpInside" id="izD-CX-mEl"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="An image is required to add an item to your freezer." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gKi-NB-IFu">
                                 <rect key="frame" x="70" y="517" width="275" height="15"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="13"/>
@@ -298,8 +289,8 @@
                                 <color key="textColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Name:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDl-H8-uue">
-                                <rect key="frame" x="37" y="321" width="77" height="22"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDl-H8-uue">
+                                <rect key="frame" x="42.666666666666657" y="321" width="64" height="22"/>
                                 <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="19"/>
                                 <color key="textColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -321,6 +312,15 @@
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VFK-tj-ygG">
+                                <rect key="frame" x="107" y="454" width="202" height="36"/>
+                                <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="20"/>
+                                <state key="normal" title="Add item to freezer"/>
+                                <connections>
+                                    <action selector="addToFreezerTapped:" destination="L68-X7-ABi" eventType="touchUpInside" id="S43-Xy-524"/>
+                                    <action selector="addToFridgeTapped:" destination="50X-2Q-R6b" eventType="touchUpInside" id="izD-CX-mEl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -340,6 +340,7 @@
                             <constraint firstItem="5rx-kh-Ue2" firstAttribute="leading" secondItem="NDl-H8-uue" secondAttribute="trailing" constant="33" id="Ydz-vD-AvK"/>
                             <constraint firstItem="M9b-QH-P8a" firstAttribute="width" secondItem="uI7-d4-1Uz" secondAttribute="width" id="Zmy-ZJ-F8o"/>
                             <constraint firstItem="uI7-d4-1Uz" firstAttribute="width" secondItem="5rx-kh-Ue2" secondAttribute="width" id="dtH-OV-gEF"/>
+                            <constraint firstAttribute="trailing" secondItem="5rx-kh-Ue2" secondAttribute="trailing" constant="170" id="ian-yt-WGH"/>
                             <constraint firstItem="gKi-NB-IFu" firstAttribute="top" secondItem="VFK-tj-ygG" secondAttribute="bottom" constant="5" id="m2g-vv-sR5"/>
                             <constraint firstItem="mQP-c0-GzI" firstAttribute="top" secondItem="McK-js-lft" secondAttribute="bottom" constant="8" id="ozZ-iA-H6h"/>
                             <constraint firstItem="7wE-fg-BPV" firstAttribute="centerX" secondItem="ZSs-Xm-hP9" secondAttribute="centerX" id="t4z-aq-Jd6"/>
@@ -1048,6 +1049,6 @@
         <image name="ice-cream" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="o4W-yZ-bNQ"/>
+        <segue reference="2Ko-hF-q58"/>
     </inferredMetricsTieBreakers>
 </document>
