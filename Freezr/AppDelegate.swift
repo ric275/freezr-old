@@ -11,9 +11,11 @@
 import UIKit
 import CoreData
 import UserNotifications
+import WatchConnectivity
+
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
     
     var window: UIWindow?
     
@@ -42,8 +44,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             //Handle the error if there is one - empty for now.
         })
         
+        //Watch connectivity
+        
+        if WCSession.isSupported() {
+            WCSession.default.delegate = self
+            WCSession.default.activate()
+            
+        }
+        
         return true
     }
+    
+    //Further Watch connectivity
+    
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        if error != nil {
+            print("Error: \(error)")
+        } else {
+            print("Ready to talk with Apple Watch")
+        }
+    }
+    
+    func sessionDidBecomeInactive(_ session: WCSession) {
+        print("inactive")
+    }
+    
+    func sessionDidDeactivate(_ session: WCSession) {
+        print("Deactivated - trying to reactivate")
+        WCSession.default.activate()
+    }
+    
+    func session(_ session: WCSession, didReceiveUserInfo userInfo: [String : Any] = [:]) {
+        print("This is the user info: \(userInfo)")
+    }
+    
     
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

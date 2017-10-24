@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="13526" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="13505"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Freezr_watchOS" customModuleProvider="target">
+                    <items>
+                        <table alignment="left" id="LNx-Dt-ph3"/>
+                        <label alignment="left" text="Shopping List" textAlignment="left" id="mZg-kg-EdC"/>
+                        <table alignment="left" id="3ee-j0-PKj">
+                            <items>
+                                <tableRow id="h4b-7q-9Dm">
+                                    <group key="rootItem" width="1" alignment="left" id="Hjh-fI-Jik">
+                                        <items>
+                                            <label alignment="left" verticalAlignment="center" text="Item" id="VVK-cH-Jep"/>
+                                        </items>
+                                        <connections>
+                                            <segue destination="jJm-rB-2bj" kind="push" id="psW-lj-bBn"/>
+                                        </connections>
+                                    </group>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="qd3-Iy-X17">
+            <objects>
+                <controller id="jJm-rB-2bj">
+                    <items>
+                        <label width="1" alignment="left" text="Item Name" textAlignment="left" numberOfLines="2" id="Vui-Ka-wh3"/>
+                        <separator alignment="left" id="4YG-py-NrM">
+                            <color key="color" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </separator>
+                        <imageView alignment="left" id="xYt-9o-EoQ"/>
+                        <separator alignment="left" id="zwS-ZI-yaF">
+                            <color key="color" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </separator>
+                        <button width="1" alignment="left" title="Mark as purchased" id="loA-HR-wqh"/>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="502" y="345"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="Freezr_watchOS" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+    </scenes>
+</document>

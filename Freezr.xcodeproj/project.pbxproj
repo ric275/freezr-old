@@ -20,6 +20,15 @@
 		048A9C601F8ADA6D00D3A85E /* ViewedFreezerItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A9C5F1F8ADA6D00D3A85E /* ViewedFreezerItemVC.swift */; };
 		0496E1EC1DB17CE20052E17B /* ShoppingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0496E1EB1DB17CE20052E17B /* ShoppingListViewController.swift */; };
 		0498A0331E26A634001D9E50 /* addSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0498A0321E26A634001D9E50 /* addSound.mp3 */; };
+		04DBE90B1F9E9DFC0088CE3D /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04DBE9091F9E9DFC0088CE3D /* Interface.storyboard */; };
+		04DBE90D1F9E9DFC0088CE3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04DBE90C1F9E9DFC0088CE3D /* Assets.xcassets */; };
+		04DBE9141F9E9DFC0088CE3D /* Freezr watchOS Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 04DBE9131F9E9DFC0088CE3D /* Freezr watchOS Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		04DBE9191F9E9DFC0088CE3D /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DBE9181F9E9DFC0088CE3D /* InterfaceController.swift */; };
+		04DBE91B1F9E9DFC0088CE3D /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DBE91A1F9E9DFC0088CE3D /* ExtensionDelegate.swift */; };
+		04DBE91D1F9E9DFC0088CE3D /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DBE91C1F9E9DFC0088CE3D /* NotificationController.swift */; };
+		04DBE91F1F9E9DFC0088CE3D /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DBE91E1F9E9DFC0088CE3D /* ComplicationController.swift */; };
+		04DBE9211F9E9DFC0088CE3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04DBE9201F9E9DFC0088CE3D /* Assets.xcassets */; };
+		04DBE9261F9E9DFC0088CE3D /* Freezr watchOS.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 04DBE9071F9E9DFC0088CE3D /* Freezr watchOS.app */; };
 		04E4204A1DABF28700390EF5 /* FreezrViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E420491DABF28700390EF5 /* FreezrViewController.swift */; };
 		04EC76101E54D1AA0076E840 /* shoppingListSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 04EC760F1E54D1AA0076E840 /* shoppingListSound.mp3 */; };
 		04EC76121E54D46E0076E840 /* deleteSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 04EC76111E54D46E0076E840 /* deleteSound.mp3 */; };
@@ -29,6 +38,48 @@
 		04FC5AC61DC9622700440657 /* FridgeItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FC5AC51DC9622700440657 /* FridgeItemViewController.swift */; };
 		04FCD12D1F8BE33B009EB95A /* circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 048A9C5C1F8ABB6500D3A85E /* circle.png */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		04DBE9151F9E9DFC0088CE3D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0467320E1DAAE6FA00EEC292 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04DBE9121F9E9DFC0088CE3D;
+			remoteInfo = "Freezr watchOS Extension";
+		};
+		04DBE9241F9E9DFC0088CE3D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0467320E1DAAE6FA00EEC292 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04DBE9061F9E9DFC0088CE3D;
+			remoteInfo = "Freezr watchOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		04DBE92C1F9E9DFC0088CE3D /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				04DBE9141F9E9DFC0088CE3D /* Freezr watchOS Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04DBE92E1F9E9DFC0088CE3D /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				04DBE9261F9E9DFC0088CE3D /* Freezr watchOS.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0404C12C1DCAA2690034DCA6 /* FridgeImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FridgeImageViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +98,18 @@
 		048A9C5F1F8ADA6D00D3A85E /* ViewedFreezerItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewedFreezerItemVC.swift; sourceTree = "<group>"; };
 		0496E1EB1DB17CE20052E17B /* ShoppingListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingListViewController.swift; sourceTree = "<group>"; };
 		0498A0321E26A634001D9E50 /* addSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = addSound.mp3; sourceTree = "<group>"; };
+		04DBE9071F9E9DFC0088CE3D /* Freezr watchOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Freezr watchOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		04DBE90A1F9E9DFC0088CE3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		04DBE90C1F9E9DFC0088CE3D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		04DBE90E1F9E9DFC0088CE3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04DBE9131F9E9DFC0088CE3D /* Freezr watchOS Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Freezr watchOS Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		04DBE9181F9E9DFC0088CE3D /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		04DBE91A1F9E9DFC0088CE3D /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		04DBE91C1F9E9DFC0088CE3D /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		04DBE91E1F9E9DFC0088CE3D /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		04DBE9201F9E9DFC0088CE3D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		04DBE9221F9E9DFC0088CE3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04DBE9231F9E9DFC0088CE3D /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		04E420491DABF28700390EF5 /* FreezrViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FreezrViewController.swift; sourceTree = "<group>"; };
 		04EC760F1E54D1AA0076E840 /* shoppingListSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = shoppingListSound.mp3; sourceTree = "<group>"; };
 		04EC76111E54D46E0076E840 /* deleteSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = deleteSound.mp3; sourceTree = "<group>"; };
@@ -64,6 +127,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		04DBE9101F9E9DFC0088CE3D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -71,6 +141,8 @@
 			isa = PBXGroup;
 			children = (
 				046732181DAAE6FA00EEC292 /* Freezr */,
+				04DBE9081F9E9DFC0088CE3D /* Freezr watchOS */,
+				04DBE9171F9E9DFC0088CE3D /* Freezr watchOS Extension */,
 				046732171DAAE6FA00EEC292 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -79,6 +151,8 @@
 			isa = PBXGroup;
 			children = (
 				046732161DAAE6FA00EEC292 /* Freezr.app */,
+				04DBE9071F9E9DFC0088CE3D /* Freezr watchOS.app */,
+				04DBE9131F9E9DFC0088CE3D /* Freezr watchOS Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -105,6 +179,30 @@
 				046732201DAAE6FA00EEC292 /* Freezr.xcdatamodeld */,
 			);
 			path = Freezr;
+			sourceTree = "<group>";
+		};
+		04DBE9081F9E9DFC0088CE3D /* Freezr watchOS */ = {
+			isa = PBXGroup;
+			children = (
+				04DBE9091F9E9DFC0088CE3D /* Interface.storyboard */,
+				04DBE90C1F9E9DFC0088CE3D /* Assets.xcassets */,
+				04DBE90E1F9E9DFC0088CE3D /* Info.plist */,
+			);
+			path = "Freezr watchOS";
+			sourceTree = "<group>";
+		};
+		04DBE9171F9E9DFC0088CE3D /* Freezr watchOS Extension */ = {
+			isa = PBXGroup;
+			children = (
+				04DBE91A1F9E9DFC0088CE3D /* ExtensionDelegate.swift */,
+				04DBE9181F9E9DFC0088CE3D /* InterfaceController.swift */,
+				04DBE91C1F9E9DFC0088CE3D /* NotificationController.swift */,
+				04DBE91E1F9E9DFC0088CE3D /* ComplicationController.swift */,
+				04DBE9201F9E9DFC0088CE3D /* Assets.xcassets */,
+				04DBE9221F9E9DFC0088CE3D /* Info.plist */,
+				04DBE9231F9E9DFC0088CE3D /* PushNotificationPayload.apns */,
+			);
+			path = "Freezr watchOS Extension";
 			sourceTree = "<group>";
 		};
 		04FC5AC31DC95D3200440657 /* Freezr */ = {
@@ -138,15 +236,51 @@
 				046732121DAAE6FA00EEC292 /* Sources */,
 				046732131DAAE6FA00EEC292 /* Frameworks */,
 				046732141DAAE6FA00EEC292 /* Resources */,
+				04DBE92E1F9E9DFC0088CE3D /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				04DBE9251F9E9DFC0088CE3D /* PBXTargetDependency */,
 			);
 			name = Freezr;
 			productName = Freezr;
 			productReference = 046732161DAAE6FA00EEC292 /* Freezr.app */;
 			productType = "com.apple.product-type.application";
+		};
+		04DBE9061F9E9DFC0088CE3D /* Freezr watchOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04DBE92D1F9E9DFC0088CE3D /* Build configuration list for PBXNativeTarget "Freezr watchOS" */;
+			buildPhases = (
+				04DBE9051F9E9DFC0088CE3D /* Resources */,
+				04DBE92C1F9E9DFC0088CE3D /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				04DBE9161F9E9DFC0088CE3D /* PBXTargetDependency */,
+			);
+			name = "Freezr watchOS";
+			productName = "Freezr watchOS";
+			productReference = 04DBE9071F9E9DFC0088CE3D /* Freezr watchOS.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		04DBE9121F9E9DFC0088CE3D /* Freezr watchOS Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04DBE92B1F9E9DFC0088CE3D /* Build configuration list for PBXNativeTarget "Freezr watchOS Extension" */;
+			buildPhases = (
+				04DBE90F1F9E9DFC0088CE3D /* Sources */,
+				04DBE9101F9E9DFC0088CE3D /* Frameworks */,
+				04DBE9111F9E9DFC0088CE3D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Freezr watchOS Extension";
+			productName = "Freezr watchOS Extension";
+			productReference = 04DBE9131F9E9DFC0088CE3D /* Freezr watchOS Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -154,7 +288,7 @@
 		0467320E1DAAE6FA00EEC292 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0800;
+				LastSwiftUpdateCheck = 0910;
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Jack Taylor";
 				TargetAttributes = {
@@ -162,6 +296,16 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 4LK849K8T4;
 						LastSwiftMigration = 0900;
+						ProvisioningStyle = Automatic;
+					};
+					04DBE9061F9E9DFC0088CE3D = {
+						CreatedOnToolsVersion = 9.1;
+						DevelopmentTeam = 4LK849K8T4;
+						ProvisioningStyle = Automatic;
+					};
+					04DBE9121F9E9DFC0088CE3D = {
+						CreatedOnToolsVersion = 9.1;
+						DevelopmentTeam = 4LK849K8T4;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -180,6 +324,8 @@
 			projectRoot = "";
 			targets = (
 				046732151DAAE6FA00EEC292 /* Freezr */,
+				04DBE9061F9E9DFC0088CE3D /* Freezr watchOS */,
+				04DBE9121F9E9DFC0088CE3D /* Freezr watchOS Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -198,6 +344,23 @@
 				04EC76141E54D7BD0076E840 /* notifSound.mp3 in Resources */,
 				0498A0331E26A634001D9E50 /* addSound.mp3 in Resources */,
 				0467321F1DAAE6FA00EEC292 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04DBE9051F9E9DFC0088CE3D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04DBE90D1F9E9DFC0088CE3D /* Assets.xcassets in Resources */,
+				04DBE90B1F9E9DFC0088CE3D /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04DBE9111F9E9DFC0088CE3D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04DBE9211F9E9DFC0088CE3D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,7 +386,31 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		04DBE90F1F9E9DFC0088CE3D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04DBE91D1F9E9DFC0088CE3D /* NotificationController.swift in Sources */,
+				04DBE91F1F9E9DFC0088CE3D /* ComplicationController.swift in Sources */,
+				04DBE91B1F9E9DFC0088CE3D /* ExtensionDelegate.swift in Sources */,
+				04DBE9191F9E9DFC0088CE3D /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		04DBE9161F9E9DFC0088CE3D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04DBE9121F9E9DFC0088CE3D /* Freezr watchOS Extension */;
+			targetProxy = 04DBE9151F9E9DFC0088CE3D /* PBXContainerItemProxy */;
+		};
+		04DBE9251F9E9DFC0088CE3D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04DBE9061F9E9DFC0088CE3D /* Freezr watchOS */;
+			targetProxy = 04DBE9241F9E9DFC0088CE3D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		0467321D1DAAE6FA00EEC292 /* Main.storyboard */ = {
@@ -240,6 +427,14 @@
 				046732261DAAE6FA00EEC292 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		04DBE9091F9E9DFC0088CE3D /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04DBE90A1F9E9DFC0088CE3D /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -386,6 +581,96 @@
 			};
 			name = Release;
 		};
+		04DBE9271F9E9DFC0088CE3D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4LK849K8T4;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				IBSC_MODULE = Freezr_watchOS_Extension;
+				INFOPLIST_FILE = "Freezr watchOS/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.blueinkcode.FreezrApp.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Debug;
+		};
+		04DBE9281F9E9DFC0088CE3D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4LK849K8T4;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				IBSC_MODULE = Freezr_watchOS_Extension;
+				INFOPLIST_FILE = "Freezr watchOS/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.blueinkcode.FreezrApp.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Release;
+		};
+		04DBE9291F9E9DFC0088CE3D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4LK849K8T4;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "Freezr watchOS Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.blueinkcode.FreezrApp.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Debug;
+		};
+		04DBE92A1F9E9DFC0088CE3D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4LK849K8T4;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "Freezr watchOS Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.blueinkcode.FreezrApp.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -403,6 +688,24 @@
 			buildConfigurations = (
 				0467322C1DAAE6FA00EEC292 /* Debug */,
 				0467322D1DAAE6FA00EEC292 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04DBE92B1F9E9DFC0088CE3D /* Build configuration list for PBXNativeTarget "Freezr watchOS Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04DBE9291F9E9DFC0088CE3D /* Debug */,
+				04DBE92A1F9E9DFC0088CE3D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04DBE92D1F9E9DFC0088CE3D /* Build configuration list for PBXNativeTarget "Freezr watchOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04DBE9271F9E9DFC0088CE3D /* Debug */,
+				04DBE9281F9E9DFC0088CE3D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
