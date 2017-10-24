@@ -20,12 +20,13 @@
 		048A9C601F8ADA6D00D3A85E /* ViewedFreezerItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A9C5F1F8ADA6D00D3A85E /* ViewedFreezerItemVC.swift */; };
 		0496E1EC1DB17CE20052E17B /* ShoppingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0496E1EB1DB17CE20052E17B /* ShoppingListViewController.swift */; };
 		0498A0331E26A634001D9E50 /* addSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0498A0321E26A634001D9E50 /* addSound.mp3 */; };
+		04CE37DD1F9FF45600FDF2E6 /* ItemInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE37DC1F9FF45600FDF2E6 /* ItemInterfaceController.swift */; };
+		04CE37DF1F9FF4A300FDF2E6 /* ItemRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE37DE1F9FF4A300FDF2E6 /* ItemRowController.swift */; };
 		04DBE90B1F9E9DFC0088CE3D /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04DBE9091F9E9DFC0088CE3D /* Interface.storyboard */; };
 		04DBE90D1F9E9DFC0088CE3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04DBE90C1F9E9DFC0088CE3D /* Assets.xcassets */; };
 		04DBE9141F9E9DFC0088CE3D /* Freezr watchOS Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 04DBE9131F9E9DFC0088CE3D /* Freezr watchOS Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		04DBE9191F9E9DFC0088CE3D /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DBE9181F9E9DFC0088CE3D /* InterfaceController.swift */; };
 		04DBE91B1F9E9DFC0088CE3D /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DBE91A1F9E9DFC0088CE3D /* ExtensionDelegate.swift */; };
-		04DBE91D1F9E9DFC0088CE3D /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DBE91C1F9E9DFC0088CE3D /* NotificationController.swift */; };
 		04DBE91F1F9E9DFC0088CE3D /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DBE91E1F9E9DFC0088CE3D /* ComplicationController.swift */; };
 		04DBE9211F9E9DFC0088CE3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04DBE9201F9E9DFC0088CE3D /* Assets.xcassets */; };
 		04DBE9261F9E9DFC0088CE3D /* Freezr watchOS.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 04DBE9071F9E9DFC0088CE3D /* Freezr watchOS.app */; };
@@ -98,6 +99,8 @@
 		048A9C5F1F8ADA6D00D3A85E /* ViewedFreezerItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewedFreezerItemVC.swift; sourceTree = "<group>"; };
 		0496E1EB1DB17CE20052E17B /* ShoppingListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingListViewController.swift; sourceTree = "<group>"; };
 		0498A0321E26A634001D9E50 /* addSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = addSound.mp3; sourceTree = "<group>"; };
+		04CE37DC1F9FF45600FDF2E6 /* ItemInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemInterfaceController.swift; sourceTree = "<group>"; };
+		04CE37DE1F9FF4A300FDF2E6 /* ItemRowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRowController.swift; sourceTree = "<group>"; };
 		04DBE9071F9E9DFC0088CE3D /* Freezr watchOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Freezr watchOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04DBE90A1F9E9DFC0088CE3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		04DBE90C1F9E9DFC0088CE3D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -105,7 +108,6 @@
 		04DBE9131F9E9DFC0088CE3D /* Freezr watchOS Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Freezr watchOS Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04DBE9181F9E9DFC0088CE3D /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
 		04DBE91A1F9E9DFC0088CE3D /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
-		04DBE91C1F9E9DFC0088CE3D /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		04DBE91E1F9E9DFC0088CE3D /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		04DBE9201F9E9DFC0088CE3D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04DBE9221F9E9DFC0088CE3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -196,7 +198,8 @@
 			children = (
 				04DBE91A1F9E9DFC0088CE3D /* ExtensionDelegate.swift */,
 				04DBE9181F9E9DFC0088CE3D /* InterfaceController.swift */,
-				04DBE91C1F9E9DFC0088CE3D /* NotificationController.swift */,
+				04CE37DC1F9FF45600FDF2E6 /* ItemInterfaceController.swift */,
+				04CE37DE1F9FF4A300FDF2E6 /* ItemRowController.swift */,
 				04DBE91E1F9E9DFC0088CE3D /* ComplicationController.swift */,
 				04DBE9201F9E9DFC0088CE3D /* Assets.xcassets */,
 				04DBE9221F9E9DFC0088CE3D /* Info.plist */,
@@ -390,8 +393,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04DBE91D1F9E9DFC0088CE3D /* NotificationController.swift in Sources */,
+				04CE37DF1F9FF4A300FDF2E6 /* ItemRowController.swift in Sources */,
 				04DBE91F1F9E9DFC0088CE3D /* ComplicationController.swift in Sources */,
+				04CE37DD1F9FF45600FDF2E6 /* ItemInterfaceController.swift in Sources */,
 				04DBE91B1F9E9DFC0088CE3D /* ExtensionDelegate.swift in Sources */,
 				04DBE9191F9E9DFC0088CE3D /* InterfaceController.swift in Sources */,
 			);
